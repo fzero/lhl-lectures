@@ -1,33 +1,36 @@
 /*
 Write a node script that ...
 
-Unlimted number of args
-Consider them numbers
-Sum them up
-Output them to the console as a sentence
+1. √ Receives unlimited arguments from the command line
+2. √ If they're numbers
+3.   √ Sum them up
+4. √ Output the result to the console
 */
 
-// func defn
-function sum(numbers) {
-  var total = 0;
-  // for(var i = 0; i < args.length; i++) {
-  for(var num of numbers) {
-    // var total = 0; // <- setting to zero everytime would not work, so it's a gotcha
-    // console.log('i:', args[i]);
-    num = Number(num);
-    if(!isNaN(num)) {
-      console.log('num:', num);
-      total += num; // aka: total = total + args[i]
+function convert_values(values) {
+  var numbers = [];
+
+  for(var value of values) {
+    var number = Number(value)
+    if (!isNaN(number)) {
+      numbers.push(number)
     }
   }
-  return(total);
+  return numbers;
 }
 
-// We don't care for first 2 arguments
-var args = process.argv.slice(2);
 
-// func invoke / call
-var result = sum(args); // => 12
+function sum(values) {
+  var total = 0;
+  var numbers = convert_values(values);
 
-// console.log('Result:', result);
-console.log('Result:', result);
+  for(var number of numbers) {
+    total += number;
+  }
+
+  return total;
+}
+
+
+var arguments = process.argv.slice(2)
+console.log(`The sum of the numbers is ${sum(arguments)}.`)
