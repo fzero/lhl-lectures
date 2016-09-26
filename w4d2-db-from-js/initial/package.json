@@ -1,0 +1,19 @@
+{
+  "name": "lhl-db-from-js",
+  "version": "0.0.1",
+  "description": "Classroom code connecting Node to Postgres",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo LOL NOPE"
+  },
+  "keywords": [
+    "db",
+    "postgres"
+  ],
+  "author": "Fabio Neves",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "pg": "^6.1.0"
+  }
+}
