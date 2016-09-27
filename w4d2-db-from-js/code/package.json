@@ -5,7 +5,6 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "start-promises": "node app-promises.js",
     "test": "echo LOL NOPE"
   },
   "keywords": [
