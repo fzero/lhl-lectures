@@ -25,7 +25,7 @@ const getAlbumTracks = (artistName, albumName, callback) => {
   db.connect((err) => { // Open DB connection
     if (err) throw err;
 
-    db.query(
+    let query =
       `SELECT
       tracks.title AS title,
       albums.title AS album,
@@ -33,19 +33,19 @@ const getAlbumTracks = (artistName, albumName, callback) => {
       FROM tracks
       JOIN albums ON tracks.album_id = albums.id
       JOIN artists ON albums.artist_id = artists.id
-      WHERE artists.name = $1::text AND albums.title = $2::text;`,
-      [artistName, albumName],
-      (err, result) => {
-        if (err) {
-          callback([]);
-        }
-        else {
-          callback(result.rows);
-        }
-        db.end(); // Close db connection - if we don't do this the app doesn't close.
+      WHERE artists.name = $1::text AND albums.title = $2::text;`;
+
+    db.query(query, [artistName, albumName], (err, result) => {
+      if (err) {
+        console.log("Something went wrong:", err);
+        callback([]);
       }
-    )
-  })
+      else {
+        callback(result.rows);
+      }
+      db.end(); // Close db connection - if we don't do this the app doesn't close.
+    });
+  });
 }
 
 // Add other query functions here and export them below

@@ -22,7 +22,7 @@ const db = new pg.Client(config);
 // Get all album tracks for an artist.
 // The callback receives result.rows from `pg`
 const getAlbumTracks = (artistName, albumName, callback) => {
-  db.query(
+  let query =
     `SELECT
     tracks.title AS title,
     albums.title AS album,
@@ -30,13 +30,14 @@ const getAlbumTracks = (artistName, albumName, callback) => {
     FROM tracks
     JOIN albums ON tracks.album_id = albums.id
     JOIN artists ON albums.artist_id = artists.id
-    WHERE artists.name = $1::text AND albums.title = $2::text;`,
-    [artistName, albumName]
-  )
+    WHERE artists.name = $1::text AND albums.title = $2::text;`;
+
+  db.query(query, [artistName, albumName])
   .then((result) => callback(result.rows))
   .then(() => db.end())
   .catch((err) => {
-    throw err;
+    console.log("Something went wrong:", err);
+    callback([]);
     db.end();
   });
 };
