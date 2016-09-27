@@ -8,3 +8,4 @@ learn about [knex](https://www.npmjs.com/package/knex), which makes it easier to
 build SQL queries in JS.
 
 The final lecture code can be found in the [`code`](code/) folder.
+DB setup and seed data can be found in the [`sql`](sql/) folder.
