@@ -24,10 +24,9 @@ db.query(query, [artistName, albumName], (err, result) => {
 
 ## Promises to the rescue
 
-Promises provide a way to make async code less painful. Many async-heady
-libraries support them natively (`request` for example), but it's important to
-know how to use them from scratch using the `Promise` constructor. Again, [MDN
-has extensive
+Promises provide a way to make async code less painful. Many async-heavy
+libraries support them natively, but it's important to know how to use them from
+scratch using the `Promise` constructor. Again, [MDN has extensive
 docs](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise),
 but [this article by Dave Atchley has better
 examples](http://www.datchley.name/es6-promises/).
