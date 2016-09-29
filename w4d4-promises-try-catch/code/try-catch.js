@@ -6,6 +6,6 @@ try {
   }
 }
 catch (e) {
-  let newNumber = Math.floor((Math.random() * 6) + 1)
+  let newNumber = Math.floor((Math.random() * 5) + 1)
   console.log(`Maybe try ${newNumber}?`);
 }

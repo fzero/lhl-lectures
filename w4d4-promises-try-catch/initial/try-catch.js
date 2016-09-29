@@ -1,7 +1,11 @@
+let magicNumber = Number(process.argv[2])
+
 try {
-  // setTimeout(function() { throw "tooEarlyException"; }, 2000);
-  throw "tooEarlyException";
+  if (magicNumber > 5) {
+    throw "Magic is too strong!"
+  }
 }
 catch (e) {
-  console.log("ERROR:", e);
+  let newNumber = Math.floor((Math.random() * 5) + 1)
+  console.log(`Maybe try ${newNumber}?`);
 }
