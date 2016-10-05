@@ -7,14 +7,16 @@ We know these guys already:
 * String - `"Hello"`, `"banana"`, `'apple'`, `"This sentence is false."`
 * Number - `1`, `378643`, `2e5`, `0xFF`
 * Boolean - `true`, `false`
-* Array* - `[1000, "This sentence isn't true", [4, 5, 6], "wat?"]`
+  * There are many other _falsey_ values: `undefined`, `null`, `NaN`, the number `0` and empty strings.
+  * Everything else will evaluate to `true` inside an `if` statement.
+* Array - `[1000, "This sentence isn't true", [4, 5, 6], "wat?"]`
   * ...but `typeof` will say it's an `object`
 * How do I find the type of something?
   * `typeof(...)`
 
 ## Objects
 
-Objects are first and foremost key-value pairs. Differently from Arrays, you use keys (which are _always strings_) to get data in an out. The values can be of any type - including arrays, other objects and functions (more on this below).
+Objects are first and foremost key-value pairs. Differently from Arrays, you use keys (which are _always strings_) to get data in an out. The values can be of **any type** - including arrays, other objects and functions (more on this below).
 
 ```js
 var myObj = {
@@ -114,7 +116,7 @@ console.log(actor);
 
 The `this` keyword can be a tricky concept to understand in Javascript. The simplest explanation is:
 
-> `this` is the object who called the function.
+> `this` is whatever called the function.
 
 In other words:
 ```js
@@ -142,6 +144,6 @@ bluesquare.describe();
 //=> I'm a blue square.
 ```
 
-Note how `this` takes the value of the **caller object**.
+Note how `this` takes the value of the **caller object** (whatever is before the dot: `redcircle` and `bluesquare` in the example above).
 
-The tricky part is `this` **changes for every function call**. This can get particularly complex when you're dealing with nested functions. 
+The tricky part is `this` **changes for every function call**. This can get particularly complex when you're dealing with nested functions.
