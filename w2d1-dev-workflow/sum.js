@@ -32,5 +32,5 @@ function sum(values) {
 }
 
 
-var arguments = process.argv.slice(2)
-console.log(`The sum of the numbers is ${sum(arguments)}.`)
+var arguments = process.argv.slice(2);
+console.log(`The sum of the numbers is ${sum(arguments)}.`);
