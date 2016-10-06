@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatty</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <style type="text/css">
+    html, body { max-height: 100vh; max-width: 100vw; font-family: 'Open Sans', sans-serif;}
+    .wrapper { font-size: 14px; }
+    nav { height: 40px; padding: 8px; border-bottom: 1px solid black; background-color: tomato; }
+    nav h1 { margin: 0; }
+    #message-list { height: calc(100vh - 131px); padding: 16px 8px;}
+    #message-list .message { padding: 4px 0;  display: flex;}
+    #message-list .message .username,#message-list .message .content {
+      display: inline-block; padding: 4px 0;
+    }
+    #message-list .message .username { flex: 15; margin-right: 16px; overflow: hidden; font-weight: 700;}
+    #message-list .message .content { flex: 85; }
+    #message-list .message.system { font-weight: 400; font-style: italic; }
+    footer {
+      height: 41px;
+      border-top: 1px solid black;
+      background-color: tomato;
+      display: flex; align-items: center;
+    }
+    footer input {
+      border: 1px solid black;
+      margin: 4px;
+      height: 20px;
+      padding: 4px 8px;
+    }
+    footer #username { flex: 3; }
+    footer #new-message { flex: 7; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <nav>
+    <h1>Chatty</h1>
+  </nav>
+  <div id="message-list">
+    <div class="message">
+      <span class="username">Anonymous1</span>
+      <span class="content">I won't be impressed with technology until I can download food.</span>
+    </div>
+    <div class="message system">
+      Anonymous1 changed their name to nomnom.
+    </div>
+  </div>
+  <footer>
+    <input id="username" type="text" placeholder="Your Name (Optional)" />
+    <input id="new-message" type="text" placeholder="Type a message and hit ENTER" />
+  </footer>
+</div>
+</body>
+</html>

@@ -4,4 +4,4 @@
 * We'll take the simple websockets approach we have and we'll extend it with different types of messages
   * Notification messages
     * "User has changed name"
-  * Command messages, like in Slack or IRC (`/slap`, `/part` etc.)
+  * Command messages, like in Slack or IRC (`/slap`, `/me` etc.)
