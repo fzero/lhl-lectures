@@ -1,0 +1,27 @@
+{
+  "name": "w2d1-bo",
+  "version": "1.0.0",
+  "description": "LighthouseLabs W2D1 Breakout - Using APIs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo LOL NOPE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fzero/lhl-lectures.git"
+  },
+  "keywords": [
+    "http",
+    "api",
+    "request"
+  ],
+  "author": "Fabio Neves",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fzero/lhl-lectures/issues"
+  },
+  "homepage": "https://github.com/fzero/lhl-lectures#readme",
+  "dependencies": {
+    "request": "^2.75.0"
+  }
+}
