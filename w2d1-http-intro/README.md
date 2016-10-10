@@ -37,6 +37,9 @@
 * It's a **client-server** protocol
     - The **client** makes **requests**
     - The server returns **responses**
+* It's **stateless**
+    - This means each request is a complete conversation. Once it's over, the server doesn't really keep any information about previous requests.
+    - Persistence (i.e. logged-in state, discussion threads and so on) is achieved through workarounds. The most popular is the use of cookies.
 
 
 ## HTTP Requests
