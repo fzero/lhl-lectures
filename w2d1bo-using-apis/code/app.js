@@ -41,6 +41,6 @@ getGithubFollowers(githubUsername, function(error, response, body) {
   console.log(`${followers.length} followers:\n`);
 
   followers.forEach(function(follower){
-    console.log(`- ${follower.avatar_url}`);
+    console.log(`- ${follower.login}`);
   });
 });
