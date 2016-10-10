@@ -118,3 +118,7 @@ Data to be sent to the server (optional)
 
 Unnecessarily extensive and detailed explanation of what happens when you type `google.com` and press enter on your browser:
 https://github.com/alex/what-happens-when
+
+## Code discussed in class
+
+Look inside the [`/code`](code) folder.
