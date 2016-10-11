@@ -5,9 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var apples = require('./routes/apples');
 
 var app = express();
 
@@ -23,7 +20,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//
+// Here we're requiring our routes, which are regular Node
+// modules in the /routes folder...
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var apples = require('./routes/apples');
+
+// ...and here we're mounting the routes on different prefixes.
+// - /       = /routes/index.js
+// - /users  = /routes/users.js
+// - /apples = /routes/apples.js
 app.use('/', routes);
 app.use('/users', users);
 app.use('/apples', apples);
