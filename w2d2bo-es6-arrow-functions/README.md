@@ -43,7 +43,7 @@ function counter() {
 }
 ```
 
-If you run the code above you'll see `NaN` being printed every second. This is because `this` means different things inside `counter` and inside the anonymous function being called by `setInterval`. If you're curious, both `setInterval` and `setTimeout` run the inner function to the global scope, which means `this` is the same as `global`.
+If you run the code above you'll see `NaN` being printed every second. That's because `this` means different things inside `counter` and inside the anonymous function being called by `setInterval`. If you're curious, both `setInterval` and `setTimeout` run the inner function on the global scope, which means `this` is the same as `global`.
 
 Now let's try this with a fat arrow function:
 
