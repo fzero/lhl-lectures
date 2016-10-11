@@ -47,6 +47,14 @@ If you don't like CRUD, you can also use BREAD:
 * [Github API](https://developer.github.com/v3/)
 * [Twitter API](https://dev.twitter.com/rest/public)
 
-## Express
+## Express.js
 
-Coming soon...
+[Express.js](http://expressjs.com) is the most popular web server package for
+Node. It's simple, fast and barebones, including only what's necessary to handle
+http requests.
+
+Because of its barebones approach, there's an associated
+[`express-generator`](http://expressjs.com/en/starter/generator.html) package
+that helps creating an all-purpose app skeleton so you can hit the ground
+running. We've used it to create the example code in [`/apples`](apples), which
+begins to implement the REST pattern to build an API for apple lovers.
