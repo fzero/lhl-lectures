@@ -1,0 +1,31 @@
+{
+  "name": "w2d3-express-crud",
+  "version": "1.0.0",
+  "description": "Example Express.js app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo LOL NOPE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fzero/lhl-lectures.git"
+  },
+  "keywords": [
+    "http",
+    "node",
+    "express"
+  ],
+  "author": "Fabio Neves",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fzero/lhl-lectures/issues"
+  },
+  "homepage": "https://github.com/fzero/lhl-lectures#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  }
+}
