@@ -1,6 +1,6 @@
 # CRUD over HTTP with Express - forms and more
 
-We'll use a very minimal Express server (simpler than the one created with
+We've used a very minimal Express server (simpler than the one created with
 `express-generator`!) to implement a simple application with a (mostly) complete
 workflow, including pages and forms.
 
@@ -25,5 +25,4 @@ data storage logic (Model) from display logic (View) using a layer in between to
 handle user requests (Controller).
 
 We've applied this pattern to our example application (see [`/code`](code)
-folder) creating a simple `appleDB` model that handles all data storage
-functions.
+folder) creating a simple model that handles all data storage functions.
