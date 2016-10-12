@@ -83,7 +83,7 @@ app.get('/apples/:id/edit', (req, res) => {
 });
 
 
-// If we wer being striclty RESTful, this would be
+// If we were being striclty RESTful, this would be
 // app.update(...), but due to browser's limitations we're doing
 // a POST to a different route. The other workaround would be to
 // use the `method-override` npm package:
