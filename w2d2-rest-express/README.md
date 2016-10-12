@@ -1,5 +1,7 @@
 ## REST
 
+> **NOTE:** This lecture was changed in Compass. Use [`w2d2-webservers-101`](../w2d2-webservers-101) instead!
+
 It's all about mapping the data you have available in a sensible way. Once you do it, you can do CRUD operations (**C**reate, **R**ead, **U**pdate, **D**elete) over HTTP.
 
 REST is everywhere, to the point that when you see it, you cannot un-see it. If you look closely, even the CBC website is organized in a restful way:
