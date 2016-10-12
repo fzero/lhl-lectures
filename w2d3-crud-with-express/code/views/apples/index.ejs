@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>List of apples!</title>
+  </head>
+  <body>
+    <h1>All my apples!</h1>
+    <p>
+      <a href="/apples/new">Add new apple</a>
+    </p>
+    <hr />
+    <div class="apples-container">
+      <% for(let i = 0; i < apples.length; i++) { %>
+        <div class="apple">
+          <p>
+            <strong>Apple type:</strong> <%= apples[i].type %>
+            <br />
+            <strong>Apple color:</strong> <%= apples[i].color %>
+            <br />
+            <a href="/apples/<%= i %>">Details</a> |
+            <a href="/apples/<%= i %>/edit">Edit</a>
+          </p>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
