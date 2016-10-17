@@ -15,9 +15,9 @@ RSpec.describe Bicycle, type: :model do
   # to the Bicycle#description method defined in bicycle.rb
   context "description" do
 
-    # This will run ONCE before all following tests.
-    # If we wanted to run this before EACH test, we'd need to
-    # change it to `before :each`
+    # This will run before each of the following tests.
+    # If we wanted to run this once, before all the tests, we'd need to
+    # change it to `before :all`
     before do
       # Creating a few objects we'll use on our tests
       # Bicycles need Brands and Styles to be valid
