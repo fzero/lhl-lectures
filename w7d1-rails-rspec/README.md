@@ -43,4 +43,4 @@ expect(student.student_number).not_to eql nil
 We also talked about how to use:
 * `describe` blocks to group test cases.
   * `context` does the exact same thing.
-* `before :each` / `before :each` blocks to write code that needs to be used to create the necessary test conditions.
+* `before` / `before :each` blocks to write code that needs to be used to create the necessary test conditions.
