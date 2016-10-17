@@ -1,6 +1,8 @@
 # Testing Rails applications using RSpec
 
-> NOTE: WIP
+We took a quick tour on using RSpec with Rails, taking tips from [this excellent article](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/).
+
+The app (more of a skeleton, really) we've worked on can be found inside [`/code`](code). Be sure to check the [`/code/spec/models`](code/spec/models) folder in particular.
 
 ## Test steps
 In general a test case will have the following steps:
@@ -14,10 +16,10 @@ Writing good unit tests is an art. You want to make sure that your tests cover m
 
 Tips for testing:
 
-* test edge cases. pick values that are right at the boundary.
-* test are supposed to be easy to read. be careful how you DRY up your code. you need to strike a good balance between readability and DRY.
-* don't use random data in your setup stage. tests need to be reproducible, meaning if you run the test twice without changing your application code, you should get the same result.
-* test are supposed to be easy to maintain, meaning easy to update when your requirements change.
+* Test edge cases. pick values that are right at the boundary.
+* Test are supposed to be easy to read. be careful how you DRY up your code. you need to strike a good balance between readability and DRY.
+* Don't use random data in your setup stage. tests need to be reproducible, meaning if you run the test twice without changing your application code, you should get the same result.
+* Test are supposed to be easy to maintain, meaning easy to update when your requirements change.
 * don't over test. when unit testing you want to test that a specific method works. no need to check that another method used by your method under test works.
 
 ## RSpec
@@ -38,6 +40,7 @@ student = Student.new
 expect(student.student_number).not_to eql nil
 ```
 
-We talked about how to use:
+We also talked about how to use:
 * `describe` blocks to group test cases.
-* `before :each` blocks to write code that needs to be used to create the necessary test conditions.
+  * `context` does the exact same thing.
+* `before :each` / `before :each` blocks to write code that needs to be used to create the necessary test conditions.
