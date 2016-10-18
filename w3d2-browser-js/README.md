@@ -24,6 +24,8 @@ Code discussed in class can be found inside [`/code`](code).
             + `document.getElementBy<attribute>()` - oldschool
             + `document.querySelector()` - what cool kids do
 
+![The browser API](browser_api.svg)
+
 * Events and event propagation
     - Events propagate outwards from the target
         + This means a `click` event on a button will also trigger `click` on a containing `<div>`
