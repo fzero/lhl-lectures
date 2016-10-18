@@ -1,5 +1,7 @@
 # Client-side Javascript (a.k.a. Return of the Browser)
 
+Code discussed in class can be found inside [`/code`](code).
+
 * Welcome to client-side JS!
     - We'll briefly dial it back to ES5...
     - ...but we can use most of ES6 (unless you like IE or Safari)
@@ -25,7 +27,7 @@
 * Events and event propagation
     - Events propagate outwards from the target
         + This means a `click` event on a button will also trigger `click` on a containing `<div>`
-        + You can stop this with `<event>.stopPropagation()` 
+        + You can stop this with `<event>.stopPropagation()`
     * The event object
         - Contains all information about it, including the DOM element itself - `event.target`
     * `<element>.addEventListener()`
@@ -36,3 +38,8 @@
     * The REPL
     * Elements tab
     * Sources tab
+
+## Bonus stuff
+
+* Check out the [`http-server`](https://www.npmjs.com/package/http-server) npm package to serve your website in development mode.
+* The poor-person's jQuery is incluced in [`code/app.js`](code/app.js).
