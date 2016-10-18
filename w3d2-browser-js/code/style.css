@@ -3,17 +3,7 @@ body {
   margin: 2rem;
 }
 
-.dat-class {
+.box {
+  padding: 50px;
   border: 1px solid black;
-  padding: 40px;
-  text-align: center;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.textfield {
-  width: 300px;
-  height: 100px;
 }

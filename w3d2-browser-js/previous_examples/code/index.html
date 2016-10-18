@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Client-side JS</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Hello there! How's it going?</h1>
+    <h2>I'm fine I guess...</h2>
+
+    <form name="counterform" class="dat-class" id="counterform" action="#">
+      <p>
+        <textarea class="textfield" name="someText" id="someText"></textarea>
+      </p>
+      <p>
+        Characters typed: <span id="counter">0</span>
+      </p>
+    </form>
+
+    <p>
+      <a id="unclickable" href="http://www.nostep.ca">I heard this guy was good-ish.</a>
+    </p>
+
+    <div class="dat-class" id="outer">
+      <div class="dat-class" id="inner">
+        <div class="dat-class" id="innerest">
+          <button id="button">Click me if you dare!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Good practice: load your DOM-dependent JS code at the bottom -->
+    <script src="app.js"></script>
+  </body>
+
+</html>

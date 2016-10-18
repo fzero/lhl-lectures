@@ -1,0 +1,19 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 2rem;
+}
+
+.dat-class {
+  border: 1px solid black;
+  padding: 40px;
+  text-align: center;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.textfield {
+  width: 300px;
+  height: 100px;
+}

@@ -10,53 +10,48 @@ function $$(query) {
   return document.querySelectorAll(query);
 }
 
+// I like prefixing variables containing DOM elements with `$`
+// to differentiate them from regular data.
+var $button = $('#the-button');
 
-// Now we get all the elements that matter to us
-var $button = $('#button'); // same as document.querySelector('#button')
-var $innerest = $('#innerest');
-var $inner = $('#inner');
-var $outer = $('#outer');
-var $unclickable = $('#unclickable');
-
-// These are for the char counter
-var $someText = $('#someText');
-var $counter = $('#counter');
-
-// `input` is fired every time the text field receives an input
-$someText.addEventListener('input', function(ev) {
-  $counter.innerText = this.value.length;
-  // I could also use `ev.target` here:
-  // $counter.innerText = ev.target.value.length;
-});
-
-
-// Use event.preventDefault() to prevent the default action.
-// In this case it would be opening a link.
-$unclickable.addEventListener('click', function(ev){
-  ev.preventDefault();
-})
-
-
-// I can separate the event callback on its own function
-function btnClick(ev){
-  alert('Button clicked');
-  ev.stopPropagation();
+function buttonClick(ev) {
+  ev.stopPropagation(); // Stops event from propagating outwards
+  alert("You clicked meeeee!");
+  $('#main-header').innerText = "YOU CLICKED THE BUTTON";
 }
-$button.addEventListener('click', btnClick);
 
-// Or I can just pass an anonymous function as a callback (of course)
-$innerest.addEventListener('click', function(ev){
-  alert('Innermost div clicked');
+$button.addEventListener('click', buttonClick);
+
+
+$('#inner-box').addEventListener('click', function(ev) {
   ev.stopPropagation();
+  alert("inner-box clicked!");
 });
 
-$inner.addEventListener('click', function(ev){
-  alert('Inner div clicked');
-  ev.stopPropagation(); // Prevents an event from bubbling outwards.
-});
-
-$outer.addEventListener('click', function(ev){
-  alert('Outer div clicked');
+$('#middle-box').addEventListener('click', function(ev) {
   ev.stopPropagation();
+  alert("middle-box clicked!");
 });
 
+$('#outer-box').addEventListener('click', function(ev) {
+  ev.stopPropagation();
+  alert("outer-box clicked!");
+});
+
+
+$('#soundcloud').addEventListener('click', function(ev){
+  ev.preventDefault(); // Stops the default action from happening - opening
+  alert("LOL NOPE");   // a link in this case.
+});
+
+$('#the_form').addEventListener('submit', function(ev) {
+  ev.preventDefault(); // Same here - don't actually submit the form
+  var name = $('#name').value;
+  var quest = $('#quest').value;
+  console.log("Name is " + name + ", quest is " + quest);
+});
+
+// Logs the `mousemove` event to the console every time the mouse is moved
+// document.addEventListener('mousemove', function(ev) {
+//   console.log(ev);
+// });
