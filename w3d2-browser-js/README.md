@@ -42,4 +42,4 @@ Code discussed in class can be found inside [`/code`](code).
 ## Bonus stuff
 
 * Check out the [`http-server`](https://www.npmjs.com/package/http-server) npm package to serve your website in development mode.
-* The poor-person's jQuery is incluced in [`code/app.js`](code/app.js).
+* The poor-person's jQuery is included in [`code/app.js`](code/app.js).
