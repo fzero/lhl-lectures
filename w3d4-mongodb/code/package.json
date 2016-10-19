@@ -1,0 +1,20 @@
+{
+  "name": "url-shortener",
+  "version": "0.0.1",
+  "description": "LHL Curriculum v2.0 - assignment to create a URL-shortening service",
+  "main": "express_server.js",
+  "scripts": {
+    "start": "node express_server_mongodb.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongodb": "^2.1.7"
+  }
+}
