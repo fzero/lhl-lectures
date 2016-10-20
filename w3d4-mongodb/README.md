@@ -173,4 +173,4 @@ Browser      (Client) <> Node/Express (< Server / Client >) <> MongoDB (Server)
 
 Here's a simplified diagram on how a server setup with Express.js and MongoDB might look like:
 
-![Server-side diagram](https://fzero.github.io/lhl-lectures/assets/browser-api.svg)
+![Server-side diagram](https://fzero.github.io/lhl-lectures/assets/client-server-arch-with-database.svg)
