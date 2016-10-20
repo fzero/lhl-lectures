@@ -14,6 +14,10 @@
         <tr>
           <td><%= todo.desc %></td>
           <td><%= todo.completed ? 'Completed' : 'Incomplete' %></td>
+          <td><%= todo.priority %></td>
+          <td>
+            <a href="/todos/<%= todo._id %>/edit" class="btn btn-default">Edit</a>
+          </td>
           <td>
             <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
               <button class="btn btn-default">Delete &#128465;</button>

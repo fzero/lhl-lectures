@@ -5,7 +5,8 @@ const methodOverride = require("method-override");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-const Mongo       = require("mongodb");
+// MongoDB setup
+const Mongo = require("mongodb");
 const MongoClient = Mongo.MongoClient;
 const MONGODB_URI = "mongodb://127.0.0.1:27017/todo_app";
 
@@ -48,8 +49,43 @@ app.get("/todos/new", (req, res) => {
 
 // Create new todo in Mongo
 app.post("/todos", (req, res) => {
-  const todo = { desc: req.body.desc, completed: false }; // mongo doc
+  const todo = {
+    desc: req.body.desc,
+    completed: false,
+    priority: Number(req.body.priority)
+  }; // mongo doc
   db.collection("todos").insertOne(todo, (err, result) => {
+    if (err) {
+      console.log("Something exploded on POST /todos!");
+    }
+    res.redirect("/todos");
+  });
+});
+
+// Edit form
+app.get("/todos/:id/edit", (req, res) => {
+  const id = req.params.id;
+  let filter = { _id: Mongo.ObjectId(id) };
+  db.collection("todos").findOne(filter, (err, result) => {
+    const templateVars = {
+      todo: result
+    };
+    res.render("todos/edit", templateVars);
+  });
+});
+
+// Update a todo
+app.put("/todos/:id", (req, res) => {
+  const id = req.params.id;
+  let filter = { _id: Mongo.ObjectId(id) };
+  const todo = {
+    desc: req.body.desc,
+    priority: Number(req.body.priority)
+  }; // mongo doc
+  db.collection("todos").updateOne(filter, todo, (err, result) => {
+    if (err) {
+      console.log("Something exploded on PUT /todos!");
+    }
     res.redirect("/todos");
   });
 });
