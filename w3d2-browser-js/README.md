@@ -24,7 +24,7 @@ Code discussed in class can be found inside [`/code`](code).
             + `document.getElementBy<attribute>()` - oldschool
             + `document.querySelector()` - what cool kids do
 
-![The browser API](https://docs.google.com/drawings/d/1NYxIgIMLg1NzFHErwyZwNgkWoLqO_kDXJ80IHJjkvVs/pub?w=960&h=720)
+![The browser API](https://fzero.github.io/lhl-lectures/assets/browser-api.svg)
 
 * Events and event propagation
     - Events propagate outwards from the target
