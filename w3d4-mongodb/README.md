@@ -1,4 +1,4 @@
-# W2D5 - MongoDB
+# Intro to databases and MongoDB
 
 Credit where credit is due: the following lecture notes and example app were heavily based on [Khurram Virani's original notes](https://github.com/kvirani/express_mongo_todo_example) (thanks!).
 
