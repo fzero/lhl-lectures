@@ -84,11 +84,7 @@ Examples:
 
 ### Enter MongoDB (or other alternatives)
 
-MongoDB is a document storage database. It has blown up big time in the last in the Node community, becoming the most popular option for many projects.
-
-Disclaimer: I can't speak to the accuracy of this list but it does give us _some_ idea:
-
-<http://db-engines.com/en/ranking>
+MongoDB is a document storage database. It has blown up big time in the last in the Node community, becoming a popular option for many projects.
 
 MongoDB is open source (like everything we use/teach here). It is a non-relational db and is more of an object store (objects are referred to as "documents").
 
@@ -138,11 +134,11 @@ We talked about how:
 - Mongo has "transactional" functions on collections to allow us to CRUD (Create Read Update Delete) documents within those collections.
 - There are many other functions that you can look up in the documentation (how to search, insert multiple, batch delete, batch update, etc, etc)
 - Collections can just be viewed as properties of the `db` object (`db.todos` can also be written as `db.collection('todos')`) therefore their name is what uniquely identify them.
-- Mongo assigns an "_id" key/property to any document so we can uniquely identify it. More on this below.
+- Mongo assigns an `_id` key/property to any document so we can uniquely identify it. More on this below.
 
 ## Primary Key
 
-The `"_id"` is a "Primary Key" that uniquely identifies each object (document) within our collections.
+The `_id` is a "Primary Key" that uniquely identifies each object (document) within our collections.
 
 It is automatically added to any object we insert and we can use it to find single object from a collection (see example above).
 

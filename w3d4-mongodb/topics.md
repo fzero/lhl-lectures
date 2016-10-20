@@ -1,6 +1,8 @@
 # Topics:
 
-* Intro to databases (Why)
+* Intro to databases
+  * Why?
+  * Why not just use files?
 * Intro to MongoDB
   * What is document storage?
   * How it uses JavaScript
