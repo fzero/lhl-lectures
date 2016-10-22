@@ -84,6 +84,8 @@ The difference is simple:
 
 In other words, `INNER JOIN`s need reciprocity, while `OUTER JOIN`s don't care.
 
+When the type of `JOIN` isn't specified, SQL will assume you're talking about a `LEFT INNER JOIN`.
+
 ## Creating the database and loading some data
 
 We're using [SQLite](https://sqlite.org/) for our example database. To recreate the data discussed in class on your machine, follow the steps below:
