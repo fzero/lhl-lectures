@@ -47,7 +47,7 @@ A SQL statement can (and should) be divided in multiple lines. The end of the st
 6. `ORDER BY` - what order do you want the resulting rows to come back in
 
 Example:
-```
+```sql
 SELECT
   total_amount
 FROM
