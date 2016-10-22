@@ -37,7 +37,7 @@ Each one of these commands have a number of options to restrict operations using
 
 A SQL statement can (and should) be divided in multiple lines. The end of the statement is always marked by a semicolon (`;`).
 
-SELECT statements are broken up into six clauses:
+`SELECT` statements are broken up into six clauses:
 
 1. `SELECT` - list the data you wanna get
 2. `FROM` - list the tables that you wanna get data from
@@ -61,7 +61,7 @@ LIMIT 10;
 
 ### `JOIN`s
 
-`JOIN`s allow you to cross-reference data between two tables. They're what makes relational databases, well, _relational_. We'll talk about `JOIN`s at length on the next few days.
+`JOIN`s allow you to cross-reference data between two tables. They put the _relational_ in _relational databases_.
 
 Example:
 ```sql
