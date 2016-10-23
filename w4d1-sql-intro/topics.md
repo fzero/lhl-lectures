@@ -1,6 +1,6 @@
 # Intro to relational databases and SQL
 
-Tables! Schemas! Relations! Primary keys! Foreign keys! Welcome to the world of SQL.
+Tables! Schemas! Relationships! Primary keys! Foreign keys! Welcome to the world of SQL.
 
 * Quick review: why do we need databases?
 * The main types of database
