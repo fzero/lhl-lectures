@@ -30,7 +30,8 @@ Tables! Schemas! Relations! Primary keys! Foreign keys! Welcome to the world of 
 ERD is a well-established standard used to visualize database relationships (and more!). There are several tools available to draw ERDs and even convert them directly into SQL code to create tables. [Lucidchart](http://www.lucidchart.com) is a good example of online ERD.
 
 Here's an ERD example for the music database we've discussed in class:
-![Music Database ERD](https://fzero.github.io/lhl-lectures/assets/musicdb-erd.svg)
+
+![Music Database ERD](https://fzero.github.io/lhl-lectures/assets/musicdb.svg)
 
 ## Querying using SQL
 
