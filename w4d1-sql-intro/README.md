@@ -29,6 +29,9 @@ Tables! Schemas! Relations! Primary keys! Foreign keys! Welcome to the world of 
 
 ERD is a well-established standard used to visualize database relationships (and more!). There are several tools available to draw ERDs and even convert them directly into SQL code to create tables. [Lucidchart](http://www.lucidchart.com) is a good example of online ERD.
 
+Here's an ERD example for the music database we've discussed in class:
+![Music Database ERD](https://fzero.github.io/lhl-lectures/assets/musicdb-erd.svg)
+
 ## Querying using SQL
 
 Relational databases have their own language to manipulate data, called [SQL](https://en.wikipedia.org/wiki/SQL). The language itself is fairly simple, with the basic CRUD operations represented by four commands: `INSERT`, `SELECT`, `UPDATE` and `DELETE`.
