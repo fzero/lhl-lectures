@@ -1,4 +1,4 @@
-# Doing development like a developere
+# Doing development like a developer
 
 Our first lecture today was on the various tools that are going to make up your toolkit for the time you are a student at Lighthouse Labs. The three tools we focused on today include:
 
