@@ -10,11 +10,11 @@ We also went over an outline of the curriculum and talked about the various ways
 
 ## Tools
 
-### Vagrant
+### [Vagrant](https://www.vagrantup.com/)
 
 When it comes to [vagrant](https://www.vagrantup.com/), this is our development environment. It is the operating system, libraries, and encapsulated workspace in which we will work on projects for a particular company or for a particular piece of software. It is common to have many vagrant machines (virtual machines inside your OS) for various projects, and developers can be expected to have to set up a virtual machine when joining a new company.
 
-### Sublime Text / Atom
+### [Sublime Text](http://www.sublimetext.com/) / [Atom](https://atom.io/)
 Sublime (or alternatively Atom) is our main code editor, that is going to do some important things for us, such as (but not limited to):
 
 * Syntax highlighting
