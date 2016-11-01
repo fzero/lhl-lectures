@@ -27,7 +27,8 @@ function totalize(numbers) {
     if (actuallyNumber(number)) {
       total += number;
     }
-    // total += (currentNumber !== NaN) ? currentNumber : 0;
+    // This also works, but it's harder to read.
+    // total += actuallyNumber(number) ? number : 0;
   }
   return total;
 }
