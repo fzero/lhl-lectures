@@ -1,0 +1,16 @@
+{
+  "name": "ws-server",
+  "version": "1.0.0",
+  "description": "LighthouseLabs W5D3 - Websockets",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Fabio Neves",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.14.0",
+    "ws": "1.1.1"
+  }
+}
