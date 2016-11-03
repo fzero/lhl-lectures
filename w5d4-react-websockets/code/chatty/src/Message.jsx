@@ -2,17 +2,19 @@ import React, {Component} from 'react';
 
 const Message = React.createClass({
   render: function() {
-    var message = this.props;
-    var username = message.username || '';
-    var messageClasses = ['content'];
+    let message = this.props.message;
+    var username = message.username || 'Anonymous';
 
-    // We use the action type as a css class too.
-    messageClasses.push(message.type);
+    let messageClasses = ['message'];
+    if (message.type === 'command') {
+      username = '';
+      messageClasses.push('command');
+    }
 
     return (
-      <div className="message" key={message.id}>
+      <div className={messageClasses.join(' ')} key={message.id}>
         <span className="username">{username}</span>
-        <span className={messageClasses.join(' ')}>{message.content}</span>
+        <span className="content">{message.content}</span>
       </div>
     );
   }

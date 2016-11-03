@@ -4,17 +4,21 @@ nav { height: 40px; padding: 8px; border-bottom: 1px solid black; background-col
 nav h1 { margin: 0; }
 #message-list { height: calc(100vh - 131px); padding: 16px 8px;}
 #message-list .message { padding: 4px 0;  display: flex;}
-#message-list .message .username,#message-list .message .content {
+#message-list .message .username,
+#message-list .message .content {
   display: inline-block; padding: 4px 0;
+}
+#message-list .message .content.action {
+  color: darkGreen;
+  font-weight: bold;
+  font-style: italic;
+}
+#message-list .message .content.system {
+  font-weight: 400;
+  font-style: italic;
 }
 #message-list .message .username { flex: 15; margin-right: 16px; overflow: hidden; font-weight: 700;}
 #message-list .message .content { flex: 85; }
-#message-list .message.system { font-weight: 400; font-style: italic; }
-#message-list .message.command {
-  font-weight: 400;
-  font-style: italic;
-  color: darkGreen;
-}
 footer {
   height: 41px;
   border-top: 1px solid black;

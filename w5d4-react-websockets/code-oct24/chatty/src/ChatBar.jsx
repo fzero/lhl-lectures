@@ -72,5 +72,4 @@ const ChatBar = React.createClass({
     );
   }
 });
-
 export default ChatBar;
