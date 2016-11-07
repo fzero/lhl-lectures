@@ -40,6 +40,7 @@ The code discussed in class an be found inside [`/code`](code). Open [`example.j
   * Optional, required, and recommended things in the syntax
     * Way less punctuation! Method calls don't need braces.
   * Common data structures and their methods
-    * You still have numbers, strings, booleans, arrays and hashes (equivalent to objects in JS)
+    * You still have numbers, strings, booleans, arrays and hashes (equivalent to objects in JS).
+    * There's an additional type: **symbol**. They're kinda sorta like strings, but they're generally used internally to identify data in situations where the user doesn't need to see it. The most common example is keys in hashes. [This article expands a bit on these concepts.](http://rubylearning.com/satishtalim/ruby_symbols.html)
     * There are **only two falsey values**: `nil` and `false`. Everything else evaluates to `true`.
   * Defining methods, scope, and interacting with objects
