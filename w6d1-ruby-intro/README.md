@@ -14,6 +14,8 @@ This class will deal with the basic features of Ruby and how it's different from
   * Ecosystem
   * Advantages (wins) and Disadvantage (losses)
 * How they are different Technically
+  * OOP vs. (mostly) functional (intro)
+  * Methods & blocks vs. functions & callbacks
   * Concurrency Model
     * I/O blocking and general lack of callbacks
   * Scoping
