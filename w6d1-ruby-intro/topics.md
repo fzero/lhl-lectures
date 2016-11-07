@@ -2,6 +2,8 @@
 
 We're going to jump right in, assuming that you've got a basic grasp of the language. That is to say that you're comfortable reading this (clean) language, not yet in writing complex programs with it yet.
 
+This class will deal with the basic features of Ruby and how it's different from Javascript. There will be a breakout later today that will deal exclusively with the OOP aspects of Ruby.
+
 ## Topics
 
 * How is Ruby conceptually different to JS & Node?
