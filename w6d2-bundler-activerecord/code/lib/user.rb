@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
 
-  validates :name, presence: true
-  validates :email, presence: true
+  has_many :posts, dependent: :destroy
+  # Is the same as:
+  # def posts
+  #   Posts.where(user_id: id)
+  # end
 
-  has_many :posts
+  validates :name, :email, presence: true
+  validates :email, uniqueness: true
 
 end

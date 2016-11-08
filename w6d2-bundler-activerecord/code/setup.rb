@@ -34,7 +34,7 @@ ActiveRecord::Schema.define do
   end
 
   create_table :posts do |table|
-    table.references :user
+    table.references :user # table.integer user_id
     table.column :title, :string
     table.column :body, :string
     table.column :published, :boolean
@@ -51,6 +51,7 @@ def populate
   require 'faker'
 
   10.times do
+
     User.create!(
       name: Faker::Name.name,
       email: Faker::Internet.email,
