@@ -1,0 +1,13 @@
+<h1>All my Sandwiches</h1>
+
+<% @sandwiches.each do |sandwich| %>
+  <p>
+    <%= sandwich.name %> - <%= sandwich.size %>: $<%= sandwich.price %>
+  <p>
+  <p>Contents:</p>
+  <ul>
+    <% sandwich.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %> (<%= ingredient.kind %>)</li>
+    <% end %>
+  </ul>
+<% end %>
