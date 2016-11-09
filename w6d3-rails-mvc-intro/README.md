@@ -9,7 +9,7 @@ The Rails documentation is very complete, and the [getting started page](http://
 * **Views**, which display data to the user.
 * **Controllers**, which handle user requests, making the connection between views and models.
 
-(Diagram here)
+![MVC diagram](https://fzero.github.io/lhl-lectures/assets/mvc_diagram.svg)
 
 ## Other things
 
@@ -24,7 +24,6 @@ resources :orders, only: [:create, :show]
 ```
 as:
 ```js
-// routes.rb
 resources(:orders, { only: [:create, :show] })
 ```
 
