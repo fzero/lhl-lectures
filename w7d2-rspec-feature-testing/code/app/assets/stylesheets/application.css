@@ -18,3 +18,14 @@ body {
   font-family: "Helvetica Neue", sans-serif;
   margin: 2em;
 }
+
+.search-form {
+  border: 1px solid black;
+  padding: 1em;
+  text-align: center;
+}
+
+.form-component {
+  display: inline;
+  margin-right: 1em;
+}

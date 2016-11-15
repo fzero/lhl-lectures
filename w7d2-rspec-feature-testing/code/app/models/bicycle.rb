@@ -8,6 +8,10 @@ class Bicycle < ApplicationRecord
   validates :model, presence: true
   validates :speeds, numericality: {only_integer: true, greater_than_or_equal_to: 1}
 
+  # Optimization trick to have all brands and styles
+  # available without N+1 queries
+  default_scope { includes(:brand, :style) }
+
 
   def description
     "#{colour} #{formatted_speeds} #{brand.name} #{model} #{style.name}".gsub('  ', ' ')
