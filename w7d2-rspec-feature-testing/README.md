@@ -2,7 +2,7 @@
 
 Today we talked about the differences between unit and integration tests (also known as feature tests) and learned how to do it using [RSpec](https://relishapp.com/rspec/rspec-rails/docs) and [Capybara](http://cheatrags.com/capybara). We've expanded on our Bicycles app example from yesterday.
 
-The code discussed in class can be found inside [`/code`](code).
+The code discussed in class can be found inside [`/code`](code). Be sure to check out [`/code/spec/features`](code/spec/features).
 
 ## Unit Testing
 
