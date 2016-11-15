@@ -28,6 +28,17 @@
   <% end %>
 </div>
 
-<% @bicycles.each do |bicycle| %>
-  <p><%= bicycle.description %></p>
-<% end %>
+<section class="bicycle-list" id="bicycle-list">
+  <% @bicycles.each do |bicycle| %>
+    <div class="bicycle">
+      <h3 class="description"><%= bicycle.description %></h3>
+      <p class="details">
+        <strong>Country:</strong> <%= bicycle.brand.country %> |
+        <strong>Brand:</strong> <%= bicycle.brand.name %> |
+        <strong>Model:</strong> <%= bicycle.model %> |
+        <strong>Style:</strong> <%= bicycle.style.name %> |
+        <strong>Speeds:</strong> <%= bicycle.speeds %>
+      </p>
+    </div>
+  <% end %>
+</section>

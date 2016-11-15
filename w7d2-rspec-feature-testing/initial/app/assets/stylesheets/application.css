@@ -22,10 +22,24 @@ body {
 .search-form {
   border: 1px solid black;
   padding: 1em;
+  margin-bottom: 2em;
   text-align: center;
 }
 
 .form-component {
   display: inline;
   margin-right: 1em;
+}
+
+.bicycle {
+  margin-bottom: 2em;
+}
+
+.details {
+  font-size: 80%;
+  color: #999;
+}
+
+.description {
+  margin-bottom: .5em;
 }
