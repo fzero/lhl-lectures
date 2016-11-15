@@ -31,7 +31,7 @@ styles = Style.all.to_a
 # Creating 50 random bikes
 50.times do
   style = styles.sample
-  speeds = ['Hybrid', 'Single-speed'].include?(style.name) ? 1 : rand(21) + 1
+  speeds = ['Fixie', 'Single-speed'].include?(style.name) ? 1 : rand(21) + 1
 
   Bicycle.create!({
     brand: brands.sample,

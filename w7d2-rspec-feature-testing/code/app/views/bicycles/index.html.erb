@@ -1,6 +1,6 @@
 <h1>All My Bicycles!</h1>
 
-<div class="search-form">
+<div class="search-form" id="search-form">
   <%= form_tag({controller: :bicycles, action: :index}, method: :get) do %>
     <div class="form-component">
       <%= label_tag(:model, 'Model ') %>
@@ -9,12 +9,16 @@
 
     <div class="form-component">
       <%= label_tag(:style, 'Style ') %>
-      <%= select_tag(:style, options_from_collection_for_select(Style.all, :id, :name), include_blank: true) %>
+      <%= select_tag(:style,
+                     options_from_collection_for_select(Style.all, :id, :name),
+                     include_blank: true, id: 'bicycle-style') %>
     </div>
 
     <div class="form-component">
       <%= label_tag(:brand, 'Brand ') %>
-      <%= select_tag(:brand, options_from_collection_for_select(Brand.all, :id, :name), include_blank: true) %>
+      <%= select_tag(:brand,
+                     options_from_collection_for_select(Brand.all, :id, :name),
+                     include_blank: true) %>
     </div>
 
     <div class="form-component">
