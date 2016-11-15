@@ -4,6 +4,8 @@ Today we talked about the differences between unit and integration tests (also k
 
 The code discussed in class can be found inside [`/code`](code). Be sure to check out [`/code/spec/features`](code/spec/features).
 
+I've also included a [Capybara cheatsheet](capybara_cheatsheet.md) with the most common actions.
+
 ## Unit Testing
 
 - Encapsulated, easy to troubleshoot
