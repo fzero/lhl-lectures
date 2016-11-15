@@ -25,6 +25,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'faker', require: false
 end
 
