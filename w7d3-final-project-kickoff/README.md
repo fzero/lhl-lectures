@@ -10,7 +10,7 @@ First some administrative stuff! Before you start you will need to supply the fo
 
 ## Picking a project
 
-There are many reason for picking a project:
+There are many reasons for picking a project:
 
 * Are you trying to build something impressive for prospective employers?
 * Are you trying to explore a technology?
