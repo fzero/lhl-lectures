@@ -1,6 +1,26 @@
 # Final project kickoff
 
-Let's begin with some high-level rules:
+First some administrative stuff! Before you start you will need to supply the following:
+
+* Team Members
+* Project Description
+* Tech stack (and short reason why)
+* Project Name
+* Preferences for mentor (if any)
+
+## Picking a project
+
+There are many reason for picking a project:
+
+* Are you trying to build something impressive for prospective employers?
+* Are you trying to explore a technology?
+* Are you trying to practice your existing set of skills?
+
+Think about this, since it will set the tone for what you'll do.
+
+---
+
+With that out of the way, let's begin with some high-level rules:
 
 ## Rule #1
 
