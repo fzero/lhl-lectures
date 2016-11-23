@@ -22,7 +22,7 @@ Ideally the server responsible for static assets shouldn't be the same where you
 
 Usually static data is served by a straight-up HTTP server like [Nginx](https://www.nginx.com/) or [Apache](https://httpd.apache.org/). These servers can also be configured to redirect certain domains or paths to the application server. This is known as a **reverse proxy**, which may also be responsible for **load-balancing** the requests among multiple instances of the app server.
 
-(image here)
+![Load balanced HTTP example](https://fzero.github.io/lhl-lectures/assets/load-balanced-http.svg)
 
 Large applications usually rely on external services to take care of static assets. These are called **Content Distribution Networks** (CDNs). The most commonly used ones today are [Amazon Cloudfront](https://aws.amazon.com/cloudfront/), [Cloudflare](https://www.cloudflare.com/) and [Akamai](https://www.akamai.com/).
 
