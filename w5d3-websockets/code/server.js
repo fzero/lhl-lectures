@@ -1,8 +1,8 @@
 const express = require('express');
 const SocketServer = require('ws').Server;
 
-// Set the port to 4000
-const PORT = 4000;
+// Set the port to 5000
+const PORT = 5000;
 
 // Create a new express server
 const app = express()
@@ -25,8 +25,8 @@ let currentContents = '';
 wss.on('connection', (ws) => {
   console.log('Client connected');
 
-  // Broadcast current textbox contents on connection
-  wss.broadcast(currentContents);
+  // Send current textbox contents on connection
+  ws.message(currentContents);
 
   // Handle messages
   ws.on('message', handleMessage);
@@ -53,7 +53,7 @@ function handleMessage(message) {
 
 
 // Simply broadcasts the message back to all clients
-function echoBack(message) {
+function broadcastBack(message) {
   console.log(`Received: ${message}`)
   wss.broadcast(message);
 }

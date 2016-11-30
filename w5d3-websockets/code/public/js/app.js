@@ -8,9 +8,9 @@ function $$(query) {
 }
 
 // Opens Websocket connection
-var ws = new WebSocket("ws://localhost:4000");
+var ws = new WebSocket("ws://localhost:5000");
 // Use a publicly available IP to accept connections from other people!
-// var ws = new WebSocket("ws://172.46.3.30:4000");
+// var ws = new WebSocket("ws://172.46.3.30:5000");
 
 // Send contents of textbox everytime someone types something
 $('#typehere').addEventListener('input', function(ev) {

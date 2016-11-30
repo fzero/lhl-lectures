@@ -1,8 +1,8 @@
 const express = require('express');
 const SocketServer = require('ws').Server;
 
-// Set the port to 4000
-const PORT = 4000;
+// Set the port to 5000
+const PORT = 5000;
 
 // Create a new express server
 const app = express()
@@ -23,7 +23,7 @@ wss.on('connection', (ws) => {
   console.log('Client connected');
 
   // Echo back messages (testing purposes)
-  ws.on('message', echoBack);
+  ws.on('message', broadcastBack);
 
   // Set up a callback for when a client closes the socket. This usually means they closed their browser.
   ws.on('close', () => console.log('Client disconnected'));
@@ -37,7 +37,7 @@ wss.broadcast = function(data) {
 };
 
 
-function echoBack(message) {
+function broadcastBack(message) {
   console.log(`Received: ${message}`)
   wss.broadcast(message);
 }
