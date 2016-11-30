@@ -26,7 +26,7 @@ wss.on('connection', (ws) => {
   console.log('Client connected');
 
   // Send current textbox contents on connection
-  ws.message(currentContents);
+  ws.send(currentContents);
 
   // Handle messages
   ws.on('message', handleMessage);
