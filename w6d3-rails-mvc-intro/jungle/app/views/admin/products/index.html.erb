@@ -1,0 +1,30 @@
+<section class="admin-products-index">
+
+  <header class="page-header">
+    <h1>Admin &raquo; All Products</h1>
+  </header>
+
+  <div class="well">
+    <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
+  </div>
+
+  <div class="panel panel-default products">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Qty Remaining</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @products %>
+      </tbody>
+    </table>
+
+  </div>
+
+</section>

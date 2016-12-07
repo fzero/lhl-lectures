@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jungle</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render 'layouts/top_nav' %>
+
+  <main class="container">
+    <%= yield %>
+  </main>
+
+  <%= yield :end_of_body %>
+</body>
+</html>

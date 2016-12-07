@@ -1,0 +1,14 @@
+<section class="categories-show">
+
+  <header class="page-header">
+    <h1>
+      <%= @category.name %>
+      <small>(<%= pluralize @products.size, 'product' %>)</small>
+    </h1>
+  </header>
+
+  <div class="products">
+    <%= render @products %>
+  </div>
+
+</section>

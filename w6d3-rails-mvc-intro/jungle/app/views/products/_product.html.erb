@@ -1,0 +1,23 @@
+<article class="product">
+  <header>
+    <%= link_to product do %>
+      <%= image_tag product.image.thumb, alt: product.name %>
+      <h4><%= product.name %></h4>
+    <% end %>
+  </header>
+  <p class="description">
+    <%= product.description %>
+  </p>
+  <footer class="actions">
+    <%= link_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary', method: :put do %>
+      <%= fa_icon "shopping-cart", text: 'Add' %>
+    <% end %>
+    <%= link_to product, class: 'btn btn-default pull-right' do %>
+      Details &raquo;
+    <% end %>
+  </footer>
+
+  <aside class="price">
+    <%= humanized_money_with_symbol product.price %>
+  </aside>
+</article>
