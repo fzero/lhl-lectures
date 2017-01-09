@@ -19,12 +19,23 @@ Sublime (or alternatively Atom) is our main code editor, that is going to do som
 
 * Syntax highlighting
 * Multiple file editing (tabbed editor)
-* cmd-T to find files in our projects
+* cmd-T/ctrl-p to find files in our projects
 * Automatically update to reflect changes on disk
 
 ### git
 
-The git utility was written by Linus Torvalds to support development of the Linux kernel. It is a Version Control System (VCS) which allows us to keep track of changes to our projects and efficiently collaborate with others on the work. We went over a number of features of git, including:
+The git utility was written by Linus Torvalds to support development of the Linux kernel. It is a Version Control System (VCS) which allows us to keep track of changes to our projects and efficiently collaborate with others on the work.
+
+In git, a file will always be in one of *four* possible states:
+
+- **Un-tracked**: The file was created and exists on your machine, but git is pretty much ignoring its existence at the moment.
+- **Staged**: You've used `git add` to include the file on the next commit. You can also say staged files are in the _commit index_ or _staging area_.
+- **Committed**: a commit has been created with the `add`ed files; this file is now actively under version control. Note that the file **hasn't been sent to Github (or other remote repository) yet!**. It's committed only to your _local repository_. You can create as many commits as you want before pushing, and each commit is a point in time to where you can return and change things.
+- **Pushed**: the file has been sent to the remote repository, also known as _upstream_.
+
+[There's a pretty good interactive git cheatsheet here](http://www.ndpsoftware.com/git-cheatsheet.html), and another one ready for printing [here](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf).
+
+We went over a number of features of git, including:
 
 * `git init`
 * `git add`
