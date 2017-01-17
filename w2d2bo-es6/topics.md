@@ -3,7 +3,7 @@
 ## Topics
 
 * `"use strict";`
-* `for...of`
+* `for...of`, `for...in`
 * `let` and `const` vs `var`
 * String Interpolation
 * Arrow functions
