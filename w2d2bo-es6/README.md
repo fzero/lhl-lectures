@@ -15,13 +15,13 @@ These are two different flavours of `for` loops used for iteration of Arrays (`f
 // the artist variable in turn.
 let artists = ['Jamie XX', 'Ke$ha', 'Madonna'];
 for (let artist of artists) {
-  console.log(artist);{
+  console.log(artist);
 }
 
 // Each key of the object will be assigned to the key variable in turn.
 // Note that we use the key to get values from the object.
 let contactInfo = {
-  firstName: 'James'.
+  firstName: 'James',
   lastName: 'Bond',
   codeName: '007'
 }
@@ -58,7 +58,7 @@ Things to know about fat arrows:
 - New ES2015 syntax for declaring **anonymous** functions
 - They are **anonymous**-only, not named as in function declarations
   - But! You can still use in a function expression as before
-- Can still pass params into them
+- Can still pass arguments into them
   - However, `arguments` is not defined for a fat-arrow function. In other words:
 ```js
 function args() {
