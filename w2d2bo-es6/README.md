@@ -25,7 +25,7 @@ let contactInfo = {
   lastName: 'Bond',
   codeName: '007'
 }
-for (key in contactInfo) {
+for (let key in contactInfo) {
   console.log(`${key}: ${contactInfo[key]}`);
 }
 ```
