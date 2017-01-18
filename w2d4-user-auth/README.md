@@ -11,3 +11,17 @@ Every time an HTTP Request is made, the browser **sends the cookies along with t
 
 ## Sessions
 Sessions use a cookie to store a unique session key on the user's computer. Using that unique key from the cookie, the server can identify a user. The session store stores information about the user on the server side.
+
+## User Registration and Login
+For part 2 of the lecture we looked at implementing the user registration and login flow.
+
+### Login Steps:
+1. Get the username and password from the login form
+2. Look up the user by username
+3. Check if the user's password matches the password that was entered in the login form
+4. Set the session.username if the password matches
+
+### Registration Steps:
+1. Get the username and password from the registration form
+2. Create a new user in the data store
+3. Either redirect the user to the login page **or** login new user automatically
