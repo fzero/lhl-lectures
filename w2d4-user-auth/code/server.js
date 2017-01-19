@@ -19,13 +19,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // - Set cookies with res.cookie('cookieName')
 // cookieParser takes in the secret key as an argument. It uses this key to
 // sign cookies.
-app.use(cookieParser('super_secret_key'))
+app.use(cookieParser('my_super_secret_key'))
+
+// Serve static files (css, images etc.) from /public
+app.use(express.static('public'))
 
 // I'm also adding a logging middleware so we can see what's going on
 // with our server. More info: https://github.com/expressjs/morgan
 app.use(morgan('dev'))
 
-
+// Let's keep all of our data in one place
 const data = {
   users: [
     {username: 'fabio', password: 'secret!'}
@@ -74,13 +77,13 @@ app.get('/signup', (req, res) => {
 
 app.post('/signup', (req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
-    if(err) {
+    if (err) {
       res.send('There was an error creating your account.')
       return
     }
     // add user to database
     data.users.push({username: req.body.username, password: hash})
-    console.log('All users are: ', data.users);
+    console.log('All users are: ', data.users)
     res.redirect('/')
   })
   // don't put code here
