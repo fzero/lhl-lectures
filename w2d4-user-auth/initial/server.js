@@ -86,7 +86,7 @@ app.post('/signup', (req, res) => {
 })
 
 app.get('/logout', (req, res) => {
-  res.cookie('current_user', '', {signed: true})
+  res.cookie('current_user', '')
   res.redirect('/login')
 })
 
