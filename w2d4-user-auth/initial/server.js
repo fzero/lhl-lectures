@@ -47,7 +47,7 @@ app.get('/cookies', (req, res) => {
 app.get('/', (req, res) => {
   // if user logged in show treasure,
   // else show login
-  const current_user = req.signedCookies.current_user
+  const current_user = req.current_user
   if(current_user) {
     res.redirect('/treasure')
   }
@@ -65,17 +65,14 @@ app.post('/login', (req, res) => {
   const password = req.body.password
   // Find user by username
   const user = data.users.find((user) => { return user.username === username })
-  // check the password
-  bcrypt.compare(password, user.password, (err, matched) => {
-    if(matched) {
-      // set a cookie to keep track of the user
-      res.cookie('current_user', user.username, {signed: true})
-      res.redirect('/treasure')
-    }
-    else {
-      res.redirect('/login')
-    }
-  })
+  // check the password - naive way
+  if (password === user.password) {
+    res.cookie('current_user', user.username)
+    res.redirect('/treasure')
+  }
+  else {
+    res.redirect('/login')
+  }
 })
 
 app.get('/signup', (req, res) => {
@@ -83,17 +80,9 @@ app.get('/signup', (req, res) => {
 })
 
 app.post('/signup', (req, res) => {
-  bcrypt.hash(req.body.password, 10, (err, hash) => {
-    if (err) {
-      res.send('There was an error creating your account.')
-      return
-    }
-    // add user to database
-    data.users.push({username: req.body.username, password: hash})
-    console.log('All users are: ', data.users)
-    res.redirect('/')
-  })
-  // don't put code here
+  data.users.push({username: req.body.username, password: req.body.password})
+  console.log('All users are: ', data.users)
+  res.redirect('/')
 })
 
 app.get('/logout', (req, res) => {
@@ -102,7 +91,7 @@ app.get('/logout', (req, res) => {
 })
 
 app.get('/treasure', (req, res) => {
-  const current_user = req.signedCookies.current_user
+  const current_user = req.cookies.current_user
   res.render('treasure', {current_user})
 })
 

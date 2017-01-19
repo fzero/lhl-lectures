@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+
+    <h1>Hello there!</h1>
+    <h2>Here are the cookies I can see:</h2>
+
+    <ul>
+      <% for (let cookieName in cookies) { %>
+        <li><%= cookieName %>: <%= cookies[cookieName] %></li>
+      <% } %>
+    </ul>
+
+  </body>
+</html>
