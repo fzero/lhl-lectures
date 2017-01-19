@@ -41,14 +41,17 @@ const data = {
  */
 
 app.get('/cookies', (req, res) => {
-  res.render('cookies', {cookies: req.cookies})
+  res.render('cookies', {cookies: req.signedCookies})
 })
 
 app.get('/', (req, res) => {
   // if user logged in show treasure,
   // else show login
   const current_user = req.signedCookies.current_user
-  if(current_user) {
+  if (current_user) {
+    // Go to database and fetch user info
+    // Set user-related variables
+    // Render page
     res.redirect('/treasure')
   }
   else {
@@ -65,9 +68,13 @@ app.post('/login', (req, res) => {
   const password = req.body.password
   // Find user by username
   const user = data.users.find((user) => { return user.username === username })
+  if (!user) {
+    res.redirect('/login')
+    return
+  }
   // check the password
   bcrypt.compare(password, user.password, (err, matched) => {
-    if(matched) {
+    if (matched) {
       // set a cookie to keep track of the user
       res.cookie('current_user', user.username, {signed: true})
       res.redirect('/treasure')
