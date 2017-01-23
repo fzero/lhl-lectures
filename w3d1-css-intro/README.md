@@ -3,10 +3,12 @@
 ## Semantic HTML
 HTML has a lot of different tags that exist to describe their contents; semantic HTML is using the most appropriate tag for the content. For example, `<div>` doesn't mean anything, but `<section>` does.
 
+[Wikipedia](https://en.wikipedia.org/wiki/Semantic_HTML) has a good article on semantic HTML. You can find a pretty good HTML element reference [here](http://html5doctor.com/element-index/).
+
 ## Block level elements vs inline elements and their nesting
 In short, inline elements are considered part of a line of text and will flow with it, while block-level elements occupy their own space and make text flow around it in several predefined ways (called **floating**). You can use CSS to *change the usual behaviour of any objects* from inline to block-level and vice-versa.
 
-There's also the concept of **inline-block** which might sound confusing at first, but does exactly what it says: allow a block-level element to flow like a line of text.
+There's also the concept of `inline-block` which might sound confusing at first, but does exactly what it says: allow a block-level element to flow like a line of text, obeying properties like `text-align` defined on the enclosing element.
 
 ## CSS Reset / normalize
 Every browser comes built-in with a default (and slightly different) CSS stylesheet, so it's necessary to use a CSS-reset file to start with a blank slate. There are many available (I'm partial to h5bp):
