@@ -61,6 +61,7 @@ nav a:hover {
   width: 150px;
 }
 
+/* Circles: just make border-radius >= 50% */
 .circle {
   display: inline-block;
   float: right;
@@ -71,6 +72,8 @@ nav a:hover {
   border-radius: 50%;
 }
 
+/* Triangles: It's about border interactions.
+   See: https://davidwalsh.name/css-triangles */
 .triangle {
   display: inline-block;
   float: left;
