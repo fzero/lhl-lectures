@@ -19,8 +19,10 @@ Every browser comes built-in with a default (and slightly different) CSS stylesh
 Every block-level element can have width, height, margins, borders and padding.
 
 * Margins are _outside_ of the element
-* Borders are _inside_ of the element (no always, see below)
+* Borders are _inside_ of the element (not always, see below)
 * Padding is _inside_ of the element (internal margin between border and content)
+
+These values interact to give you the final size of the element. Sadly each browser can do this slightly different, so we need to fix that. Enter...
 
 ### Box sizing: border-box (non-default)
 This is a messy one. It really _should_ be the default, but luckily [it's a fixable problem](https://www.paulirish.com/2012/box-sizing-border-box-ftw).
