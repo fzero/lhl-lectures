@@ -8,4 +8,6 @@
 * Reset / normalize
 * Box sizing: border-box (non-default)
   * It really _should_ be the default!
+  * Reference: https://www.paulirish.com/2012/box-sizing-border-box-ftw
 * CSS debugging in DevTools
+* Tweetr walkthrough
