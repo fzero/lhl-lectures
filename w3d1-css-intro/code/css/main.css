@@ -1,1 +1,83 @@
 /* Your amazing styles here! */
+
+body {
+  font-family: "Helvetica", sans-serif;
+  margin: 60px 5% 5% 5%;
+  border: 1px solid black;
+  padding: 15px;
+}
+
+h1 {
+  margin-top: 5px;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: lightblue;
+}
+
+nav ul {
+  padding-left: 0;
+  margin: 10px auto;
+  text-align: center;
+}
+
+nav li {
+  list-style-type: none;
+  display: inline;
+  margin: auto 10px;
+}
+
+nav a {
+  font-size: 80%;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  padding: 3px;
+}
+
+article header a {
+  display: none;
+}
+
+article footer {
+  text-align: right;
+  font-size: 80%;
+}
+
+nav a:hover {
+  border: 1px solid #ff0000;
+}
+
+.inset {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  width: 150px;
+}
+
+.circle {
+  display: inline-block;
+  float: right;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+}
+
+.triangle {
+  display: inline-block;
+  float: left;
+  margin: 5px;
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid green;
+}
