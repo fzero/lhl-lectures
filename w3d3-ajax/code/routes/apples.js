@@ -30,26 +30,26 @@ router.get('/:id', (req, res) => {
 
 // Adds a new apple
 router.post('/', (req, res) => {
-  if (!appleDB.isValid(req.body.data)) {
+  if (!appleDB.isValid(req.body)) {
     res.status(400).json({
       error: `Bad request: your JSON must include type, color and taste.`
     })
     return
   }
 
-  var result = appleDB.create(req.body.data)
+  var createdApple = appleDB.create(req.body)
 
   res.json({
     status: 'ok',
-    id: result.id,
-    data: result
+    id: createdApple.id,
+    data: createdApple
   })
 })
 
 
 // Updates an apple
 router.put('/:id', (req, res) => {
-  if (!req.params.id || !appleDB.isValid(req.body.data)) {
+  if (!req.params.id || !appleDB.isValid(req.body)) {
     res.status(400).json({
       error: `Bad request: no id included / your JSON must include type, color and taste.`
     })
@@ -57,13 +57,13 @@ router.put('/:id', (req, res) => {
   }
 
   let appleId = Number(req.params.id)
-  let result = appleDB.update(appleId, req.body.data)
+  let updatedApple = appleDB.update(appleId, req.body)
 
   if (result) {
     res.json({
       status: 'ok',
       id: appleId,
-      data: result
+      data: updatedApple
     })
   }
   else {

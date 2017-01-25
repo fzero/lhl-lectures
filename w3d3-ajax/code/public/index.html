@@ -11,6 +11,27 @@
       Try going to <a href="/apples"><code>/apples</code></a> to check it out.
     </p>
 
+    <form id="newApple" action="/apples" method="/post">
+      <h3>New apple!</h3>
+      <p>
+        Type:
+        <input id="type" type="text" name="type" placeholder="Apple type" />
+      </p>
+      <p>
+        Color:
+        <input id="color" type="text" name="color" placeholder="Looks like..." />
+      </p>
+      <p>
+        Taste:
+        <input id="taste" type="text" name="taste" placeholder="Tastes like..." />
+      </p>
+      <input type="submit" value="Gogogo!" />
+    </form>
+
+    <button id="getApples">Get dem apples!</button>
+
+    <div id="container"></div>
+
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="/js/app.js"></script>
   </body>
