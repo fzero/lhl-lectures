@@ -18,11 +18,11 @@ oReq.open("GET", "http://www.example.org/example.txt");
 oReq.send();
 ```
 
-...so make our lives easier we will be using the jQuery library to make AJAX easier.
+...so to make our lives easier we will be using the jQuery library to make AJAX easier.
 
 ## jQuery AJAX
 
-Here is how to do a jQuery AJAX call:
+Here is how to do a [jQuery AJAX](http://api.jquery.com/jQuery.ajax/) call:
 ```js
 $.ajax('http://localhost:5000/breweries')
 .done((response) => {
