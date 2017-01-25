@@ -33,7 +33,7 @@ $.ajax('http://localhost:5000/breweries')
 })
 ```
 
-A bonus is that the response from the server is automatically turned into JS objects and you don't have to manually convert the `responseBody` via `JSON.parse()``
+A bonus is that the response from the server is automatically turned into JS objects and you don't have to manually convert the `responseBody` via `JSON.parse()`.
 
 When dealing with AJAX requests there exists a min of 3 outcomes:
 
