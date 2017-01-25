@@ -29,5 +29,10 @@ When dealing with AJAX requests there exists a min of 3 outcomes:
 
 Also you can use the `jQuery.get()`, `jQuery.getJSON()`, `jQuery.post()` calls, but they are just helper functions that call `jQuery.ajax` behind the scenes.
 
+## Bonus: JSONPlaceholder
+
+It's and amazing tool to test your AJAX requests with fake data. [Check it out](http://jsonplaceholder.typicode.com) and thank Faisal for the tip!
+
+
 ---
 Lecture notes adapted from Rob Jackiewicz - thanks!
