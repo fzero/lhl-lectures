@@ -37,12 +37,12 @@ router.post('/', (req, res) => {
     return
   }
 
-  var appleId = appleDB.create(req.body.data)
+  var result = appleDB.create(req.body.data)
 
   res.json({
     status: 'ok',
-    id: appleId,
-    data: appleDB.find(appleId)
+    id: result.id,
+    data: result
   })
 })
 
@@ -63,7 +63,7 @@ router.put('/:id', (req, res) => {
     res.json({
       status: 'ok',
       id: appleId,
-      data: appleDB.find(appleId)
+      data: result
     })
   }
   else {

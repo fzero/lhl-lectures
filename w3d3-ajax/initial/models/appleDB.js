@@ -80,7 +80,7 @@ function update(id, updatedApple) {
     taste: updatedApple.taste
   }
 
-  return appleDB[appleId]
+  return find(appleId)
 }
 
 
