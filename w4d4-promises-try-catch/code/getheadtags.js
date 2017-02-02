@@ -8,10 +8,13 @@ const tagsFile = process.argv[3]
 // We need two parameters
 if (!url || !tagsFile) {
   console.log("Usage: node getheadtags.js <url> <file>")
-    process.exit(1)
+  process.exit(1)
 }
 
-
+// Promisified request.get()
+// Returns a promise:
+// - resolves with body
+// - rejects with error
 function pGet(url) {
   // The function returns a promise object, not a value
   return new Promise((resolve, reject) => {
@@ -52,7 +55,7 @@ function tryGet(url) {
 
 // The next two functions display information about the body returned
 // a successful pGet() call. They return immediately resolved promises
-// to keep the .then() chain going.
+// with the original body to keep the .then() chain going.
 
 function displayBodySize(body) {
   console.log(`${url} is ${body.length} bytes long.\n`)
@@ -67,13 +70,19 @@ function displayContents(body) {
 
 // Now we'll use cheerio to get some information from the
 // URL and write it to a file later.
+// Using try-catch to catch any cheerio errors!
 function extractHeaderTags(body) {
-  let tags = []
-  let $ = cheerio.load(body)
-  $('h1, h2, h3, h4').each(function(i, elem) {
-    tags.push( $(this).text().trim() )
-  })
-  return Promise.resolve(tags)
+  try {
+    let tags = []
+    let $ = cheerio.load(body)
+    $('h1, h2, h3, h4').each(function(i, elem) {
+      tags.push( $(this).text().trim() )
+    })
+    return Promise.resolve(tags)
+  }
+  catch(err) {
+    return Promise.reject(err)
+  }
 }
 
 
@@ -100,7 +109,7 @@ function writeTagsTextToFile(tags, filename) {
 
 
 pGet(url)
-.then(displayBodySize)
+.then(displayBodySize) // We can do this when a function receives a single argument
 .then(extractHeaderTags)
 .then((tags) => writeTagsTextToFile(tags, tagsFile))
 .then((fileContents) => console.log(`Wrote header tags to ${tagsFile}:\n\n${fileContents}`))
