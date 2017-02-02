@@ -10,6 +10,8 @@
   "author": "Fabio Neves",
   "license": "UNLICENSED",
   "dependencies": {
+    "cheerio": "^0.22.0",
+    "fs": "0.0.1-security",
     "request": "^2.75.0"
   }
 }
