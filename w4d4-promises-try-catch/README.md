@@ -37,7 +37,9 @@ The main idea goes like this:
   * Think of it as an IOU for the function's return value
 * When things go well: `.then((something) => {something()})`
   * `.then` is called with the **sucessful** return value of the previous step
-* You can add more `.then`s here, as many as you want
+* You can add more `.then`s here, as long as you return another promise
+  * You can make immediately resolved/rejected promises with `Promise.resolve("value")`
+  * So instead of `return "value"` you'll use `return Promise.resolve("value")`
 * When errors happen: `.catch((oops) => console.log("Things went boom, yo"))`
   * The chain will be halted and `.catch` will be called immediately with the error as first argument
 

@@ -1,8 +1,8 @@
 // an immediately resolved promise
-var p2 = Promise.resolve("foo");
+var immediate = Promise.resolve("foo");
 
 // can get it after the fact, unlike events
-p2.then((res) => console.log(res));
+immediate.then((res) => console.log(res));
 
 var p = new Promise(function(resolve, reject) {
   setTimeout(() => resolve(4), 2000);
