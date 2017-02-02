@@ -22,6 +22,8 @@ db.query(query, [artistName, albumName], (err, result) => {
 }
 ```
 
+This is ok, but we can do better!
+
 ## Promises to the rescue
 
 Promises provide a way to make async code less painful. Many async-heavy
@@ -46,3 +48,7 @@ The main idea goes like this:
 See [`promises.js`](code/promises.js) for an introductory example and
 [`p-request.js`](code/p-request.js) for a practical use of promises being used
 with the `request` module.
+
+For a more complete example, check out [`getheadtags.js`](code/getheadtags.js).
+It uses promises to break each one of the process' steps into a
+promise-compatible function, the calls everything step by step at the end.
