@@ -1,21 +1,24 @@
 /*
-Example on how to break a problem down to its constituent
-parts. Here we're talking about what it takes to cross a street.
+Given that I want to cross the street
+I need to cross the street
+So that I can get to the other side
 
-1. Go to the corner
-2. Is there a traffic light?
-  - If true, look at light.
-    - Is it red?
-      - if true, wait
-    - else start walking
-      - walk()
-else
-  - look left
-  - look right
-  - Are there cars?
-    - if true, wait
-    else
-    - walk()
+- Does our robot have cameras?
+  - Can we recogzine objects?
+    - no:
+      - Sorry bro
+  - Yes: 
+    - Are there traffic lights?
+      - Is the light green?
+        - yes: start walking to the other side
+          - Walking: see walk(n) function
+        - no: Wait until it changes
 
-TODO: function walk()
+function walk(n) {
+  // Put right foot in front of left
+  // Adjust balance
+  // Put left foot in front of right
+  // Adjust balance
+  // repeat n times
+}
 */
