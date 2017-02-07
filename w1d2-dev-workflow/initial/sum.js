@@ -1,0 +1,5 @@
+/*
+Given that I have some numbers
+I want to sum them all
+so that I can know the result
+*/
