@@ -4,9 +4,9 @@ Callbacks - or function parameters - are one of the most important and powerful 
 
 But before we get to callbacks, it's important to understand a very fundamental concept of Javascript:
 
-## Everything in Javascript is data
+## Everything is data
 
-While many languages keep code and data completely separated, Javascript does things differently. So far we've ben creating functions like this:
+While many languages keep code and data completely separated, Javascript does things differently. So far we've been creating functions like this:
 ```js
 function doSomething(thing) {
   console.log("Hooray, now I'm " + thing + "ing!");
@@ -41,7 +41,7 @@ Now let's think about the implications of that:
 
 * Strings, numbers, arrays and everything else are values that I can put inside variables.
 * I can call functions passing any of these values as arguments and everything will work fine.
-* If functions are just another type of data, **I can pass functions as arguments to other functions.**
+* If functions are just another type of data, **I can pass functions as arguments to other functions!**
 
 And that's exactly what callbacks / function parameters are all about.
 
@@ -87,7 +87,7 @@ forEach(someNumbers, fancyLog);
 
 A good way to visualize this is by comparing it to a food processor:
 
-![Food Processor](https://s3.fzero.ca.s3.amazonaws.com/stuff/foodproc.jpg)
+![Food Processor](http://s3.fzero.ca/stuff/foodproc.jpg)
 
 The food processor doesn't do anything by itself, but once you insert one of the accessories, it becomes a slicer, grater or blender. You could write that in (pseudo) code like this:
 
