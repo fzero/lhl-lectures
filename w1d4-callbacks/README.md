@@ -98,24 +98,24 @@ function processFood(foodItem, action) {
 }
 
 // Now our callbacks (or function parameters)
-function sliceStuff(foodItem) {
+function slice(foodItem) {
   console.log("Your " + foodItem + " is now sliced!");
 }
 
-function grateStuff(foodItem) {
+function grate(foodItem) {
   console.log("Your " + foodItem + " is now grated!");
 }
 
-function blendStuff(foodItem) {
+function blend(foodItem) {
   console.log("Your " + foodItem + " is now blended! Mmmm... smoothie!");
 }
 
 // And now we use it
-processFood("carrot", grateStuff);
+processFood("carrot", grate);
 // "Your carrot is now grated!"
 ```
 
-Notice that `processFood()` won't even work if you don't pass in an action!
+Notice that `processFood()` won't even work if you don't pass in an action.
 
 ## Reasoning behind the term "callback"
 
