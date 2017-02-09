@@ -124,3 +124,7 @@ You'll find that most JS documentation refers to function parameters as _callbac
 There are several operations that can take time to be completed - especially ones related to network connections. The people who designed Javascript opted to keep the language fast by making most operations that take time  _asynchronous_, meaning that the main program _won't wait for them to be completed_.
 
 In those situations, we use functions that receive a function to be _called back_ with the results once the operation is done - hence the name. We'll discuss asynchronous callbacks in depth in the coming weeks, so don't worry too much about it right now.
+
+## Example code!
+
+Be sure to take a look inside [`/code`](code) for more examples on using callbacks. [`foreach.js`](code/foreach.js) and [`processfood.js`](code/processfood.js) are rather basic, while [`game.js`](code/game.js) and [`game-v2.js`](code/game-v2.js) are more advanced and also include examples of objects and introspection using `this`.
