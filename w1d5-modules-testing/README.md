@@ -22,6 +22,36 @@ Node.js comes with a package manager / task runner called [npm](https://www.npmj
 * `npm install` in a folder with a `package.json` file
    * Installs all project dependencies.
 
+### Notes about `package.json`
+
+There are some things `npm init` won't do for you that you should probably do manually. The `scripts` section contains terminal commands commonly used with your project. Of those, the two most common are `test` and `start`.
+
+* `test` is created automatically by `npm init` and it's automatically assigned to a placeholder. Once you have tests (see below!), you should substitute it with the command you'll use to run the tests (e.g.: `mocha`).
+* `start` is NOT created automatically, but it's very useful. It should contain the terminal command used to start the project (e.g. `node index.js`). With this in place, you can start your project by typing `npm start` on the terminal.
+
+Here's a complete `package.json` example:
+```json
+{
+  "name": "w1d5",
+  "version": "1.0.0",
+  "description": "LHL - Automated testing example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "author": "Fabio Neves",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "request": "^2.79.0"
+  }
+}
+```
+
 ## Creating a module
 
 A module is a normal JS file that **exports functions and values to be used in other files**. Example:
@@ -105,3 +135,7 @@ describe('squared', function() {
   });
 });
 ```
+
+## Example code
+
+Take a look inside [`/code`](code) for a complete example including modules, packages and tests.
