@@ -35,7 +35,7 @@ console.log(doSomething);
 // [Function: doSomething]
 ```
 
-Note that we didn't put braces after `doSomething` in the example above. That's because `doSomething()` **runs the function and gets its return value** while `doSomething` simply **references the function itself**.
+Note that we didn't put parenthesis after `doSomething` in the example above. That's because `doSomething()` **runs the function and gets its return value** while `doSomething` simply **references the function itself**.
 
 Now let's think about the implications of that:
 
