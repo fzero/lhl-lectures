@@ -24,12 +24,8 @@ Node.js comes with a package manager / task runner called [npm](https://www.npmj
 
 ## Creating a module
 
-A module is a normal JS file that **exports functions and values to be used by other modules**. Example:
+A module is a normal JS file that **exports functions and values to be used in other files**. Example:
 ```js
-// Silly example module
-// Note we're using a few ES6 features: fat arrow syntax to create a function,
-// a default value for the parameter and template strings like in Ruby.
-
 function sayHello(name) {
   console.log("HELLO " + name.toUpperCase() + "!");
 }
@@ -37,8 +33,10 @@ function sayHello(name) {
 // Use the `module.exports` object to indicate which functions and values will
 // be available when the module is required. You can have functions that are
 // used inside the module but aren't exported (private).
+// You can assign anything to module.exports, but usually this will either be
+// an object or a function that returns an object.
 module.exports = {
-  hello: hello
+  sayHello: sayHello
 }
 ```
 
@@ -48,7 +46,7 @@ Use `require` to load a module and store the exported objects inside a variable.
 ```js
 var hello = require('./module.js');
 
-hello("everybody");
+hello.sayHello("everybody");
 //=> HULLO EVERYBODY!
 ```
 
