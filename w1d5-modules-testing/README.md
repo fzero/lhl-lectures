@@ -15,7 +15,7 @@ Node.js comes with a package manager / task runner called [npm](https://www.npmj
 * `npm install --save <package>`
     * Installs a package and adds it to your `package.json` file
 * `npm install --save-dev <package>`
-    * Same thing, but install the package as a development dependency on `package.json`. Use this for linters, compilers, builders and anything else that won't be needed for the app to run in production, but will be useful during development.
+    * Same thing, but install the package as a development dependency on `package.json`. Use this for linters, testers, compilers, builders and anything else that won't be needed for the app to run in production, but will be useful during development.
 * `npm install -g <package>`
     * Installs a package globally and makes command-line utilities available.
     * Example: `npm install -g express-generator` and then you can use the `express` command from the terminal to start new [Express.js](http://expressjs.com) projects.
