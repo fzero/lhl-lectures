@@ -47,7 +47,7 @@ Use `require` to load a module and store the exported objects inside a variable.
 var hello = require('./module.js');
 
 hello.sayHello("everybody");
-//=> HULLO EVERYBODY!
+//=> HELLO EVERYBODY!
 ```
 
 ### Libraries installed with `npm install` are modules too
