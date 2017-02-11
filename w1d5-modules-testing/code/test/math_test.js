@@ -36,7 +36,7 @@ describe('Testing the math module', function() {
       expect(math.circleArea(2)).to.equal(12.57);
     });
 
-    it('should return 12.56637 when 2 is given precision 5', function() {
+    it('should return 12.56637 when 2 is given, precision 5', function() {
       expect(math.circleArea(2, 5)).to.equal(12.56637);
     });
 
@@ -45,13 +45,11 @@ describe('Testing the math module', function() {
 
   describe('circumference()', function() {
 
-    // we'll use expect style for these tests
-
     it('should return 25.13 when 4 is given without custom precision', function() {
       expect(math.circumference(4)).to.equal(25.13);
     });
 
-    it('should return 25.13274 when 2 is given precision 5', function() {
+    it('should return 25.13274 when 2 is given, precision 5', function() {
       expect(math.circumference(4, 5)).to.equal(25.13274);
     });
 
