@@ -49,7 +49,7 @@ describe('Testing the math module', function() {
       expect(math.circumference(4)).to.equal(25.13);
     });
 
-    it('should return 25.13274 when 2 is given, precision 5', function() {
+    it('should return 25.13274 when 4 is given, precision 5', function() {
       expect(math.circumference(4, 5)).to.equal(25.13274);
     });
 
