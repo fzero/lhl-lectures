@@ -16,8 +16,7 @@ The documentation on ActiveRecord (the gem) is extensive and excellent. Be sure 
 * Validations: http://guides.rubyonrails.org/active_record_validations.html
 * Associations: http://guides.rubyonrails.org/association_basics.html
 
-The code discussed in the lecture can be found here:
-https://www.dropbox.com/s/yf61xj23s7fom4i/w3d3-activerecord-intro.tgz?dl=0
+The code discussed in the lecture can be found in [`/code`](code).
 
 ## Topics:
 

@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   # def posts
   #   Posts.where(user_id: id)
   # end
+  #
+  # And whenever the corresponding User is destroyed, the related posts
+  # will also be deleted.
 
   validates :name, :email, presence: true
   validates :email, uniqueness: true
