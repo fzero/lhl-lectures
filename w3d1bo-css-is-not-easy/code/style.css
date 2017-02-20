@@ -1,1 +1,51 @@
 /* CSS goes here */
+
+body {
+  font-family: "Helvetica", sans-serif;
+  margin: 5%;
+}
+
+h1 {
+  font-family: "Courier";
+}
+
+h2 {
+  font-family: cursive;
+}
+
+.different {
+  font-family: "Helvetica";
+  color: #666;
+}
+
+.super.special h2 {
+  font-size: 200%;
+  color: blue;
+}
+
+.special h2 {
+  color: red;
+  border: 1px solid black;
+}
+
+#so-unique {
+  margin-left: 50%;
+}
+
+.cool-paragraph {
+  border-left: 3px solid gray;
+  margin-left: 5%;
+  padding-left: 10px;
+}
+
+.cool-paragraph:hover {
+  background-color: lightblue;
+}
+
+.featured > p {
+  font-size: 125%;
+}
+
+.adjacent .first + p {
+  background-color: yellow;
+}

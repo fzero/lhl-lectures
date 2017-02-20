@@ -6,11 +6,10 @@
   <title>Semantic HTML and CSS</title>
 
   <style>
-    /* Embedded CSS goes here! */
+    /* Embedded CSS goes here! It's better to use a separate file though. */
   </style>
 
   <link href="style.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -30,45 +29,52 @@
     </ul>
   </nav>
 
-  <article>
-    <header>
-      <h2>
-        <a id="intro">&middot;</a> Intro
-      </h2>
-    </header>
-    <p>
-      Tumblr before they sold out letterpress selfies enamel pin, meggings woke neutra trust fund wolf sartorial put a bird on it photo booth. Marfa asymmetrical swag, single-origin coffee flannel disrupt bicycle rights selfies hell of neutra. Ennui ugh hexagon, paleo vice typewriter jianbing. <a href="http://duckduckgo.com">Coloring book offal heirloom chicharrones</a>, drinking vinegar vape prism jean shorts trust fund keffiyeh truffaut hexagon hammock. Godard letterpress cold-pressed, 90's blue bottle pitchfork distillery retro master cleanse ugh wolf lumbersexual. Knausgaard YOLO lumbersexual, <strong>meggings literally</strong> whatever kitsch 90's letterpress DIY readymade. Lumbersexual occupy pabst normcore fashion axe.
-    </p>
-  </article>
+  <section>
 
-  <article>
-    <header>
-      <h2>
-        <a id="semantic-html">&middot;</a> Semantic HTML
-      </h2>
-    </header>
-    <p>
-      Asymmetrical forage bespoke DIY, humblebrag waistcoat fixie succulents celiac. Bushwick umami bespoke quinoa man bun sustainable, humblebrag echo park <em>flexitarian</em> williamsburg aesthetic yr leggings pitchfork. Neutra messenger bag thundercats, celiac YOLO raclette artisan pabst. Mustache tote bag iceland farm-to-table deep v. Selvage celiac franzen pitchfork poke pork belly kogi readymade. Mustache kitsch intelligentsia organic. Twee hot chicken four loko authentic glossier, photo booth viral hoodie meh skateboard pop-up.
-    </p>
-  </article>
+    <article>
+      <header class="super special">
+        <h2>
+          <a id="intro">&middot;</a> Intro
+        </h2>
+      </header>
+      <p class="cool-paragraph">
+        Tumblr before they sold out letterpress selfies enamel pin, meggings woke neutra trust fund wolf sartorial put a bird on it photo booth. Marfa asymmetrical swag, single-origin coffee flannel disrupt bicycle rights selfies hell of neutra. Ennui ugh hexagon, paleo vice typewriter jianbing. <a href="http://duckduckgo.com">Coloring book offal heirloom chicharrones</a>, drinking vinegar vape prism jean shorts trust fund keffiyeh truffaut hexagon hammock. Godard letterpress cold-pressed, 90's blue bottle pitchfork distillery retro master cleanse ugh wolf lumbersexual. Knausgaard YOLO lumbersexual, <strong>meggings literally</strong> whatever kitsch 90's letterpress DIY readymade. Lumbersexual occupy pabst normcore fashion axe.
+      </p>
+      <p>
+        Asymmetrical forage bespoke DIY, humblebrag waistcoat fixie succulents celiac. Bushwick umami bespoke quinoa man bun sustainable, humblebrag echo park <em>flexitarian</em> williamsburg aesthetic yr leggings pitchfork. Neutra messenger bag thundercats, celiac YOLO raclette artisan pabst. Mustache tote bag iceland farm-to-table deep v. Selvage celiac franzen pitchfork poke pork belly kogi readymade. Mustache kitsch intelligentsia organic. Twee hot chicken four loko authentic glossier, photo booth viral hoodie meh skateboard pop-up.
+      </p>
+    </article>
 
-  <article>
-    <header>
-      <h2>
-        <a id="css">&middot;</a> Cascading Stylesheets
-      </h2>
-    </header>
-    <p>
-      Distillery succulents ennui hammock, salvia irony ugh beard fanny pack migas la croix cold-pressed. Waistcoat whatever tacos, vape bitters microdosing meggings. Hashtag hell of austin drinking vinegar biodiesel tofu. Meditation plaid copper mug chia flexitarian mlkshk.
-        <blockquote>
-          Listicle squid four dollar toast, celiac sartorial edison bulb narwhal mumblecore jianbing taxidermy. Lumbersexual salvia 8-bit twee woke.
-        </blockquote>
-        Beard 90's skateboard affogato, snackwave taxidermy poke migas health goth hoodie vexillologist cornhole.
-    </p>
-    <p>
-      Asymmetrical forage bespoke DIY, humblebrag waistcoat fixie succulents celiac. Bushwick umami bespoke quinoa man bun sustainable, humblebrag echo park flexitarian williamsburg aesthetic yr leggings pitchfork. Neutra messenger bag thundercats, celiac <strong>YOLO <em>raclette</em> artisan pabst</strong>. Mustache tote bag iceland farm-to-table deep v. Selvage celiac franzen pitchfork poke pork belly kogi readymade. <em>Mustache kitsch intelligentsia organic.</em> Twee hot chicken four loko authentic glossier, photo booth viral hoodie meh skateboard pop-up.
-    </p>
-  </article>
+    <article class="featured">
+      <header class="special">
+        <h2>
+          <a id="semantic-html">&middot;</a> Semantic HTML
+        </h2>
+      </header>
+      <p>
+        Asymmetrical forage bespoke DIY, humblebrag waistcoat fixie succulents celiac. Bushwick umami bespoke quinoa man bun sustainable, humblebrag echo park <em>flexitarian</em> williamsburg aesthetic yr leggings pitchfork. Neutra messenger bag thundercats, celiac YOLO raclette artisan pabst. Mustache tote bag iceland farm-to-table deep v. Selvage celiac franzen pitchfork poke pork belly kogi readymade. Mustache kitsch intelligentsia organic. Twee hot chicken four loko authentic glossier, photo booth viral hoodie meh skateboard pop-up.
+      </p>
+    </article>
+
+    <article class="adjacent">
+      <header>
+        <h2 class="different">
+          <a id="css">&middot;</a> Cascading Stylesheets
+        </h2>
+      </header>
+      <p class="first">
+        Asymmetrical forage bespoke DIY, humblebrag waistcoat fixie succulents celiac. Bushwick umami bespoke quinoa man bun sustainable, humblebrag echo park flexitarian williamsburg aesthetic yr leggings pitchfork. Neutra messenger bag thundercats, celiac <strong>YOLO <em>raclette</em> artisan pabst</strong>. Mustache tote bag iceland farm-to-table deep v. Selvage celiac franzen pitchfork poke pork belly kogi readymade. <em>Mustache kitsch intelligentsia organic.</em> Twee hot chicken four loko authentic glossier, photo booth viral hoodie meh skateboard pop-up.
+      </p>
+      <p>
+        Distillery succulents ennui hammock, salvia irony ugh beard fanny pack migas la croix cold-pressed. Waistcoat whatever tacos, vape bitters microdosing meggings. Hashtag hell of austin drinking vinegar biodiesel tofu. Meditation plaid copper mug chia flexitarian mlkshk.
+          Beard 90's skateboard affogato, snackwave taxidermy poke migas health goth hoodie vexillologist cornhole.
+      </p>
+      <p>
+        Asymmetrical forage bespoke DIY, humblebrag waistcoat fixie succulents celiac. Bushwick umami bespoke quinoa man bun sustainable, humblebrag echo park flexitarian williamsburg aesthetic yr leggings pitchfork. Neutra messenger bag thundercats, celiac <strong>YOLO <em>raclette</em> artisan pabst</strong>. Mustache tote bag iceland farm-to-table deep v. Selvage celiac franzen pitchfork poke pork belly kogi readymade. <em>Mustache kitsch intelligentsia organic.</em> Twee hot chicken four loko authentic glossier, photo booth viral hoodie meh skateboard pop-up.
+      </p>
+    </article>
+
+  </section>
 
 </body>
 
