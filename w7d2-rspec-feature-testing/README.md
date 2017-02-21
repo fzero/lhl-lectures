@@ -6,6 +6,8 @@ The code discussed in class can be found inside [`/code`](code). Be sure to chec
 
 I've also included a [Capybara cheatsheet](capybara_cheatsheet.md) with the most common actions.
 
+> **NOTE:** Setting up Capybara can be tricky, and we've run into an issue with `geckodriver` during class. We've switched to `chromedriver` and everything went fine. [Check the README included with the example code](code/README.md) for more details.
+
 ## Unit Testing
 
 - Encapsulated, easy to troubleshoot

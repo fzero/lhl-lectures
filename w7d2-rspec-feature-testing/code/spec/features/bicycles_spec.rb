@@ -59,9 +59,17 @@ RSpec.feature "Bicycle index", type: :feature, js: true do
     save_screenshot('filtered_by_model.png')
   end
 
-  # NOTE: I'm having issues with Capybara here. This test should work, but apparently
-  # the `select` part isn't working! I'll update this with a working test as soon as
-  # I find out what's wrong.
+  scenario "Filter bikes by speeds" do
+    visit "/bicycles"
+
+    fill_in :speeds, with: 10
+    click_on "Search!"
+
+    expect(page).to have_css('div.bicycle', count: 1)
+    expect(page).to have_text('Black 10-speed Hildebrand Roadmeister Hybrid', count: 1)
+    save_screenshot('filtered_by_speeds.png')
+  end
+
   scenario "Filter bikes by style" do
     visit "/bicycles"
 
@@ -71,6 +79,17 @@ RSpec.feature "Bicycle index", type: :feature, js: true do
     expect(page).to have_css('div.bicycle', count: 1)
     expect(page).to have_text('Black 10-speed Hildebrand Roadmeister Hybrid', count: 1)
     save_screenshot('filtered_by_style.png')
+  end
+
+  scenario "Filter bikes by brand" do
+    visit "/bicycles"
+
+    select 'Exterminator', from: 'brand'
+    click_button 'Search!'
+
+    expect(page).to have_css('div.bicycle', count: 1)
+    expect(page).to have_text('Extreme chrome Exterminator DESTROYENATOR BMX', count: 1)
+    save_screenshot('filtered_by_brand.png')
   end
 
 end

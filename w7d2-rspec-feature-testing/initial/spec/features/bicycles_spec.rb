@@ -23,6 +23,7 @@ RSpec.feature "Bicycle index", type: :feature, js: true do
   scenario "Lists all bikes" do
     visit "/bicycles"
 
+    expect(page).to have_css('.bicycle', count: 2)
     expect(page).to have_text('Red Brand Moustache Fixie', count: 1)
     expect(page).to have_text('Black 10-speed Hildebrand Roadmeister Hybrid', count: 1)
     save_screenshot('all_bikes.png')
