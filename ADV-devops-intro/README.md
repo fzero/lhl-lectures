@@ -9,6 +9,7 @@ The first thing you need to know is what your app needs to work:
 * Application server (Express, Puma etc.)
   * Serves all data-driven requests (database access)
   * External APIs
+  * CORS
 * Database server
   * Posrgres, MySQL, Mongo, Redis etc.
 * Admin tools
@@ -26,6 +27,16 @@ Usually static data is served by a straight-up HTTP server like [Nginx](https://
 
 Large applications usually rely on external services to take care of static assets. These are called **Content Distribution Networks** (CDNs). The most commonly used ones today are [Amazon Cloudfront](https://aws.amazon.com/cloudfront/), [Cloudflare](https://www.cloudflare.com/) and [Akamai](https://www.akamai.com/).
 
+## CORS - Cross Origin Resource Sharing
+
+Depending on your setup, the client-side part of your app may be in a different domain from your API back-end. This situation can create problems if your server isn't properly configured to do [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) properly.
+
+By default, browsers will **not** allow Javascript code served by one domain to fetch or post data to an API hosted somewhere else. To fix this, your back-end must **grant permission** to the domain(s) where your client-side code is hosted. You can also enable access from any domain if you wish, _but that's not recommended unless you have another way of limiting access_ (authentication for example).
+
+If you're using [Express](http://expressjs.com) you can add the [`cors`](https://github.com/expressjs/cors) middleware package to your project. It provides a very easy way to control access to your API endpoints.
+
+[You can also do it manually if you want.](https://enable-cors.org/server_expressjs.html) CORS is controlled by response headers after all, and that's very easy to implement [in pretty much any language](https://enable-cors.org/server.html).
+
 ## How to put everything together
 
 There are several ways to go about hosting an application, but in general the decision is about taking time to do things from scratch or spending more to use a more convenient and automated process.
@@ -33,6 +44,7 @@ There are several ways to go about hosting an application, but in general the de
 Providers like [Amazon](https://aws.amazon.com/), [Rackspace](https://www.rackspace.com/) and [DigitalOcean](https://www.digitalocean.com/) are on the "from scratch" side. Assembling your own hardware server is also a thing.
 
 You have to install everything from the OS up and also come up with a way to deploy code to the server. There are several tools to make this easier:
+
 * [Chef](https://www.chef.io/)
 * [Puppet](https://puppet.com/)
 * [Ansible](https://www.ansible.com/)
