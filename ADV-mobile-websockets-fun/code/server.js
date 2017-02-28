@@ -56,7 +56,10 @@ function rand(max) {
 }
 
 
+// Connection event
 function clientConnected(ws, clientId) {
+
+  // Create client data
   clients[clientId] = {
     id: clientId,
     name: faker.name.firstName(),
@@ -65,6 +68,8 @@ function clientConnected(ws, clientId) {
     y: rand(100)
   }
 
+  // Setup message to be set to the client
+  // Includes all currently connected clients
   const setupMsg = {
     type: 'setup',
     data: {
@@ -73,6 +78,8 @@ function clientConnected(ws, clientId) {
     }
   }
 
+  // Connection message to be sent to the client
+  // Tells the client who they are
   const connectionMsg = {
     type: 'connection',
     data: clients[clientId]
@@ -84,18 +91,36 @@ function clientConnected(ws, clientId) {
 }
 
 
+// Disconnection event
 function clientDisconected(clientId) {
+  const client = clients[clientId]
+
+  if (!client) return // catch race condition
+
   const disconnectionMsg = {
     type: 'disconnection',
-    data: clients[clientId]
+    data: client
   }
   wss.broadcast(JSON.stringify(disconnectionMsg))
-  console.log(`<< ${clients[clientId].name} (${clientId}) disconnected`)
+  console.log(`<< ${client.name} (${clientId}) disconnected`)
   delete clients[clientId]
 }
 
 
-// Handles incoming messages.
-function handleMessage(message) {
-  wss.broadcast(message)
+// Handles incoming messages
+function handleMessage(incoming) {
+  // Broadcast message back no matter what
+  wss.broadcast(incoming)
+
+  var message = JSON.parse(incoming)
+
+  switch(message.type) {
+    case 'action':
+      // Update client state based on id
+      clients[message.data.id] = clients[message.data]
+      break
+
+    default:
+      console.log(`Unsupported message:`, message)
+  }
 }

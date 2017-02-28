@@ -5,67 +5,87 @@ function $(query) {
 
 // Variables to store connected clients
 var myself, $myself;
-var debouncer;
 var clients = {};
 var $container = $('#container');
+var debouncer;
 
 // Main message handler
 function handleMessage(ev) {
   var message = JSON.parse(ev.data);
+
   switch (message.type) {
+
+    // Receives list of all connected clients
+    // and figures out who we are (so philosophical!)
     case 'setup':
       clients = message.data.connectedClients;
       myself = clients[message.data.id];
       $('#info').innerText = `You are ${myself.name}`;
       break;
 
+    // Adds a new client to the pool
     case 'connection':
       if (message.data.id !== myself.id) {
         clients[message.data.id] = message.data
       }
       break;
 
+    // Removes a client from the pool
     case 'disconnection':
       delete clients[message.data.id];
       break;
 
+    // Processes an action (movement)
     case 'action':
       handleAction(message.data);
       break;
 
+    // Catch-all
     default:
       console.log('Unsupported message:', message);
   }
+
   render();
 }
 
 
+// Since our actions ate just movements, read x and y coords
+// And update corresponding client
 function handleAction(message) {
   clients[message.id].x = message.x;
   clients[message.id].y = message.y;
 }
 
 
+// Renders all connected clients
+// This is quick and dirty, but efficient
 function render() {
   var html = '';
+
   for (var id in clients) {
     var client = clients[id];
     var style = `background-color: ${client.color}; left: ${client.x}%; top: ${client.y}%;`;
     var classes = "ball";
-    if (id === myself.id) classes += " myself";
+    if (id === myself.id) {
+      classes += " myself";
+    }
     html += `<div class="${classes}" id="${client.id}" style="${style}"><span>${client.name}</span></div>`;
   }
+
+  // Actual render
   $container.innerHTML = html;
+
+  // Add drag actions to $myself
   $myself = document.getElementById(myself.id);
   $myself.addEventListener("mousedown", handleMouseDown, false);
 }
 
 
 // Opens Websocket connection
-var ip = "10.88.111.39";
-var ws = new WebSocket(`ws://${ip}:5000`);
 // Use a publicly available IP to accept connections from other people!
-// var ws = new WebSocket("ws://172.46.3.30:5000");
+// var ip = "172.46.3.132";
+var ip = '127.0.0.1';
+var ws = new WebSocket(`ws://${ip}:5000`);
 
 ws.onopen = function(ev) {
   console.log("Connected to server!");
@@ -76,6 +96,8 @@ ws.onopen = function(ev) {
 ws.onmessage = handleMessage;
 
 
+// Converts pixel positions to percentage to make
+// everything resolution-independent
 function normalizeToPercentage(x, y) {
   var pixelWidth = document.documentElement.clientWidth;
   var pixelHeight = document.documentElement.clientHeight;
@@ -87,6 +109,9 @@ function normalizeToPercentage(x, y) {
 }
 
 
+// Sends movement events to the server via WebSockets
+// Notice the use of setTimeout to limit the number of
+// ws messages. This process is called debouncing.
 function sendAction() {
   if (debouncer) {
     clearTimeout(debouncer);
@@ -98,7 +123,7 @@ function sendAction() {
     }
     ws.send(JSON.stringify(message));
     debouncer = undefined;
-  }, 2);
+  }, 5);
 }
 
 
