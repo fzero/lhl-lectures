@@ -3,5 +3,4 @@
 * Accelerometers
 * Websockets
 * WebRTC
-* Touch
 * WebAudio
