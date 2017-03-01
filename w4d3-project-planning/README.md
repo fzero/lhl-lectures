@@ -53,6 +53,7 @@ But in short:
     - Tools:
       + https://wireframe.cc
       + https://moqups.com/
+      + Good ol' whiteboarding
   + It's always better to think from the perspective of the user, not what's easier to implement
   + How to write user stories: https://medium.com/@jonatisokon/a-framework-for-user-stories-bc3dc323eca9
 
