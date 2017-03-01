@@ -44,7 +44,7 @@ But in short:
     - Schema
       - Database tables!
       - Relationships!
-    - Are you sticking with plain DB queries (`pg`/'knex') or will you try using an ORM?
+    - Are you sticking with plain DB queries (`pg`/`knex`) or will you try using an ORM?
       - [Bookshelf](http://bookshelfjs.org)
       - [Sequelize](http://sequelizejs.com)
   + Create workflows on how the users will provide that data and interact with it
