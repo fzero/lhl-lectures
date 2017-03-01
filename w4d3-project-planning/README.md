@@ -45,8 +45,8 @@ But in short:
       - Database tables!
       - Relationships!
     - Are you sticking with plain DB queries (`pg`/`knex`) or will you try using an ORM?
-      - [Bookshelf](http://bookshelfjs.org)
       - [Sequelize](http://sequelizejs.com)
+      - [Bookshelf](http://bookshelfjs.org)
   + Create workflows on how the users will provide that data and interact with it
     - Wireframes!
     - Storyboards!
