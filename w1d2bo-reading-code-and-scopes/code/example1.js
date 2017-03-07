@@ -1,8 +1,13 @@
+// Example 1: code isn't necessarily executed in order
+// Function definitions are just definitions
+// The coe only runs when the function is called
+
+// Global variable x
 var x = 0;
 
 console.log('A: ', x);
 
-function a(x) {
+function a(x) { // This is NOT the same x - this one is local to function a
   console.log('B: ', x)
 
   x++;
@@ -12,8 +17,6 @@ function a(x) {
 
 console.log('D: ', x);
 
-a(x);
+a(1000); // function a only runs here!
 
 console.log('E: ', x);
-
-var list = [1, 2, "3", 4, 5];
