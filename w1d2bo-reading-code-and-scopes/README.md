@@ -14,7 +14,7 @@ What is a scope? Where does it come from? What do they eat?
 * Scopes and how they work through Functions.
   * The best way to think of it is that functions are like glass boxes mirrored on the outside. **Everyone can see variables declared outside of functions, but nobody on the outside can see variables declared within functions.**
 * "The scope chain" and being able to identify different levels of scopes in JavaScript.
-  * Functions can be nested, same varable rules apply.
+  * Functions can be nested, same variable rules apply.
 
 ## Functions as values
 
