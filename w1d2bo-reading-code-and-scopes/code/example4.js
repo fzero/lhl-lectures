@@ -8,7 +8,7 @@
 // function description(), but it makes clear that we're *always* putting
 // a piece of code inside a variable.
 var description = function() {
-  console.log(this.name + " is an agent with license " + this.licence + ", codename: " + this.codename);
+  console.log(this.name + " is an agent with licence " + this.licence + ", codename: " + this.codename);
 }
 
 
