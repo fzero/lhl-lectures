@@ -1,6 +1,6 @@
 // Example 1: code isn't necessarily executed in order
-// Function definitions are just definitions
-// The coe only runs when the function is called
+// Function definitions are just that: definitions.
+// The code only runs when the function is called
 
 // Global variable x
 var x = 0;

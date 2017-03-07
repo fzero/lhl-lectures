@@ -20,5 +20,5 @@ function sayName(name, isDr) {
 sayName("John Doe", false);
 sayName("Phil", true);
 sayName(name, true);
-sayName(name, []);
-doctor(); //won't work
+sayName(name, []); // Example of a truthy value!
+doctor(); // won't work, since doctor() is defined inside sayName()
