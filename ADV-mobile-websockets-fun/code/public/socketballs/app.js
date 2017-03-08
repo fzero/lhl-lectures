@@ -83,8 +83,8 @@ function render() {
 
 // Opens Websocket connection
 // Use a publicly available IP to accept connections from other people!
-// var ip = "172.46.3.132";
-var ip = '127.0.0.1';
+var ip = "172.46.3.233";
+// var ip = '127.0.0.1';
 var ws = new WebSocket(`ws://${ip}:5000`);
 
 ws.onopen = function(ev) {
@@ -121,7 +121,9 @@ function sendAction() {
       type: 'action',
       data: myself
     }
-    ws.send(JSON.stringify(message));
+    if (ws.readyState === ws.OPEN) {
+      ws.send(JSON.stringify(message));
+    }
     debouncer = undefined;
   }, 5);
 }

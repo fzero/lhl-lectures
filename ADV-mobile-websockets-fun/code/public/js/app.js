@@ -8,7 +8,7 @@ function $$(query) {
 }
 
 // Opens Websocket connection
-var ws = new WebSocket("ws://localhost:5000");
+var ws = new WebSocket("ws://172.46.3.233:5000");
 // Use a publicly available IP to accept connections from other people!
 // var ws = new WebSocket("ws://172.46.3.30:5000");
 

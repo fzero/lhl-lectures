@@ -24,19 +24,19 @@ let clients = {}
 // Set up a callback that will run when a client connects to the server
 // When a client connects they are assigned a socket, represented by
 // the ws parameter in the callback.
-wss.on('connection', (ws) => {
+wss.on('connection', (client) => {
 
   // Initialize a new client id
   const clientId = uuid()
 
   // Send initial client data
-  clientConnected(ws, clientId);
+  clientConnected(client, clientId);
 
   // Handle messages
-  ws.on('message', handleMessage)
+  client.on('message', handleMessage)
 
   // Set up a callback for when a client closes the socket. This usually means they closed their browser.
-  ws.on('close', () => {
+  client.on('close', () => {
     clientDisconected(clientId)
   })
 })
@@ -45,7 +45,9 @@ wss.on('connection', (ws) => {
 // Broadcast - Goes through each client and sends message data
 wss.broadcast = function(data) {
   wss.clients.forEach(function(client) {
-    client.send(data)
+    if (client.readyState === client.OPEN) {
+      client.send(data)
+    }
   })
 }
 
@@ -57,7 +59,7 @@ function rand(max) {
 
 
 // Connection event
-function clientConnected(ws, clientId) {
+function clientConnected(client, clientId) {
 
   // Create client data
   clients[clientId] = {
@@ -85,7 +87,9 @@ function clientConnected(ws, clientId) {
     data: clients[clientId]
   }
 
-  ws.send(JSON.stringify(setupMsg))
+  if (client.readyState === client.OPEN) {
+    client.send(JSON.stringify(setupMsg))
+  }
   wss.broadcast(JSON.stringify(connectionMsg))
   console.log(`>> ${clients[clientId].name}`, clients[clientId])
 }
