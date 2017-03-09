@@ -1,4 +1,4 @@
-# Callbacks / function parameters
+# Callbacks / function arguments
 
 * Everything is data in Javascript
 * Code is also data

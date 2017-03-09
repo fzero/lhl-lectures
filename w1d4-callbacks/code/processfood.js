@@ -3,7 +3,7 @@ function processFood(foodItem, callback) {
   callback(foodItem);
 }
 
-// Now our callbacks (or function parameters)
+// Now our callbacks (or function arguments)
 function slice(foodItem) {
   console.log("Your " + foodItem + " is now sliced!");
 }

@@ -1,6 +1,6 @@
 # Callbacks - your new best friends!
 
-Callbacks - or function parameters - are one of the most important and powerful features of Javascript. They're used extensively when you need to process several elements of an array or object at once and also when sending/receiving information to/from servers over the internet.
+Callbacks - or function arguments - are one of the most important and powerful features of Javascript. They're used extensively when you need to process several elements of an array or object at once and also when sending/receiving information to/from servers over the internet.
 
 But before we get to callbacks, it's important to understand a very fundamental concept of Javascript:
 
@@ -29,7 +29,7 @@ console.log(name);
 // James Bond
 ```
 
-Then this should work too (spoiler alert: it does!)
+Then this should work too:
 ```js
 console.log(doSomething);
 // [Function: doSomething]
@@ -43,7 +43,7 @@ Now let's think about the implications of that:
 * I can call functions passing any of these values as arguments and everything will work fine.
 * If functions are just another type of data, **I can pass functions as arguments to other functions!**
 
-And that's exactly what callbacks / function parameters are all about.
+And that's exactly what callbacks / function arguments are all about.
 
 ## Practical example
 
@@ -61,7 +61,7 @@ function logEach(array) {
 logEach(someNumbers);
 ```
 
-But what if I want to do other things to the array elements without having to write a separate function every time? I could create a function that takes **an additional parameter containing the function that will be executed with each element of the array**. Something like this:
+But what if I want to do other things to the array elements without having to write a separate function every time? I could create a function that takes **an additional argument containing the function that will be executed with each element of the array**. Something like this:
 
 ```js
 function forEach(array, action) {
@@ -97,7 +97,7 @@ function processFood(foodItem, action) {
   action(foodItem);
 }
 
-// Now our callbacks (or function parameters)
+// Now our callbacks (or function arguments)
 function slice(foodItem) {
   console.log("Your " + foodItem + " is now sliced!");
 }
@@ -119,7 +119,7 @@ Notice that `processFood()` won't even work if you don't pass in an action.
 
 ## Reasoning behind the term "callback"
 
-You'll find that most JS documentation refers to function parameters as _callbacks_, which can be a bit confusing (what exactly are we calling back?), but there's a reason behind it.
+You'll find that most JS documentation refers to function arguments as _callbacks_, which can be a bit confusing (what exactly are we calling back?), but there's a reason behind it.
 
 There are several operations that can take time to be completed - especially ones related to network connections. The people who designed Javascript opted to keep the language fast by making most operations that take time  _asynchronous_, meaning that the main program _won't wait for them to be completed_.
 
