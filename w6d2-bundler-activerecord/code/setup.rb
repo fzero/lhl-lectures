@@ -23,8 +23,8 @@ puts "CONNECTED"
 puts "Setting up Database (recreating tables) ..."
 
 ActiveRecord::Schema.define do
-  drop_table :users if ActiveRecord::Base.connection.table_exists?(:users)
-  drop_table :posts if ActiveRecord::Base.connection.table_exists?(:posts)
+  drop_table :users if ActiveRecord::Base.connection.data_source_exists?(:users)
+  drop_table :posts if ActiveRecord::Base.connection.data_source_exists?(:posts)
 
   create_table :users do |t|
     t.column :name, :string
