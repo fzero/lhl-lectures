@@ -2,7 +2,8 @@ class Table
 
   attr_reader :width, :length, :height, :weight, :legs, :material
 
-  def initialize(width, length, height, weight, legs=4, material='wood')
+  def initialize(width, length, height, weight,
+                 legs=4, material='wood')
     @width = width
     @length = length
     @height = height
@@ -12,7 +13,8 @@ class Table
   end
 
   def to_s
-  "#{@legs}-legged table made of #{@material}. WxLxH: #{@width}x#{@length}x#{@height}cm. Weight: #{@weight}Kg."
+    "#{@legs}-legged table made of #{@material}. " +
+    "WxLxH: #{@width}x#{@length}x#{@height}cm. Weight: #{@weight}Kg."
   end
 
   def heavy?
