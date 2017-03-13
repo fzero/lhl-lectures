@@ -1,10 +1,12 @@
 # ES6 features
 
-There are two main versions of Javascript being used these days - ES5 and ES6. The former is supported by all browsers and Node.js, while the latter is being implemented. As of the beginning of 2017, most browsers support around 90% of ES6, while Node supports almost all of it.
+There are two main versions of Javascript being used these days - ES5 and ES6. The former is supported by all browsers and Node.js, while the latter is being implemented. As of the beginning of 2017, most browsers support around 90% of ES6, while Node supports pretty much all of it.
+
+The features listed below ar available in all modern browsers (this excludes Internet Explorer - use Edge instead if you like Windows).
 
 ## `"use strict";`
 
-This is actually an ES5 feature that instructs the Javascript interpreter to be more strict when checking code. It's triggered by adding the `"use strict";` string to the top of a file or function. [MDN has a detailed list of changes brought by strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+This is an ES5 (yes, _five_) feature that instructs the Javascript interpreter to be more strict when checking code. It's triggered by adding the `"use strict";` string to the top of a file or function. [MDN has a detailed list of changes brought by strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 
 ## `for...of` and `for...in`
 
@@ -53,7 +55,7 @@ console.log(`His name is ${firstName} ${lastName}.`);
 
 ## Arrow functions
 
-Things to know about fat arrows:
+Things to know about arrow functions:
 
 - New ES2015 syntax for declaring **anonymous** functions
 - They are **anonymous**-only, not named as in function declarations
@@ -81,7 +83,7 @@ But the biggest difference is...
 
 ## `this` works differently
 
-Usually `this` contains the object that called the function, but fat arrow functions **inherit `this` from the outer scope**. The jargonesque way of explaining it is: the scope of `this` is now _lexically-scoped_.
+Usually `this` contains the object that called the function, but arrow functions **inherit `this` from the outer scope**. The jargonesque way of explaining it is: the scope of `this` is now _lexically-scoped_.
 
 Clearly this item requires a bit more explanation, so let's do it! Take this code with regular functions:
 
@@ -98,7 +100,7 @@ function counter() {
 
 If you run the code above you'll see `NaN` being printed every second. That's because `this` means different things inside `counter` and inside the anonymous function being called by `setInterval`. If you're curious, both `setInterval` and `setTimeout` run the inner function on the global scope, which means `this` is the same as `global`.
 
-Now let's try this with a fat arrow function:
+Now let's try this with a arrow function:
 
 ```js
 function counter() {
@@ -113,4 +115,4 @@ function counter() {
 
 This version actually works as intended, since the value of `this` is inherited by the anonymous function inside `setInterval`.
 
-Overall, fat arrows simplify syntax anywhere a callback function or handler is defined, but always remember to check if `this` contains what you think it does!
+Overall, arrow functions simplify syntax anywhere a callback function or handler is defined, but always remember to check if `this` contains what you think it does!
