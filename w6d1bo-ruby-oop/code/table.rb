@@ -1,3 +1,8 @@
+# Inheritance example
+
+require 'pry'
+
+
 class Table
 
   attr_reader :width, :length, :height, :weight, :legs, :material
@@ -24,6 +29,8 @@ class Table
 end
 
 
+# Every CoffeeTable is a Table
+
 class CoffeeTable < Table
 
   def to_s
@@ -35,3 +42,6 @@ class CoffeeTable < Table
   end
 
 end
+
+
+binding.pry # Play with it!
