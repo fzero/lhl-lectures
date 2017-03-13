@@ -1,7 +1,7 @@
 require 'active_support/all'
 
 # OOP version of the Candidates assignment.
-# Note how all methods that shoulld take a candidate are defined
+# Note how all methods that should take a candidate are defined
 # _inside_ the class, since all necessary data is available in every
 # Candidate instance.
 
