@@ -89,3 +89,7 @@ ikea_hemnes.distractedly_walk_by
 ```
 
 This is a silly example, of course. Usually classes will describe things like database tables, app components and so on - and that's precisely where OOP shines. Tomorrow we'll talk about [**ActiveRecord**](http://guides.rubyonrails.org/active_record_basics.html) and how it uses class inheritance to provide a generic interface to deal with databases pretty much without writing any database-handling code at all.
+
+## Code
+
+We've worked on the Candidates assignment and solved it using classes. See the [`/code/candidates_oop`](code/candidates_oop) folder for the complete code. Also check out [`/code`](code) for class inheritance examples with tables and computers. 
