@@ -36,8 +36,43 @@ for (let key in contactInfo) {
 
 In a nutshell:
 
-* `var` is scoped to the function, while `let` is scoped to a block.
+* `var` is scoped to the function, while `let` is scoped to a block
+```js
+/*
+ * We'll define a variable inside this for loop with `var` first:
+ */
+for (var i = 0; i < 10; i++) {
+  var inside = i * 10;
+  console.log(inside);
+}
+
+console.log('i:', i);
+//=> i: 9
+
+console.log('inside:', inside);
+//=> inside: 90
+
+/*
+ * Now the same thing with `let`:
+ */
+for (let x = 0; x < 10; x++) {
+  let insideX = x * 10; // These variables only exist inside this `for`
+  console.log(insideX);
+}
+
+console.log('x:', x);
+//=> ReferenceError: x is not defined
+
+console.log('insideX:', insideX);
+//=> ReferenceError: insideX is not defined
+```
+
 * `const` creates a value that can't be changed afterwards.
+```js
+const magicNumber = 10;
+magicNumber = 20;
+//=> TypeError: Assignment to constant variable.
+```
 
 ## String Interpolation, a. k. a. template strings
 
