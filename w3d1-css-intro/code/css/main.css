@@ -11,12 +11,15 @@ Precedence:
 body {
   font-family: "Helvetica", sans-serif;
   font-size: 22px;
-  /* We fixed the nav bar to the top so we need more margin there */
-  /* Notice how we can mix units withut any issues */
+  /* We fixed the nav bar to the top so we need some space there.
+     Notice how we can mix units withut any issues. */
   margin: 100px 10% 30% 10%; /* Top, Right, Bottom, Left: TRouBLe */
 }
 
-/* Formatting the navigation */
+
+/*
+ * Navigation
+ */
 
 nav {
   position: fixed; /* sticks the nav bar at the top */
@@ -55,7 +58,11 @@ nav li a:hover {
   background-color: green;
 }
 
-/* article -related classes */
+
+/*
+ * Articles
+ */
+
 article {
   margin-bottom: 50px;
 }
@@ -75,9 +82,9 @@ article footer {
 
 
 /*
-The classes below aren't specific to any tag, so we can use it
-on any element
-*/
+ * The classes below aren't specific to any tag, so we can use them
+ * on any element
+ */
 
 .left {
   float: left;
