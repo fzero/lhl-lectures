@@ -1,48 +1,70 @@
 /* Your amazing styles here! */
 
+/*
+Precedence:
+1. inline
+2. #id
+3. .class
+4. tags
+*/
+
 body {
   font-family: "Helvetica", sans-serif;
-  margin: 60px 5% 5% 5%;
-  border: 1px solid black;
-  padding: 15px;
+  /* We fixed the nav bar to the top so we need more margin there */
+  /* Notice how we can mix units withut any issues */
+  margin: 100px 5% 20% 5%; /* Top, Right, Bottom, Left: TRouBLe */
 }
 
-h1 {
-  margin-top: 5px;
-  border-bottom: 1px solid #aaaaaa;
-}
+/* Formatting the navigation */
 
 nav {
-  position: fixed;
-  width: 100%;
+  position: fixed; /* sticks the nav bar at the top */
   top: 0;
   left: 0;
-  background: lightblue;
+  width: 100%;
+  background-color: white;
+  opacity: 0.9;
+  padding: 2px;
+  box-shadow: 3px 3px 10px #ccc;
 }
 
+/* <ul> inside <nav> */
 nav ul {
-  padding-left: 0;
-  margin: 10px auto;
+  list-style-type: none; /* don't display the item dots */
+  padding: 0;            /* remove left padding */
   text-align: center;
 }
 
+/* <li> inside <nav> */
 nav li {
-  list-style-type: none;
-  display: inline;
-  margin: auto 10px;
+  display: inline;  /* behave like pure text */
+  padding: 1em;     /* add space between options */
 }
 
-nav a {
-  font-size: 80%;
-  color: black;
+/* <a> inside <li> inside <nav> */
+nav li a {
   text-decoration: none;
   font-weight: bold;
-  border: 1px solid #cccccc;
-  padding: 3px;
+  color: green;
 }
 
-article header a {
-  display: none;
+/* same as above, but with mouse hovering */
+nav li a:hover {
+  color: white;
+  background-color: green;
+}
+
+/* article -related classes */
+article {
+  margin-bottom: 50px;
+}
+
+article header h2 {
+  border-bottom: 1px solid #999999;
+}
+
+article p {
+  font-family: serif;
 }
 
 article footer {
@@ -50,37 +72,42 @@ article footer {
   font-size: 80%;
 }
 
-nav a:hover {
-  border: 1px solid #ff0000;
+
+/*
+The classes below aren't specific to any tag, so we can use it
+on any element
+*/
+
+.left {
+  float: left;
+  margin: 0 10px 10px 0;
 }
 
-.inset {
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
+.right {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+.thumb {
   width: 150px;
 }
 
-/* Circles: just make border-radius >= 50% */
-.circle {
-  display: inline-block;
-  float: right;
-  margin: 5px;
-  width: 100px;
-  height: 100px;
-  background: red;
-  border-radius: 50%;
+.caption {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 60%;
 }
 
-/* Triangles: It's about border interactions.
-   See: https://davidwalsh.name/css-triangles */
-.triangle {
-  display: inline-block;
-  float: left;
-  margin: 5px;
-  width: 0;
-  height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
-  border-left: 60px solid green;
+.photo-box {
+  border: 3px solid white;
+  padding: 5px;
+  box-shadow: 3px 3px 10px #ccc;
+}
+
+.circle {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
 }
