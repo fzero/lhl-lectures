@@ -6,7 +6,9 @@ The code discussed in class can be found inside [`/code`](code). Be sure to chec
 
 I've also included a [Capybara cheatsheet](capybara_cheatsheet.md) with the most common actions.
 
-> **NOTE:** Setting up Capybara can be tricky, and we've run into an issue with `geckodriver` during class. We've switched to `chromedriver` and everything went fine. [Check the README included with the example code](code/README.md) for more details.
+If you need help setting up your Rails app to run unit and feature tests, [check out this article](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/).
+
+> **NOTE:** Setting up Capybara can be tricky, so make sure to check the article above. I'm using `chromedriver` to run features tests, but you can also use `phantomjs` as recommended in Compass. [Check the README included with the example code](code/README.md) for more details.
 
 ## Unit Testing
 
@@ -17,6 +19,7 @@ I've also included a [Capybara cheatsheet](capybara_cheatsheet.md) with the most
 - Certify that your code behaves as expected
 - Ensure reliability
 - Ensure stability
+- In Rails it usually mean testing the models and business logic in general
 
 **Disadvantages:**
 
@@ -25,6 +28,34 @@ I've also included a [Capybara cheatsheet](capybara_cheatsheet.md) with the most
   - Have to write new tests
 - Hard to cover all the edge cases
 - Hard to test integrations
+
+## Integration (or Feature) Testing
+
+- Testing the overall product
+  - How units integrate with each other
+  - Exercises the whole stack, from routes to views
+- Uses a fake (headless and/or automated) browser
+  - PhantomJS (npm)
+  - Chromedriver / Geckodriver
+    - Separate pieces of software
+- [Capybara](http://cheatrags.com/capybara)
+  - DOM traversal
+  - Fill in forms
+  - Click on links
+  - Test for presence for elements / text on the page
+
+**Disadvantages:**
+
+- Difficult to write tests that fully test a behaviour
+- Difficult to write tests that cover edge cases
+- TIME!
+  - Each test has to launch a brand-new browser instance
+- When test fails, far more time to troubleshoot
+  - Dumping out a lot of HTML for debugging
+- More brittle applications are more likely to cause testing problems
+- Harder to write specific test cases
+- Harder to "hide" business-logic layout on page
+
 
 ## Code coverage
 
@@ -48,32 +79,6 @@ Code coverage is a measure of how much of your code is actually tested.
 - Runs tests when master is updated
   - If tests pass, deploys to production
 - Continuous integration PLUS deployment
-
-## Integration Testing
-
-- Testing the overall product
-  - How units integrate with each other
-- Fake (headless) browser
-  - PhantomJS (npm)
-  - Selenium
-    - Separate piece of software
-  - DOM traversal
-  - Fill in forms
-  - Click on links
-- Capybara
-- Test for presence for elements / text on the page
-
-Disadvantages:
-
-- Difficult to write tests that fully test a behaviour
-- Difficult to write tests that cover edge cases
-- TIME
-  - Each test has to launch a brand-new browser instance
-- When test fails, far more time to troubleshoot
-  - Dumping out a lot of HTML for debugging
-- More brittle applications are more likely to cause testing problems
-- Harder to write specific test cases
-- Harder to "hide" business-logic layout on page
 
 ## Methods for Integration Testing
 
