@@ -105,11 +105,17 @@ This is the way TinyApp works. Every link and form submission results on the pag
 
 The server code receives regular HTTP requests and plain form data and returns rendered HTML pages based on EJS templates.
 
+By the way, EJS templates are **server-side**. This means **the server** builds the HTML with the data you provide as `templateVars` and sends the **completed HTML** to the browser.
+
 ### 2. Single-page application (SPA)
 
 Tweetr is a good example of this. The HTML is completely static (_not_ `ejs`) and every action is handled by _client-side Javascript code_ (inside `/public` in express) and AJAX requests.
 
 The server-side code **only receives and outputs data**, usually in JSON format. This means **every form, button and link _must_ have an attached JS function.**
+
+In other words **the server will NOT use EJS or other server-side templates.** All requests and responses will use JSON.
+
+You may have **static HTML pages** in the `/public` folder, but the data will always be displayed using Javascript to render HTML using JSON data received from the server.
 
 This means more client-side code, but the results are more interactive. [React](https://facebook.github.io/react/), [Ember](https://emberjs.com/) and [Angular](https://angularjs.org/) are examples of client-side frameworks geared towards making single-page applications.
 
