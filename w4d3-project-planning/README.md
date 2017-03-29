@@ -95,7 +95,7 @@ But in short:
     + [Materialize](http://materializecss.com/)
     + Hundreds of others!
   - [Bower](https://bower.io/) might be a good addition to your project
-    - It's like `npm` for client-side stuff (jQuery, CSS framweorks etc.)
+    - It's like `npm` for client-side stuff (jQuery, CSS frameworks etc.)
 
 ## The three main approaches on writing a web app
 
