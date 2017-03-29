@@ -1,4 +1,4 @@
-# Project planning (midterm)
+# Project planning (midterm) and notes on web app architecture
 
 Let's begin with some high-level rules:
 
