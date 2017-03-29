@@ -103,31 +103,31 @@ But in short:
 
 This is the way TinyApp works. Every link and form submission results on the page being completely reloaded from scratch. Every single request needs its own EJS template inside `/views`.
 
-The server code receives regular HTTP requests and plain form data and returns rendered HTML pages based on EJS templates.
+The server code receives regular HTTP requests and plain form data, and returns rendered HTML pages based on EJS templates.
 
-By the way, EJS templates are **server-side**. This means **the server** builds the HTML with the data you provide as `templateVars` and sends the **completed HTML** to the browser.
+By the way, those EJS templates are **server-side**. This means **the server** builds the HTML with the data you provide as `templateVars` and sends the **completed HTML** to the browser.
 
 ### 2. Single-page application (SPA)
 
-Tweetr is a good example of this. The HTML is completely static (_not_ `ejs`) and every action is handled by _client-side Javascript code_ (inside `/public` in express) and AJAX requests.
+Tweetr is a good example of this. The HTML is completely static (_not_ EJS) and every action is handled by client-side Javascript code (inside `/public` in Express) with AJAX requests.
 
 The server-side code **only receives and outputs data**, usually in JSON format. This means **every form, button and link _must_ have an attached JS function.**
 
 In other words **the server will NOT use EJS or other server-side templates.** All requests and responses will use JSON.
 
-You may have **static HTML pages** in the `/public` folder, but the data will always be displayed using Javascript to render HTML using JSON data received from the server.
+You may have **static HTML pages** in the `/public` folder, but the data will always be displayed using client-side Javascript to render HTML using JSON data received from the server.
 
 This means more client-side code, but the results are more interactive. [React](https://facebook.github.io/react/), [Ember](https://emberjs.com/) and [Angular](https://angularjs.org/) are examples of client-side frameworks geared towards making single-page applications.
 
 ### 3. Mix and match
 
-Some pages are request-response (welcome page and login form, for example) while a few of them have SPA features.
+Some pages are request-response (welcome page and login form, for example) while others have SPA features.
 
-A good example would be an e-commerce application showing a sticky shopping cart panel. Every time an item is chosen from the menu, the cart updates without reloading the page. On the other hand, the whole page reloads when the user presses the "order" button.
+A good example would be an e-commerce application showing a sticky shopping cart panel. Every time an item is chosen, the cart updates without reloading the page. On the other hand, the whole page reloads when the user presses the "order" button on the cart.
 
 **This is usually the quickest approach to write a good, interactive web app at the level you are right now.** It's very common for professional apps to start like this and then migrate to a full SPA architecture.
 
-Some large applications are structured as multiple SPAs with a few request-response actions in between. For example, Facebook and Twitter have a request-response login page, while the main application is a large SPA. Try a few of your favourite web apps and try to figure out which requests reload the whole page.
+Some large applications are structured as multiple SPAs with a few request-response actions in between. For example, Facebook and Twitter have a request-response login page, while the main application is a large SPA. A good exercise is using a few of your favourite web apps and trying to figure out which requests reload the whole page.
 
 ## BONUS: Git feature branching cheatsheet
 
