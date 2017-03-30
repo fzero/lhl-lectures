@@ -6,14 +6,14 @@ Services [Amazon S3](https://aws.amazon.com/s3/) and [Github pages](https://page
 
 ## Static website generators
 
-Static generatores help creating static content by using the same tools available to dynamic sytes built with Express or Rails. You can create templates and layouts to avoid repetition, write text using Markdown, use SASS for CSS, compile ES6 and so on.
+Static generatores help creating static content by using the same tools available to dynamic sytes built with Express or Rails. You can create templates and layouts to avoid repetition, write text using [Markdown](https://en.wikipedia.org/wiki/Markdown), use [SASS](http://sass-lang.com/guide) for CSS, compile ES6 and so on.
 
 The most popular generators are Ruby-based, but there are popular options in written in many languages:
 
 * [Jekyll](http://jekyllrb.com/) - The granddaddy of all generators, written in Ruby. It's used internally by Github Pages.
+* [Hexo](https://hexo.io/) - Like Jekyll, but for Node.
 * [Hugo](http://gohugo.io/) - Very fast and popular, written in [Go](https://golang.org/).
 * [Middleman](https://middlemanapp.com/) - Similar to Jekyll, but less blog-centric (also Ruby-based).
-* [Hexo](https://hexo.io/) - Like Jekyll, but for Node.
 
 Usually you don't really need to do much programming besides HTML, CSS and maybe some client-side JS to create a static blog. Middleman is slightly more geared towards creating web app UIs. It integrates Webpack in the mix, so it's relatively easy to use it to create marketing pages while the app itself is in React, for example.
 
@@ -21,7 +21,7 @@ Usually you don't really need to do much programming besides HTML, CSS and maybe
 
 Ideally the server responsible for static assets shouldn't be the same where you get the data from. This leaves the application server free to take care only of data-related requests. Your Javascript code, CSS and images won't change after they reach the browser anyway, so why use Express to do that when you can use a specialized tool for that?
 
-The most popular CDN out there is definitely Amazon Cloudfront, which serves files hosted on Amazon S3. You can also use S3 directly to serve content and entire websites.
+The most popular CDN out there is definitely [Amazon Cloudfront](https://aws.amazon.com/cloudfront/), which serves files hosted on [Amazon S3](https://aws.amazon.com/s3/). You can also use S3 directly to serve content and entire websites.
 
 Tools of note:
 * [Cyberduck](https://cyberduck.io/)
