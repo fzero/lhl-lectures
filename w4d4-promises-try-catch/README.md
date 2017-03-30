@@ -45,6 +45,8 @@ The main idea goes like this:
 * When errors happen: `.catch((oops) => console.log("Things went boom, yo"))`
   * The chain will be halted and `.catch` will be called immediately with the error as first argument
 
+[This site provides an amazing visualization of how promises work](http://bevacqua.github.io/promisees/), including examples on how to use `Promise.all()` to run several promises in parallel and use their results.
+
 See [`promises.js`](code/promises.js) for an introductory example and
 [`p-request.js`](code/p-request.js) for a practical use of promises being used
 with the `request` module.
