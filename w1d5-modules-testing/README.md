@@ -81,6 +81,8 @@ exports.sayHello = sayHello;
 exports.sayHi = sayHi;
 ```
 
+[This article](https://www.sitepoint.com/understanding-module-exports-exports-node-js/) expands on the subject a bit more.
+
 ### Using a module
 
 Use `require` to load a module and store the exported objects inside a variable. Remember that functions are values in Javascrtipt!
