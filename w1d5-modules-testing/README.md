@@ -60,14 +60,25 @@ function sayHello(name) {
   console.log("HELLO " + name.toUpperCase() + "!");
 }
 
+function sayHi(name) {
+  console.log("Hi " + name + ".");
+}
+
 // Use the `module.exports` object to indicate which functions and values will
 // be available when the module is required. You can have functions that are
 // used inside the module but aren't exported (private).
 // You can assign anything to module.exports, but usually this will either be
 // an object or a function that returns an object.
 module.exports = {
-  sayHello: sayHello
+  sayHello: sayHello,
+  sayHi: sayHi
 }
+```
+
+`module.exports` expects an object, but you can also export values and functions individually using `exports.key = value`. The following `exports` example is equivalent to the one above:
+```js
+exports.sayHello = sayHello;
+exports.sayHi = sayHi;
 ```
 
 ### Using a module
