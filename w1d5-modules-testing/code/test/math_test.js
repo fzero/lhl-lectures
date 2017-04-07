@@ -3,6 +3,8 @@
 // We need to require something that allows us to verify results
 // We're using `chai` here, which can be used both in `assert`
 // and `expect` styles. See http://chaijs.com/guide/styles
+// You can also use Node's own assert package with:
+// var assert = require('assert');
 var assert = require('chai').assert;
 var expect = require('chai').expect;
 
