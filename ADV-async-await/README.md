@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 })
 ```
 
-There are some simple examples in the [`/code`](code) folder comparing the different async approaches. [This article](https://medium.com/@bluepnume/learn-about-promises-before-you-start-using-async-await-eb148164a9c8) also has a very good explanation of how promises and `async`/`await` are connected, including some pitfalls to avoid. A particular insteresting one is the syntax for `Promise.all()`.
+There are some simple examples in the [`/code`](code) folder comparing the different async approaches. [This article](https://medium.com/@bluepnume/learn-about-promises-before-you-start-using-async-await-eb148164a9c8) also has a very good explanation of how promises and `async`/`await` are connected, including some pitfalls to avoid. A particularly insteresting one is the syntax for `Promise.all()`.
 
 ## A full example: [Baaaes](https://github.com/fzero/baaaes)
 
