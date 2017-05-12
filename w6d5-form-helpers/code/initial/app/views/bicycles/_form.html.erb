@@ -1,0 +1,30 @@
+<%= form_for bicycle do |b| %>
+  <p>
+    <%= b.label :model, "Model:" %>
+    <%= b.text_field :model, placeholder: "Bicycle model" %>
+  </p>
+
+  <p>
+    <%= b.label :colour, "Colour:" %>
+    <%= b.text_field :colour, placeholder: "Colour" %>
+  </p>
+
+  <p>
+    <%= b.label :speeds, "Speeds:" %>
+    <%= b.number_field :speeds, placeholder: "1-21" %>
+  </p>
+
+  <p>
+    <%= b.label :style_id, 'Style:' %>
+    <%= b.select(:style_id, options_from_collection_for_select(Style.all, :id, :name, bicycle.style_id), include_blank: true) %>
+  </p>
+
+  <p>
+    <%= b.label :brand_id, 'Brand:' %>
+    <%= b.select(:brand_id, options_from_collection_for_select(Brand.all, :id, :name, bicycle.brand_id), include_blank: true, selected: bicycle.brand_id) %>
+  </p>
+
+  <p>
+    <%= b.submit "Go!" %>
+  </p>
+<% end %>

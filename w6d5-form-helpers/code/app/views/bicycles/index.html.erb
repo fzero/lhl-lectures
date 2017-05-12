@@ -1,0 +1,48 @@
+<h1>All My Bicycles!</h1>
+
+<div class="search-form" id="search-form">
+  <%= form_tag({controller: :bicycles, action: :index}, method: :get) do %>
+    <div class="form-component">
+      <%= label_tag(:model, 'Model ') %>
+      <%= text_field_tag(:model, nil, size: 30) %>
+    </div>
+
+    <div class="form-component">
+      <%= label_tag(:style, 'Style ') %>
+      <%= select_tag(:style,
+                     options_from_collection_for_select(Style.all, :id, :name),
+                     include_blank: true, id: 'bicycle-style') %>
+    </div>
+
+    <div class="form-component">
+      <%= label_tag(:brand, 'Brand ') %>
+      <%= select_tag(:brand,
+                     options_from_collection_for_select(Brand.all, :id, :name),
+                     include_blank: true) %>
+    </div>
+
+    <div class="form-component">
+      <%= label_tag(:speeds, 'Speeds ') %>
+      <%= number_field_tag(:speeds, nil, min: 1, max: 21) %>
+    </div>
+
+    <div class="form-component">
+      <%= submit_tag('Search!') %>
+    </div>
+  <% end %>
+</div>
+
+<section class="bicycle-list" id="bicycle-list">
+  <% @bicycles.each do |bicycle| %>
+    <div class="bicycle">
+      <h3 class="description"><%= bicycle.description %></h3>
+      <p class="details">
+        <strong>Country:</strong> <%= bicycle.brand.country %> |
+        <strong>Brand:</strong> <%= bicycle.brand.name %> |
+        <strong>Model:</strong> <%= bicycle.model %> |
+        <strong>Style:</strong> <%= bicycle.style.name %> |
+        <strong>Speeds:</strong> <%= bicycle.speeds %>
+      </p>
+    </div>
+  <% end %>
+</section>
