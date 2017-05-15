@@ -40,4 +40,4 @@ References:
 
 You can find it in the [`/code`](code) folder as usual. The HTML part is pretty standard, but make sure to check out [`main.css`](code/css/main.css) - I've added plenty of contents explaining what's going on.
 
-You can also find variations created on previous classes in the [`/previous_examples`](previous_examples) folder. They all started off the same HTML we've discussed in class, but different live-coding sessions have result in different looks. Feel free to check them out!
+You can also find variations created on previous classes in the [`/previous_examples`](previous_examples) folder. They all started off the same HTML we've discussed in class, but different live-coding sessions have different results.
