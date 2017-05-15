@@ -29,7 +29,7 @@ These values interact to give you the final size of the element. Sadly each brow
 ### Box sizing: border-box (non-default)
 This is a messy one. It really _should_ be the default, but luckily [it's a fixable problem](https://www.paulirish.com/2012/box-sizing-border-box-ftw).
 
-## BONUS: triangles and circles
+## BONUS: circles and triangles
 Yes, you can make them just with CSS!
 
 References:
@@ -39,3 +39,5 @@ References:
 ## Code discussed in class
 
 You can find it in the [`/code`](code) folder as usual. The HTML part is pretty standard, but make sure to check out [`main.css`](code/css/main.css) - I've added plenty of contents explaining what's going on.
+
+You can also find variations created on previous classes in the [`/previous_examples`](previous_examples) folder. They all started off the same HTML we've discussed in class, but different live-coding sessions have result in different looks. Feel free to check them out!

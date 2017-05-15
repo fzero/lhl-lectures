@@ -9,13 +9,12 @@ Precedence:
 */
 
 body {
-  font-family: "Helvetica", sans-serif;
-  font-size: 22px;
+  font-family: "Helvetica", "Arial", "Futura", sans-serif;
+  color: #474747;
   /* We fixed the nav bar to the top so we need some space there.
      Notice how we can mix units withut any issues. */
-  margin: 100px 10% 30% 10%; /* Top, Right, Bottom, Left: TRouBLe */
+  margin: 120px 10% 30% 10%; /* Top, Right, Bottom, Left: TRouBLe */
 }
-
 
 /*
  * Navigation
@@ -26,36 +25,38 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  border-width: 1px 0 10px 0;
+  border-color: #474747;
+  border-style: solid;
   background-color: white;
   opacity: 0.9;
-  padding: 2px;
-  box-shadow: 3px 3px 10px #ccc;
+  box-shadow: 3px 3px 30px 3px #666;
 }
 
 /* <ul> inside <nav> */
 nav ul {
-  list-style-type: none; /* don't display the item dots */
-  padding: 0;            /* remove left padding */
+  list-style: none;
+  padding: 0;
   text-align: center;
 }
 
-/* <li> inside <nav> */
-nav li {
-  display: inline;  /* behave like pure text */
-  padding: 1em;     /* add space between options */
+/* <li> inside <ul> inside <nav> */
+nav ul li {
+  display: inline;
+  margin: auto 15px auto 15px;
 }
 
-/* <a> inside <li> inside <nav> */
-nav li a {
+/* <a> inside <nav> */
+nav a {
   text-decoration: none;
   font-weight: bold;
-  color: green;
+  color: #2184a5;
 }
 
 /* same as above, but with mouse hovering */
-nav li a:hover {
-  color: white;
-  background-color: green;
+nav a:hover {
+  color: #fff;
+  background-color: #2184a5;
 }
 
 
@@ -72,7 +73,7 @@ article header h2 {
 }
 
 article p {
-  font-family: serif;
+  font-family: "Georgia", serif;
 }
 
 article footer {
@@ -86,36 +87,20 @@ article footer {
  * on any element
  */
 
-.left {
+.float-left {
   float: left;
-  margin: 0 10px 10px 0;
+  margin-right: 15px;
+  margin-bottom: 5px;
 }
 
-.right {
+.float-right {
   float: right;
-  margin: 0 0 10px 10px;
+  margin-left: 15px;
+  margin-bottom: 5px;
 }
 
-.thumb {
-  width: 150px;
-}
-
-.caption {
-  margin-top: 5px;
-  text-align: center;
-  font-size: 60%;
-}
-
-.photo-box {
-  border: 3px solid white;
-  padding: 5px;
-  box-shadow: 3px 3px 10px #ccc;
-}
-
-.circle {
-  display: block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: red;
+.text-insert {
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 10px;
 }

@@ -1,0 +1,121 @@
+/* Your amazing styles here! */
+
+/*
+Precedence:
+1. inline
+2. #id
+3. .class
+4. tags
+*/
+
+body {
+  font-family: "Helvetica", sans-serif;
+  font-size: 22px;
+  /* We fixed the nav bar to the top so we need some space there.
+     Notice how we can mix units withut any issues. */
+  margin: 100px 10% 30% 10%; /* Top, Right, Bottom, Left: TRouBLe */
+}
+
+
+/*
+ * Navigation
+ */
+
+nav {
+  position: fixed; /* sticks the nav bar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  opacity: 0.9;
+  padding: 2px;
+  box-shadow: 3px 3px 10px #ccc;
+}
+
+/* <ul> inside <nav> */
+nav ul {
+  list-style-type: none; /* don't display the item dots */
+  padding: 0;            /* remove left padding */
+  text-align: center;
+}
+
+/* <li> inside <nav> */
+nav li {
+  display: inline;  /* behave like pure text */
+  padding: 1em;     /* add space between options */
+}
+
+/* <a> inside <li> inside <nav> */
+nav li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: green;
+}
+
+/* same as above, but with mouse hovering */
+nav li a:hover {
+  color: white;
+  background-color: green;
+}
+
+
+/*
+ * Articles
+ */
+
+article {
+  margin-bottom: 50px;
+}
+
+article header h2 {
+  border-bottom: 1px solid #999999;
+}
+
+article p {
+  font-family: serif;
+}
+
+article footer {
+  text-align: right;
+  font-size: 80%;
+}
+
+
+/*
+ * The classes below aren't specific to any tag, so we can use them
+ * on any element
+ */
+
+.left {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.right {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+.thumb {
+  width: 150px;
+}
+
+.caption {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 60%;
+}
+
+.photo-box {
+  border: 3px solid white;
+  padding: 5px;
+  box-shadow: 3px 3px 10px #ccc;
+}
+
+.circle {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
+}
