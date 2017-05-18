@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const path = require('path')
 const morgan = require('morgan')
 const sassMiddleware = require('node-sass-middleware')
 
@@ -23,7 +22,7 @@ app.use(bodyParser.json()) // JSON
 // }))
 
 // Serve static content from /public
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('./public'))
 
 // Logging
 app.use(morgan('dev'))
