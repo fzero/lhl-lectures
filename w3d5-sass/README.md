@@ -64,11 +64,11 @@ It's also possible to integrate SASS directly with Express using the [`node-sass
 const sassMiddleware = require('node-sass-middleware')
 
 app.use(sassMiddleware({
-  src: './stylesheets',  // Location of SASS files
-  dest: './public/css',  // Compiled CSS location
-  prefix:  '/css'        // URL path to be intercepted by the middleware and
-}))                      // compiled on the fly
-                         // (e.g. ./stylesheets/main.scss -> /css/main.css)
+  src: './stylesheets', // Location of SASS files
+  dest: './public/css', // Compiled CSS location
+  prefix:  '/css'       // URL path to be intercepted by the middleware and
+}))                     // compiled on the fly. When the browser tries to
+                        // GET /css/main.css, it compiles ./stylesheets/main.scss
 ```
 
 In either case, remember two things:
