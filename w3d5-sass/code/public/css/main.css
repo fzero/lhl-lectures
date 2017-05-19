@@ -1,8 +1,3 @@
-/*
-  This file is generated automatically by SASS and will be erased
-  every time the corresponing SASS is modified.
-*/
-
 body {
   background-color: #c3d0d3;
   font-family: "Helvetica", sans-serif;
@@ -44,7 +39,5 @@ nav {
     .container article {
       width: 100%;
       margin-right: auto; }
-      .container article h2 {
-        font-size: 80%; }
     .container aside {
       width: 100%; } }

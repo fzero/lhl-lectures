@@ -80,15 +80,15 @@ See the [`/code`](code) folder for more details.
 
 ## Responsive design
 
-Whether we call it Responsive Design, Adaptive Design, Progressive Design, or Mobile-first Design, they all have one thing in common: they are concerned for how a website will appear across different types of screens/devices.
+Whether we call it Responsive Design, Adaptive Design, Progressive Design, or Mobile-first Design, they all have one thing in common: it's all about making a website work well across different types of screens/devices.
 
-The techniques used to deal with this are old, coming from an era where people wanted to print webpages and a different style-sheet would be needed to support the printer. That `@media` query would allow for a completely different set of styles to be applied IF the page was rendered on paper instead. These days, `@media` queries can be used to read the size of the display area and override CSS rules accordingly. [MDN has a great guide on media queries (as usual).](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries).
+The techniques used to deal with this are old, coming from an era where people wanted to print webpages, and a different style-sheet would be needed to support the printer. These days, `@media` queries can be used to read the size of the display area and override CSS rules accordingly. [MDN has a great guide on media queries (as usual)](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries).
 
 The links below contain good tutorials on responsive design concepts, but if you have to remember one thing is this: always start designing your web applications assuming the user needs to do ONE thing and that thing is the only widget that matters in your page. Everything else should be secondary.
 
-* Responsive design basics: https://developers.google.com/web/fundamentals/design-and-ui/responsive/
-* Common patterns for flexible layouts: https://developers.google.com/web/fundamentals/design-and-ui/responsive/patterns
-* If your layout is super complex, consider a full FlexBox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+* [Responsive design basics (Google Dev Pages)](https://developers.google.com/web/fundamentals/design-and-ui/responsive/)
+* [Common patterns for flexible layouts (Google Dev Pages)](https://developers.google.com/web/fundamentals/design-and-ui/responsive/patterns)
+* [Using FlexBox for complex designs (CSS Tricks)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### Grid systems
 
