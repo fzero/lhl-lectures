@@ -58,9 +58,11 @@ SASS was originally written in Ruby, and the official way to install it is by us
 
 This will compile all SASS files in the `/stylesheets` folder and put them into the `/public/css` folder
 
-It's also possible to integrate SASS directly with Express using the [`node-sass-middleware` package](https://github.com/sass/node-sass-middleware). If you do this, remember two things:
+It's also possible to integrate SASS directly with Express using the [`node-sass-middleware` package](https://github.com/sass/node-sass-middleware).
 
-* This will **overwrite all CSS files inside `/public/css`** every time the server starts. You should edit the `.scss` files inside `/stylesheets` instead.
+In either case, remember two things:
+
+* **All CSS files inside `/public/css` will be overwritten** every time the server starts. You should edit the `.scss` files inside `/stylesheets` instead.
 * On the other hand, the browser has no idea how to parse SCSS, so you should link the **generated `.css` files generated in `/public/css` on your HTML**.
 
 See the [`/code`](code) folder for more details.
@@ -76,3 +78,9 @@ The links below contain good tutorials on responsive design concepts, but if you
 * Responsive design basics: https://developers.google.com/web/fundamentals/design-and-ui/responsive/
 * Common patterns for flexible layouts: https://developers.google.com/web/fundamentals/design-and-ui/responsive/patterns
 * If your layout is super complex, consider a full FlexBox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+### Grid systems
+
+Responsive designs are usually created using grid systems, which place all  elements into columns and rows that can be stacked depending on the size of the display. [Bootstrap](http://getbootstrap.com/), [Materialize](http://materializecss.com/) and other frameworks come with a grid system built-in, but you can also use generators like [this one](http://www.responsivegridsystem.com) to create only the bare mininum code. This keeps things lean and unopinionated for you to show off your amazing design chops.
+
+[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) can also be used to create grids, but it's still not supported by all browsers. It gives you much more control over element distribution and positioning in when a collection of elements is involved.
