@@ -1,0 +1,29 @@
+// This partial will be included in main.css
+// Note we're using variables defined elsewhere.
+// You MUST have those variables defined at this point or else
+// things will break!
+
+nav {
+  display: block;
+  width: 100%;
+  border: 1px solid $link-colour;
+  text-align: center;
+  margin-bottom: 1.5%;
+  ul {
+    padding-left: 0;
+    li {
+      display: inline;
+      margin: auto 5px auto 5px;
+    }
+    @media (max-width: $stacking-width) {
+      li {
+        display: block;
+      }
+    }
+  }
+  a {
+    color: $link-colour;
+    background-color: $background;
+    text-decoration: none;
+  }
+}

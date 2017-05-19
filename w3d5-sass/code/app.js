@@ -14,12 +14,15 @@ app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({extended: false})) // forms
 app.use(bodyParser.json()) // JSON
 
-// SASS preprocessor
-// app.use(sassMiddleware({
-//     src: './stylesheets',
-//     dest: './public/css',
-//     prefix:  '/css'
-// }))
+const appEnv = process.env.NODE_ENV || 'development'
+if (appEnv === 'development') {
+  // SASS preprocessor
+  app.use(sassMiddleware({
+      src: './stylesheets',
+      dest: './public/css',
+      prefix:  '/css'
+  }))
+}
 
 // Serve static content from /public
 app.use(express.static('./public'))

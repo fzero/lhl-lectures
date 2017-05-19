@@ -1,0 +1,50 @@
+/*
+  This file is generated automatically by SASS and will be erased
+  every time the corresponing SASS is modified.
+*/
+
+body {
+  background-color: #c3d0d3;
+  font-family: "Helvetica", sans-serif;
+  margin: 5%; }
+
+nav {
+  display: block;
+  width: 100%;
+  border: 1px solid #6769a8;
+  text-align: center;
+  margin-bottom: 1.5%; }
+  nav ul {
+    padding-left: 0; }
+    nav ul li {
+      display: inline;
+      margin: auto 5px auto 5px; }
+    @media (max-width: 600px) {
+      nav ul li {
+        display: block; } }
+  nav a {
+    color: #6769a8;
+    background-color: #c3d0d3;
+    text-decoration: none; }
+
+.container {
+  padding: 2%;
+  border: 1px solid black; }
+  .container article {
+    display: inline-block;
+    width: 70%;
+    margin-right: 1.5%; }
+  .container aside {
+    display: inline-block;
+    width: 25%; }
+
+@media (max-width: 600px) {
+  .container {
+    border: 1px solid black; }
+    .container article {
+      width: 100%;
+      margin-right: auto; }
+      .container article h2 {
+        font-size: 80%; }
+    .container aside {
+      width: 100%; } }
