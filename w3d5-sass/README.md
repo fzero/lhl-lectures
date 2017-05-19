@@ -1,12 +1,12 @@
 # SASS and responsive design
 
-CSS is great(-ish), but it lacks some features we're used to find in _real_ programming variables, such as variables, modules and so on. There are a few tools created to fill in that gap, and one of the most popular ones is the [SASS css preprocessor](http://sass-lang.com).
+CSS is great(-ish), but it lacks some features common in _real_ programming languages, such as variables, modules and so on. There are a few tools that fill in that gap, and the most popular right now is [SASS](http://sass-lang.com).
 
 ## Getting sassy
 
-SASS has two syntaxes: an oldschool one that uses significant whitespaces (like Python) and SCSS, which looks pretty much like CSS with additional features, the most notable being nesting, variables and partials.
+SASS has two syntaxes: an oldschool one that uses significant whitespaces (like Python) and SCSS, which looks pretty much like CSS with additional features - the most notable being nesting, variables and partials.
 
-This means instead of writing CSS like this:
+This means instead of writing something like this:
 ```css
 nav {
   border: 1px solid black;
@@ -48,7 +48,7 @@ The full SASS guide can be found [here](http://sass-lang.com/guide).
 
 ### Installation and usage
 
-SASS was originally written in Ruby, and the official way to install it is by using the `gem` command. Luckily for us, it was also made into a library that can be used from Node with [the `node-sass` package](https://github.com/sass/node-sass). This gives you a command-line tool to compile SCSS into plain old CSS. You can then add it to your `package.json` like so:
+SASS was originally written in Ruby, so the official way to install it is by using the `gem` command. Luckily for us, it was also made into a library that can be used from Node with the [`node-sass` package](https://github.com/sass/node-sass). This gives you a command-line tool to compile SCSS into plain old CSS. You can then add it to your `package.json` like so:
 
 ```json
 "scripts": {
@@ -56,9 +56,20 @@ SASS was originally written in Ruby, and the official way to install it is by us
  }
 ```
 
-This will compile all SASS files in the `/stylesheets` folder and put them into the `/public/css` folder
+This will watch `.sass` and `.scss` files in the `./stylesheets` folder and put the resulting `.css` into `./public/css`. If you just want to run it once instead of making it watch for changes, remove the `--watch` argument.
 
-It's also possible to integrate SASS directly with Express using the [`node-sass-middleware` package](https://github.com/sass/node-sass-middleware).
+It's also possible to integrate SASS directly with Express using the [`node-sass-middleware` package](https://github.com/sass/node-sass-middleware). You can add it to your Express app like this:
+
+```js
+const sassMiddleware = require('node-sass-middleware')
+
+app.use(sassMiddleware({
+  src: './stylesheets',  // Location of SASS files
+  dest: './public/css',  // Compiled CSS location
+  prefix:  '/css'        // URL path to be intercepted by the middleware and
+}))                      // compiled on the fly
+                         // (e.g. ./stylesheets/main.scss -> /css/main.css)
+```
 
 In either case, remember two things:
 

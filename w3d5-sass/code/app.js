@@ -14,9 +14,10 @@ app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({extended: false})) // forms
 app.use(bodyParser.json()) // JSON
 
+// SASS preprocessor
+// NOTE: It should always be added before express.static
 const appEnv = process.env.NODE_ENV || 'development'
 if (appEnv === 'development') {
-  // SASS preprocessor
   app.use(sassMiddleware({
       src: './stylesheets',
       dest: './public/css',
