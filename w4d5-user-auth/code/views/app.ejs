@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>You're In</title>
+  <link rel="stylesheet" href="/styles/layout.css">
+</head>
+
+<body>
+  <h1>Welcome to user app</h1>
+
+  <p>
+    Logged in as <%= user.email %>.
+    <a href="/logout">Sign Out</a>
+  </p>
+
+  <%- include partials/_flash.ejs %>
+
+  <form action="/profile" method="post">
+    <p>
+      <label for="profile-email">Email</label>
+      <input id="profile-email" name="email">
+    </p>
+    <p>
+      <label for="profile-password">Password</label>
+      <input id="profile-password" name="password" type="password">
+    </p>
+    <button>Update Profile</button>
+  </form>
+
+</body>
+</html>
