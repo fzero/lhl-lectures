@@ -14,6 +14,8 @@ This session cookie usually does NOT contain information that can identify the u
 
 This is slightly more complex, but allows for more flexibility and gives users the option to login to your application using existing accounts on other services, such as GMail, Twitter, Facebook, Github and so on.
 
+In essence, the user receives a token - usually a long string of random characters - once login is successful. From that point on, all requests to a given app will have to include the token to authenticate data access. This is very common when dealing with APIs.
+
 The most common form of token-based authentication is [OAuth](https://oauth.net/). There are several different libraries that provide OAuth support ready to go for different services. The most popular for Javascript is [PassportJS](http://passportjs.org/).
 
 PassportJS works as an [ExpressJS middleware](http://expressjs.com/en/guide/using-middleware.html), and also provides a convenient way to implement a [username/password-based workflow](http://passportjs.org/docs/username-password).
