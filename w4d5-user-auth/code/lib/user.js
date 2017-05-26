@@ -10,7 +10,12 @@ module.exports = function(knex) {
       .limit(1)
       .then((rows) => {
         user = rows[0]
-        return resolve(user)
+        if (user) {
+          return resolve(user)
+        }
+        else {
+          return reject()
+        }
       })
       .catch((error) => reject(error));
     })
@@ -32,7 +37,8 @@ module.exports = function(knex) {
   }
 
 
-  // Used for updates, checks email uniqueness. Triggers .catch if email exists
+  // Checks email uniqueness. Triggers .catch if email exists
+  // (In essence it's the opposite of findByEmail)
   function checkEmailUniqueness(email) {
     return new Promise((resolve, reject) => {
       findByEmail(email)

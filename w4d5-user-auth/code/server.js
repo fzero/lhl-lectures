@@ -57,6 +57,12 @@ app.get('/', (req, res) => {
         user: user
       })
     })
+    .catch(() => {
+      res.render('index', {
+        errors: req.flash('errors'),
+        info: req.flash('info')
+      });
+    })
   } else {
     // If the user is not logged in, render the login/register page
     res.render('index', {
