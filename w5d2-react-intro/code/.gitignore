@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+.env
+
+npm-debug.log
+
+*generated.*
+
+build
+node_modules
