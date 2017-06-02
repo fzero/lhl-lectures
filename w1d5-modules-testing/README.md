@@ -13,14 +13,14 @@ Node.js comes with a package manager / task runner called [npm](https://www.npmj
 * `npm init`
     * Creates a `package.json` file for your project by asking a few simple questions. **You should always start your project with this.**
 * `npm install --save <package>`
-    * Installs a package and adds it to your `package.json` file
+    * Installs a package and adds it to your `package.json` file. On Node 8+ this is implied.
 * `npm install --save-dev <package>`
     * Same thing, but install the package as a development dependency on `package.json`. Use this for linters, testers, compilers, builders and anything else that won't be needed for the app to run in production, but will be useful during development.
 * `npm install -g <package>`
     * Installs a package globally and makes command-line utilities available.
     * Example: `npm install -g express-generator` and then you can use the `express` command from the terminal to start new [Express.js](http://expressjs.com) projects.
 * `npm install` in a folder with a `package.json` file
-   * Installs all project dependencies.
+   * Installs all project dependencies. Node 8+ will also create a `package-lock.json` file containing a list of dependencies and versions.
 
 ### Notes about `package.json`
 
