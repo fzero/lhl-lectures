@@ -70,4 +70,14 @@ describe('Testing the math module', function() {
 
   });
 
+  describe('triangleArea()', function() {
+    it('should return 100.00 when w = 10 and h = 20', function() {
+      expect(math.triangleArea(10, 20)).to.equal(100.00);
+    });
+
+    it('should return 27.56 when w = 10.5 and h = 5.25 and precision = 2', function() {
+      expect(math.triangleArea(10.5, 5.25, 2)).to.equal(27.56);
+    });
+  })
+
 });

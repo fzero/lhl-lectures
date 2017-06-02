@@ -18,6 +18,10 @@ function toKb(bytes, precision) {
   return roundToPrecision(bytes/1024, precision);
 }
 
+function triangleArea(w, h, precision) {
+  return roundToPrecision((w * h) / 2, precision);
+}
+
 // Internal utility function (not exported)
 function roundToPrecision(number, precision) {
   var precision = precision || 2; // default precision
@@ -28,5 +32,6 @@ module.exports = {
   squared: squared,
   circleArea: circleArea,
   circumference: circumference,
-  toKb: toKb
+  toKb: toKb,
+  triangleArea: triangleArea
 }
