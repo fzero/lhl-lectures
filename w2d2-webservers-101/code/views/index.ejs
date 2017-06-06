@@ -4,5 +4,12 @@
   </head>
   <body>
     <h1>Hello there!</h1>
+    <p>This is the view file. It's actually ejs!</p>
+
+    <ul>
+      <% for (var key in query) { %>
+        <li><strong><%= key %>:</strong> <%= query[key] %></li>
+      <% } %>
+    </ul>
   </body>
 </html>
