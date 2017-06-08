@@ -1,0 +1,13 @@
+<h1><%= @bicycle.description %></h1>
+
+<section class="bicycle-list" id="bicycle-list">
+  <div class="bicycle">
+    <p><strong>Country:</strong> <%= @bicycle.brand.country %></p>
+    <p><strong>Brand:</strong> <%= @bicycle.brand.name %></p>
+    <p><strong>Model:</strong> <%= @bicycle.model %></p>
+    <p><strong>Style:</strong> <%= @bicycle.style.name %></p>
+    <p><strong>Speeds:</strong> <%= @bicycle.speeds %></p>
+  </div>
+</section>
+
+<%= link_to 'Back to Bicycles list', bicycles_path %>
