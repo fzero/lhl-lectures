@@ -1,5 +1,7 @@
 # Rails form helpers
 
+> **NOTE:** The curriculum has changed. W6D5 now deals with nested routing.
+
 Rails comes built-in with several helper methods to make form creation much easier. [The official guides are excellent, so make sure to read them!](http://guides.rubyonrails.org/form_helpers.html)
 
 In a nutshell:
