@@ -8,7 +8,7 @@ As always, [Rails docs are incredible](http://guides.rubyonrails.org/routing.htm
   * How to deal with nested routes inside controllers
   * Changes to `params`
     * With nesting you'll always get **two** ids
-    * You're always getting to the **nested** controller
+    * You're always going to the **nested** controller
       * `/styles/:style_id/bicycles` goes to `bicycles#index`, not to `styles#show`
     * Always check `bin/rake routes`
   * [Shallow nesting](http://guides.rubyonrails.org/routing.html#shallow-nesting)
