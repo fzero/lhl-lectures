@@ -1,106 +1,70 @@
 /* Your amazing styles here! */
 
-/*
-Precedence:
-1. inline
-2. #id
-3. .class
-4. tags
-*/
-
 body {
-  font-family: "Helvetica", "Arial", "Futura", sans-serif;
-  color: #474747;
-  /* We fixed the nav bar to the top so we need some space there.
-     Notice how we can mix units withut any issues. */
-  margin: 120px 10% 30% 10%; /* Top, Right, Bottom, Left: TRouBLe */
+  font-family: "Helvetica", sans-serif;
+  margin: 100px 12% 30% 12%;
 }
 
-/*
- * Navigation
- */
-
-nav {
-  position: fixed; /* sticks the nav bar at the top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-width: 1px 0 10px 0;
-  border-color: #474747;
-  border-style: solid;
-  background-color: white;
-  opacity: 0.9;
-  box-shadow: 3px 3px 30px 3px #666;
-}
-
-/* <ul> inside <nav> */
-nav ul {
-  list-style: none;
-  padding: 0;
+h1 {
   text-align: center;
+  border-bottom: 1px solid black;
 }
 
-/* <li> inside <ul> inside <nav> */
-nav ul li {
-  display: inline;
-  margin: auto 15px auto 15px;
-}
-
-/* <a> inside <nav> */
-nav a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #2184a5;
-}
-
-/* same as above, but with mouse hovering */
-nav a:hover {
-  color: #fff;
-  background-color: #2184a5;
-}
-
-
-/*
- * Articles
- */
-
-article {
-  margin-bottom: 50px;
-}
-
-article header h2 {
-  border-bottom: 1px solid #999999;
-}
-
-article p {
+p {
   font-family: "Georgia", serif;
 }
 
-article footer {
-  text-align: right;
-  font-size: 80%;
+nav {
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 100;
+  text-align: center;
+  padding-top: 5px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px 3px #ccc;
+  opacity: 0.95;
 }
 
+nav ul {
+  padding-left: 0;
+  list-style-type: none;
+}
 
-/*
- * The classes below aren't specific to any tag, so we can use them
- * on any element
- */
+nav li {
+  border-radius: 10px;
+  background-color: #ececec;
+  padding: 2px;
+  display: inline-block;
+  margin: 3px;
+}
+
+nav li:hover {
+  background-color: yellow;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  margin: auto 6px auto 6px;
+}
 
 .float-left {
   float: left;
-  margin-right: 15px;
-  margin-bottom: 5px;
+  margin: auto 11px 9px 0;
 }
 
 .float-right {
   float: right;
-  margin-left: 15px;
-  margin-bottom: 5px;
+  margin: auto 0 9px 11px;
 }
 
-.text-insert {
-  background-color: #ccc;
-  padding: 10px;
-  border-radius: 10px;
+.thumb {
+  width: 150px;
+}
+
+.circle {
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px 3px #ccc;
 }

@@ -1,0 +1,106 @@
+/* Your amazing styles here! */
+
+/*
+Precedence:
+1. inline
+2. #id
+3. .class
+4. tags
+*/
+
+body {
+  font-family: "Helvetica", "Arial", "Futura", sans-serif;
+  color: #474747;
+  /* We fixed the nav bar to the top so we need some space there.
+     Notice how we can mix units withut any issues. */
+  margin: 120px 10% 30% 10%; /* Top, Right, Bottom, Left: TRouBLe */
+}
+
+/*
+ * Navigation
+ */
+
+nav {
+  position: fixed; /* sticks the nav bar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-width: 1px 0 10px 0;
+  border-color: #474747;
+  border-style: solid;
+  background-color: white;
+  opacity: 0.9;
+  box-shadow: 3px 3px 30px 3px #666;
+}
+
+/* <ul> inside <nav> */
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+/* <li> inside <ul> inside <nav> */
+nav ul li {
+  display: inline;
+  margin: auto 15px auto 15px;
+}
+
+/* <a> inside <nav> */
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #2184a5;
+}
+
+/* same as above, but with mouse hovering */
+nav a:hover {
+  color: #fff;
+  background-color: #2184a5;
+}
+
+
+/*
+ * Articles
+ */
+
+article {
+  margin-bottom: 50px;
+}
+
+article header h2 {
+  border-bottom: 1px solid #999999;
+}
+
+article p {
+  font-family: "Georgia", serif;
+}
+
+article footer {
+  text-align: right;
+  font-size: 80%;
+}
+
+
+/*
+ * The classes below aren't specific to any tag, so we can use them
+ * on any element
+ */
+
+.float-left {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+
+.float-right {
+  float: right;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.text-insert {
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+}
