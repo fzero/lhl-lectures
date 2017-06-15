@@ -159,7 +159,7 @@ https://docs.mongodb.com/manual/crud/
 db.collection('my_collection').find(filters).toArray((err, results) => {...})
 ```
 
-On the other handm `findOne()` is more straightforward, since it only returns one result or `null`:
+On the other hand `findOne()` is more straightforward, since it only returns one result or `null`:
 ```
 db.collection('my_collection').findOne(filters, (err, result) => {...})
 ```
