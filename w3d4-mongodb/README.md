@@ -150,6 +150,20 @@ It is automatically added to any object we insert and we can use it to find sing
 
 We walked through the Todo Node/Express app which only has index, new/create and delete functionality. It uses Mongo as its data store and we went through the `app.js` file in detail to see how it does it.
 
+Using MongoDB from NodeJS is slightly different, due to the nature of Javascript (callbacks and whatnot). You can find basic guide to CRUD operations on Mongo on the link below:
+
+https://docs.mongodb.com/manual/crud/
+
+**NOTE:** Most `find()` examples will return an object that needs to be converted to an array first, so the prevalent pattern in that case will be:
+```
+db.collection('my_collection').find(filters).toArray((err, results) => {...})
+```
+
+On the other handm `findOne()` is more straightforward, since it only returns one result or `null`:
+```
+db.collection('my_collection').findOne(filters, (err, result) => {...})
+```
+
 ### The `dbInstance` (db connection)
 
 We see that our node app connects to a specific MongoDB database when it starts and there is a single connection passed into all the other helper functions like `insert`, `remove` and `getAll`
