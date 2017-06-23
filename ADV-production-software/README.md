@@ -16,6 +16,12 @@
   * Time and bandwidth as budget
     * Ideally, your framework shouldn't use more than 60% of your budget
     * Good resource: [Ilya Grigorik's Youtube course on web performance](https://www.youtube.com/watch?v=7gtf47D_bu0&list=PLS3jzvALRSe6uP9gVfXLCG6nWo7M0hAJY)
+    * Good people to follow on Twitter:
+      * [Ilya Grigorik (@igrigorik)](https://twitter.com/igrigorik)
+      * [Paul Lews (@aerotwist)](https://twitter.com/aerotwist)
+      * [Paul Irish (@paul_irish)](https://twitter.com/paul_irish)
+      * [Jake Archibald (@jaffathecake)](https://twitter.com/jaffathecake)
+      * [Kevin Sweeney (@restlessdesign)](https://twitter.com/restlessdesign)
 
 ## For the app owner (company, developer etc.)
 
