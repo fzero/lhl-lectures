@@ -1,36 +1,34 @@
 /*
-Given that I have some numbers
+Given that input some numbers from the command line
 I want to sum them all
 so that I can know the result
-
-Things we need to do:
-  - print messages to the screen [ok]
-  - read command-line parameters [ok]
-    - process.argv
-  - sum numbers [ok]
 */
 
-// Takes array and returns only elements that are numbers
-function getNumbers(inputArgs) {
-  var output = [];
-  for (var i = 0; i < inputArgs.length; i += 1) {
-    var converted = Number(inputArgs[i]);
-    if ( !(isNaN(converted)) ) {
-      output.push(converted);
-    }
-  }
-  return output;
+function definitelyANumber(maybeNumber) {
+  return !isNaN(maybeNumber);
 }
 
-// Returns a sum of all numbers in an array
+function getNumbers(rawNumbers) {
+  var numbers = [];
+  for (var number of rawNumbers) {
+    if (definitelyANumber(number)) {
+      numbers.push(Number(number));
+    }
+  }
+  return numbers;
+}
+
 function sumNumbers(numbers) {
   var total = 0;
-  for (var i = 0; i < numbers.length; i += 1) {
+  for (var i = 0; i < numbers.length; i++) {
     total += numbers[i];
   }
   return total;
 }
 
-var numbers = getNumbers(process.argv.slice(2));
-var result = sumNumbers(numbers);
+var args = process.argv.slice(2);
+var result = sumNumbers(getNumbers(args));
 console.log(result);
+
+// Test code
+if (sumNumbers([1, 10, 100]) === 111) console.log("It works!");

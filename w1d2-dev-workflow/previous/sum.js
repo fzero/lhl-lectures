@@ -1,36 +1,36 @@
 /*
-Write a node script that ...
+Given that I have some numbers
+I want to sum them all
+so that I can know the result
 
-1. √ Receives unlimited arguments from the command line
-2. √ If they're numbers
-3.   √ Sum them up
-4. √ Output the result to the console
+Things we need to do:
+  - print messages to the screen [ok]
+  - read command-line parameters [ok]
+    - process.argv
+  - sum numbers [ok]
 */
 
-function convert_values(values) {
-  var numbers = [];
-
-  for(var value of values) {
-    var number = Number(value)
-    if (!isNaN(number)) {
-      numbers.push(number)
+// Takes array and returns only elements that are numbers
+function getNumbers(inputArgs) {
+  var output = [];
+  for (var i = 0; i < inputArgs.length; i += 1) {
+    var converted = Number(inputArgs[i]);
+    if ( !(isNaN(converted)) ) {
+      output.push(converted);
     }
   }
-  return numbers;
+  return output;
 }
 
-
-function sum(values) {
+// Returns a sum of all numbers in an array
+function sumNumbers(numbers) {
   var total = 0;
-  var numbers = convert_values(values);
-
-  for(var number of numbers) {
-    total += number;
+  for (var i = 0; i < numbers.length; i += 1) {
+    total += numbers[i];
   }
-
   return total;
 }
 
-
-var arguments = process.argv.slice(2)
-console.log(`The sum of the numbers is ${sum(arguments)}.`)
+var numbers = getNumbers(process.argv.slice(2));
+var result = sumNumbers(numbers);
+console.log(result);
