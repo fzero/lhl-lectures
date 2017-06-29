@@ -89,6 +89,9 @@ var ws = new WebSocket(`ws://${ip}:5000`);
 
 ws.onopen = function(ev) {
   console.log("Connected to server!");
+  if (ws.readyState === ws.OPEN) {
+    ws.send(JSON.stringify({type: 'refresh', id: myself.id}));
+  }
 }
 
 // The .onmessage event is called everytime a message

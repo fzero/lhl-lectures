@@ -33,7 +33,7 @@ wss.on('connection', (client) => {
   clientConnected(client, clientId);
 
   // Handle messages
-  client.on('message', handleMessage)
+  client.on('message', handleMessage, client)
 
   // Set up a callback for when a client closes the socket. This usually means they closed their browser.
   client.on('close', () => {
@@ -112,7 +112,7 @@ function clientDisconected(clientId) {
 
 
 // Handles incoming messages
-function handleMessage(incoming) {
+function handleMessage(incoming, client) {
   // Broadcast message back no matter what
   wss.broadcast(incoming)
 
@@ -123,6 +123,20 @@ function handleMessage(incoming) {
       // Update client state based on id
       clients[message.data.id] = clients[message.data]
       break
+
+    case 'refresh':
+      const setupMsg = {
+        type: 'setup',
+        data: {
+          id: message.data.id,
+          connectedClients: clients
+        }
+      }
+      if (client.readyState === client.OPEN) {
+        client.send(JSON.stringify(setupMsg))
+      }
+      break
+
 
     default:
       console.log(`Unsupported message:`, message)
