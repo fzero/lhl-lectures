@@ -44,3 +44,7 @@ We also talked about how to use:
 * `describe` blocks to group test cases.
   * `context` does the exact same thing.
 * `before` / `before :each` blocks to write code that needs to be used to create the necessary test conditions.
+
+## FactoryGirl
+
+[FactoryGirl](http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md) is a gem that allows you to create customizable test assets with different traits. Be sure to check out [`/code/spec/factories`](code/spec/factories) to see how to define them and [`bicycle_spec.rb`](code/spec/models/bicycle_spec.rb) to see it in use.
