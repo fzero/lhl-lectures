@@ -1,22 +1,14 @@
 class Bicycle < ApplicationRecord
 
-  belongs_to :style
-  belongs_to :brand
-
-  validates :brand, presence: true
-  validates :style, presence: true
   validates :model, presence: true
-  validates :speeds, numericality: {only_integer: true, greater_than_or_equal_to: 1}
+  validates :speeds, presence: true, numericality: true
 
+  belongs_to :brand
+  belongs_to :style
 
   def description
-    "#{colour} #{formatted_speeds} #{brand.name} #{model} #{style.name}".gsub('  ', ' ')
-  end
-
-
-  def formatted_speeds
-    return '' if speeds == 1
-    "#{speeds}-speed"
+    return "#{colour} #{brand.name} #{style.name}." if style.name == 'Fixie'
+    "#{colour} #{brand.name} #{speeds}-speed #{style.name}."
   end
 
 end

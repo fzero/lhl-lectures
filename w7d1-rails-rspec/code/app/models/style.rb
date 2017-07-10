@@ -2,7 +2,6 @@ class Style < ApplicationRecord
 
   has_many :bicycles
 
-  validates :name, presence: true
 end
 
 # create_table "styles", force: :cascade do |t|
