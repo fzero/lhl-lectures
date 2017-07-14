@@ -34,11 +34,10 @@ app.get('/', (req, res) => {
 
 // Fetch from Mongo all todos
 app.get("/todos", (req, res) => {
-  db.collection("todos").find().toArray((err, results) => {
-    const templateVars = {
-      todos: results
-    };
-    res.render("todos/index", templateVars);
+  const query = req.query.query
+  const dbQuery = (query) ? {desc: {$regex: `.*${query}.*`}} : {}
+  db.collection("todos").find(dbQuery).toArray((err, results) => {
+    res.render("todos/index", {todos: results});
   });
 });
 

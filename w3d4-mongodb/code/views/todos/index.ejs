@@ -9,6 +9,12 @@
     <a href="/todos/new" class="btn btn-primary">New Todo</a>
     <hr>
 
+    <form action="/todos" method="GET">
+      <label for="query">Search:</label>
+      <input type="text" name="query" placeholder="Search for todo..." />
+      <input type="submit" value="Go!" />
+    </form>
+
     <table class="table table-bordered table-striped">
       <% for (todo of todos) { %>
         <tr>
