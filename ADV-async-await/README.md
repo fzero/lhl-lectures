@@ -33,6 +33,10 @@ router.get('/', async (req, res) => {
 })
 ```
 
+If you're a visual learner, [Bramus](ttps://www.bram.us) created this short and sweet GIF explaining the [callbacks &rarr; promises &rarr; async/await transition](https://www.bram.us/2017/05/09/javascript-from-callbacks-to-promises-to-asyncawait-in-7-seconds/):
+
+![Awesome gif!](https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif)
+
 There are some simple examples in the [`/code`](code) folder comparing the different async approaches. [This article](https://medium.com/@bluepnume/learn-about-promises-before-you-start-using-async-await-eb148164a9c8) also has a very good explanation of how promises and `async`/`await` are connected, including some pitfalls to avoid. A particularly insteresting one is the syntax for `Promise.all()`.
 
 ## A full example: [Baaaes](https://github.com/fzero/baaaes)
