@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 })
 ```
 
-If you're a visual learner, [Bramus](ttps://www.bram.us) created this short and sweet GIF explaining the [callbacks &rarr; promises &rarr; async/await transition](https://www.bram.us/2017/05/09/javascript-from-callbacks-to-promises-to-asyncawait-in-7-seconds/):
+If you're a visual learner, [Bramus](https://www.bram.us) created this short and sweet GIF explaining the [callbacks &rarr; promises &rarr; async/await transition](https://www.bram.us/2017/05/09/javascript-from-callbacks-to-promises-to-asyncawait-in-7-seconds/):
 
 ![Awesome gif!](https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif)
 
