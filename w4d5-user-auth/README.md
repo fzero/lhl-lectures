@@ -4,7 +4,7 @@ Every app that does anything interesting will definitely need some form of user 
 
 ## Cookie-based sessions (with encryption)
 
-This is by far the most common way to persist a logged-in state. The included example code (see [`/code`](code)) implements that. As a bonus, it also introduces a few concepts to better organize your code.
+This is by far the most common way to persist a logged-in state. The included example code (see [`/code/vanilla`](code/vanilla)) implements that. As a bonus, it also introduces a few concepts to better organize your code.
 
 In a nutshell, an encrypted session cookie is created when a user is logged in. If the cookie isn't present, the user must login before proceeding. This means **you need to add a check to every endpoint that requires a login** and redirect the user to the login page whenever the session cookie isn't found *or* if it doesn't match any existing users.
 
@@ -29,3 +29,11 @@ When in doubt, read the sentence above again.
 You must be able to **verify** a password, but this doesn't mean making a straight comparison. The most common practice these days is to use a [cryptographic hash function](https://en.wikipedia.org/wiki/Cryptographic_hash_function) to generate a string of pseudo-random bytes based on a password. To authenticate a user, just use the same function again and compare the resulting hash.
 
 Hashing functions can't be reversed (at least not easily). In other words, it's virtually impossible to retrieve a password from a good cryptographic hash. This means that even if a hacker gains access to your database, your customer's passwords are not in the open (but yes, it would still be a good idea to force them to reset it just in case).
+
+## Express Middlewares and passportJS
+
+There are a few different versions of the example app inside `/code`, each using a different way to handle logins and sessions:
+
+* [`/code/vanilla`](code/vanilla) has authentication code written inside the routing functions themselves. While this works, it can easliy lead to code repetition (very bad!)
+* [`/code/middleware`](code/middleware) moves session management to an [ExpressJS middleware function](http://expressjs.com/en/guide/writing-middleware.html), which keeps things neat.
+* [`/code/passport`](code/passport) uses the [PassportJS](http://passportjs.org/docs/username-password) middleware to handle session management and logins. It does pretty much the same as the plain middleware version, but it provides a standardized way to do it - and it potentially allows you to change login strategies later.
