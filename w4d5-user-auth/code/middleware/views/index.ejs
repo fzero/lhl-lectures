@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/styles/layout.css">
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+
+  <%- include partials/_flash.ejs %>
+
+  <form action="/login" method="post">
+    <h2>Sign In</h2>
+    <p>
+      <label for="login-email">Email</label>
+      <input id="login-email" name="email">
+    </p>
+    <p>
+      <label for="login-password">Password</label>
+      <input id="login-password" name="password" type="password">
+    </p>
+    <p>
+      <button>Sign In</button>
+    </p>
+  </form>
+
+  <form action="/register" method="post">
+    <h2>Register</h2>
+    <p>
+      <label for="register-email">Email</label>
+      <input id="register-email" name="email">
+    </p>
+    <p>
+      <label for="register-password">Password</label>
+      <input id="register-password" name="password" type="password">
+    </p>
+    <p>
+      <button>Register</button>
+    </p>
+  </form>
+
+</body>
+</html>
