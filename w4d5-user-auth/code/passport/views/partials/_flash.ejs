@@ -1,0 +1,10 @@
+<% if (errors.length) { %>
+  <% errors.forEach((error) => { %>
+    <p>Error: <%= error %></p>
+  <% }) %>
+<% } %>
+<% if (info.length) { %>
+  <% info.forEach((message) => { %>
+    <p>Info: <%= message %></p>
+  <% }) %>
+<% } %>
