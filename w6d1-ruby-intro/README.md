@@ -44,3 +44,53 @@ The code discussed in class an be found inside [`/code`](code). Open [`example.j
     * There's an additional type: **symbol**. They're kinda sorta like strings, but they're generally used internally to identify data in situations where the user doesn't need to see it. The most common example is keys in hashes. [This article expands a bit on these concepts.](http://rubylearning.com/satishtalim/ruby_symbols.html)
     * There are **only two falsey values**: `nil` and `false`. Everything else evaluates to `true`.
   * Defining methods, scope, and interacting with objects
+
+## A bit more about blocks
+
+Blocks are a rather unique Ruby feature, and it's hard to fine a good beginner's guide. Here's a quick summary:
+
+A block is a piece of code you can pass to a method. Inside that method, the block is represented by `yield`. Simplest possible example:
+
+```ruby
+def receives_block
+  puts "Before yield"
+  yield
+  puts "After yield"
+end
+
+receives_block do
+  puts "This is all happening inside receives_block"
+  puts "All this code is represented by the yield keyword"
+  puts "Still in there"
+  puts "And now we're out"
+end
+```
+
+output:
+```
+Before yield
+This is all happening inside receives_block
+All this code is represented by the yield keyword
+Still in there
+And now we're out
+After yield
+```
+
+`yield` can also return a value. When that happens, the return value will be put in the "chute" (the variable between vertical bars):
+```ruby
+def receives_block_with_yield
+  yield "I'm yielding this!"
+end
+
+receives_block_with_yield do |yielded|
+  puts "The block yielded: #{yielded}"
+end
+```
+
+Output:
+```
+The block yielded: I'm yielding this!
+```
+
+For a more in-depth explanation, please refer to this article:
+http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
