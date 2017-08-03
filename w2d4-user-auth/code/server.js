@@ -28,6 +28,32 @@ app.use(express.static('public'))
 // with our server. More info: https://github.com/expressjs/morgan
 app.use(morgan('dev'))
 
+// Let's create our own middleware to check for a logged in user!
+// This prevents repetition, as we won't have to check this on every route.
+function checkUser(req, res, next) {
+  // We want to leave /login and /signup available even if the user
+  // isn't logged in, for obvious reasons.
+  if (req.path === '/login' || req.path === '/signup') {
+    next() // Execute next middleware or go to routes
+    return
+  }
+
+  // Get user from cookies
+  const currentUser = req.signedCookies.current_user
+  if (currentUser) {
+    console.log('User is logged in!', currentUser)
+    req.currentUser = currentUser // We can add values to req and res in a middleware function
+    next() // ALways call next!
+  }
+  else {
+    res.redirect('/login')
+  }
+}
+
+// Now we put our middleware into use
+app.use(checkUser)
+
+
 // Let's keep all of our data in one place
 const data = {
   users: [
@@ -45,18 +71,7 @@ app.get('/cookies', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  // if user logged in show treasure,
-  // else show login
-  const current_user = req.signedCookies.current_user
-  if (current_user) {
-    // Go to database and fetch user info
-    // Set user-related variables
-    // Render page
-    res.redirect('/treasure')
-  }
-  else {
-    res.render('login')
-  }
+  res.redirect('treasure')
 });
 
 app.get('/login', (req, res) => {
@@ -109,8 +124,11 @@ app.get('/logout', (req, res) => {
 })
 
 app.get('/treasure', (req, res) => {
-  const current_user = req.signedCookies.current_user
-  res.render('treasure', {current_user})
+  res.render('treasure', {currentUser: req.currentUser})
+})
+
+app.get('/secretpage', (req, res) => {
+  res.render('secretpage')
 })
 
 

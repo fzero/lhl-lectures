@@ -10,7 +10,7 @@ That's where cookies come in!
 Cookies are stored in the client and sent back to the server with every request in a special header. They are managed by the browser and are stored per domain.
 
 ## Creating Cookies
-Cookies can be set by the server via an HTTP response, but can also be set (and read) by Javascript running in the browser using `document.cookie`.
+Cookies can be set by the server via an HTTP response, but can also be set (and read) by Javascript running in the browser using `document.cookie`. [MDN has a detailed guide on this](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) (as always!).
 
 ## Reading Cookies
 Every time an HTTP Request is made, the browser **sends the cookies along with the request**. This makes it possible for the server to read the cookies, creating an illusion of data persistence.
@@ -34,3 +34,7 @@ For part 2 of the lecture we looked at implementing the user registration and lo
 1. Get the username and password from the registration form
 2. Create a new user in the data store
 3. Either redirect the user to the login page **or** login new user automatically
+
+## Middleware
+
+You can use a custom Express middleware to check for logins in your app. This greatly reduces code repetition and it's considered a good practice. Check the example inside the [`/code`](code) folder for a practical example.
