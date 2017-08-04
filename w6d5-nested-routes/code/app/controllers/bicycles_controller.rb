@@ -1,4 +1,5 @@
 class BicyclesController < ApplicationController
+  before_action :set_style
 
   def index
     @bicycles = Bicycle.all
