@@ -27,6 +27,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'faker', require: false
+  gem 'factory_girl_rails'
 end
 
 group :test do

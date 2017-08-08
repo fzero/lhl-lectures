@@ -4,29 +4,29 @@ require 'support/database_cleaner'
 RSpec.feature "Bicycle index", type: :feature, js: true do
 
   before :each do
-    @brand = Brand.create(name: 'Brand', country: 'Canada')
-    @hildebrand = Brand.create(name: 'Hildebrand', country: 'USA')
-    @exterminator = Brand.create(name: 'Exterminator', country: 'USA')
+    @brand = FactoryGirl.create(:brand, name: 'Brand', country: 'Canada')
+    @hildebrand = FactoryGirl.create(:brand, name: 'Hildebrand', country: 'USA')
+    @exterminator = FactoryGirl.create(:brand, name: 'Exterminator', country: 'USA')
 
-    @fixie = Style.create(name: 'Fixie')
-    @hybrid = Style.create(name: 'Hybrid')
-    @bmx = Style.create(name: 'BMX')
+    @fixie = FactoryGirl.create(:style, name: 'Fixie')
+    @hybrid = FactoryGirl.create(:style, name: 'Hybrid')
+    @bmx = FactoryGirl.create(:style, name: 'BMX')
 
-    @bike1 = Bicycle.create(
+    @bike1 = FactoryGirl.create(:bicycle,
       brand: @brand,
       style: @fixie,
       speeds: 1,
       colour: 'Red',
       model: 'Moustache'
     )
-    @bike2 = Bicycle.create(
+    @bike2 = FactoryGirl.create(:bicycle,
       brand: @hildebrand,
       style: @hybrid,
       speeds: 10,
       colour: 'Black',
       model: 'Roadmeister'
     )
-    @bike3 = Bicycle.create(
+    @bike3 = FactoryGirl.create(:bicycle,
       brand: @exterminator,
       style: @bmx,
       speeds: 1,
