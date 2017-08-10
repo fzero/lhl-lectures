@@ -188,3 +188,29 @@ Browser      (Client) <> Node/Express (< Server / Client >) <> MongoDB (Server)
 Here's a simplified diagram on how a server setup with Express.js and MongoDB might look like:
 
 ![Server-side diagram](https://fzero.github.io/lhl-lectures/assets/client-server-arch-with-database.svg)
+
+## BONUS: Promises
+
+The MongoDB npm package uses promises extensively, so it's a good idea to have a basic understanding of that.
+
+TL;DR: instead of doing this...
+
+```js
+asyncCall("I'ma do some stuff that takes time!", (error, result) => {
+  if (error) {
+    console.error('Stuff exploded!')
+    return
+  }
+  console.log(`The result is: ${result}`)
+})
+```
+
+...you can do this:
+
+```js
+asyncCallWithPromises("I'ma do some stuff that takes time!")
+.then((result) => console.log(`The result is: ${result}`))
+.catch((error) => console.error('Stuff exploded!'))
+```
+
+Take a look at these [W4D4 lecture notes](../w4d4-promises-try-catch) for more details and examples.
