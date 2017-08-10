@@ -32,13 +32,14 @@ app.get('/', (req, res) => {
   res.redirect('/todos');
 });
 
-// Fetch from Mongo all todos
+// Fetch all todos from Mongo, filtering by the search field if present
 app.get("/todos", (req, res) => {
   const query = req.query.query
   const dbQuery = (query) ? {desc: {$regex: `.*${query}.*`}} : {}
-  db.collection("todos").find(dbQuery).toArray((err, results) => {
-    res.render("todos/index", {todos: results});
-  });
+  // We're using promises here
+  db.collection("todos").find(dbQuery).toArray()
+  .then( (results) => res.render("todos/index", {todos: results}) )
+  .catch( (error) => res.send(`Something exploded! Error: ${error}`) )
 });
 
 // Form to create new todo
@@ -55,7 +56,8 @@ app.post("/todos", (req, res) => {
   }; // mongo doc
   db.collection("todos").insertOne(todo, (err, result) => {
     if (err) {
-      console.log("Something exploded on POST /todos!");
+      res.send("Something exploded on POST /todos!");
+      return
     }
     res.redirect("/todos");
   });
@@ -66,10 +68,7 @@ app.get("/todos/:id/edit", (req, res) => {
   const id = req.params.id;
   let filter = { _id: Mongo.ObjectId(id) };
   db.collection("todos").findOne(filter, (err, result) => {
-    const templateVars = {
-      todo: result
-    };
-    res.render("todos/edit", templateVars);
+    res.render("todos/edit", {todo: result});
   });
 });
 
@@ -83,7 +82,8 @@ app.put("/todos/:id", (req, res) => {
   }; // mongo doc
   db.collection("todos").updateOne(filter, todo, (err, result) => {
     if (err) {
-      console.log("Something exploded on PUT /todos!");
+      res.send("Something exploded on PUT /todos!");
+      return
     }
     res.redirect("/todos");
   });
@@ -94,9 +94,10 @@ app.delete("/todos/:id", (req, res) => {
   const id = req.params.id;
   let filter = { _id: Mongo.ObjectId(id) };
   db.collection("todos").deleteOne(filter, (err, result) => {
-    // We need to handle errors better - perhaps show an
-    // error message to the user instead of halting the server?
-    if (err) throw err;
+    if (err) {
+      res.send("Something exploded on DELETE /todos!");
+      return
+    }
     res.redirect("/todos");
   });
 });
