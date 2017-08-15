@@ -20,8 +20,7 @@ It's always a good idea to keep your data-handling code separated from your app'
 
 As a practical example, which code would you rather maintain - this:
 ```js
-db.query(
-  'SELECT * FROM users WHERE email = $1;', ['email@example.com'], (err, result) => {
+db.query('SELECT * FROM users WHERE email = $1;', ['email@example.com'], (err, result) => {
   console.log(result)
 })
 ```
