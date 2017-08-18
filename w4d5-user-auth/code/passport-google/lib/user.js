@@ -106,7 +106,7 @@ module.exports = function(knex) {
   }
 
 
-  function update(id, newEmail, newPassword) {
+  function update(id, newEmail, newPassword, accessToken, refreshToken, profile) {
     // We have multiple promises running here, so we'll use a slightly
     // different tecnique with Promise.all
     let promises = []
@@ -136,6 +136,9 @@ module.exports = function(knex) {
       const updatedUser = {}
       if (email) updatedUser.email = email
       if (passwordDigest) updatedUser.password_digest = passwordDigest
+      if (accessToken) updatedUser.accessToken = accessToken
+      if (refreshToken) updatedUser.refreshToken = refreshToken
+      if (profile) updatedUser.profile = profile
 
       return knex('users')
       .update(updatedUser)
