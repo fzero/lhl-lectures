@@ -92,5 +92,9 @@ Output:
 The block yielded: I'm yielding this!
 ```
 
-For a more in-depth explanation, please refer to this article:
+Take a look at [`/code/blocks.rb`](code/blocks.rb) for more examples. For a more in-depth explanation, please refer to this article:
 http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
+
+## Classes and OOP
+
+There's a breakout this afternoon that will go more in-depth about classes, but I've included two code examples implementing classes: [`/code/contacts.rb`](code/contacts.rb) and [`/code/bicycle.rb`](code/bicycle.rb). Both pieces of code define **classes** that create **instances** with attributes and methods.
