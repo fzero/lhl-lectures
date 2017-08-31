@@ -60,3 +60,57 @@ So if I want to link (or redirect) to the products index, I can use the `product
 ```ruby
 product_url @product #=> 'http://mysite.com/products/:id'
 ```
+
+## BONUS: Metaprogramming & `method_missing` - where the magic comes from
+
+You might have noticed that Rails somehow "knows" some things exist and creates corresponding methods automatically. For example:
+
+```
+# On bin/rails console
+
+irb(main):003:0> Product
+=> Product(id: integer, name: string, description: text, image: string, price_cents: integer, quantity: integer, created_at: datetime, updated_at: datetime, category_id: integer)
+
+irb(main):005:0> Product.find_by_name("Men's Classy shirt")
+=> #<Product id: 1, name: "Men's Classy shirt", description: "Intelligentsia kinfolk pabst 3 wolf moon. Wayfarer...", image: "apparel1.jpg", price_cents: 6499, quantity: 10, created_at: "2017-08-04 13:58:38", updated_at: "2017-08-04 13:58:38", category_id: 1>
+```
+
+All `Product`s have names, so ActiveRecord automatically created a `find_by_name` method. How? Metaprogramming! All Ruby classes inherit from `BasicObject`, and that class provides a few special methods that can be overriden. The most common ones are type converters - `to_s`, `to_i` and so on. You can create your own by overriding them in your class:
+
+```ruby
+class Classy
+
+  def initialize(name)
+    @name = name
+  end
+
+  def to_s
+    "I say, #{@name.capitalize} is indubitably one classy individual."
+  end
+end
+
+fabio = Classy.new('Fabio')
+puts fabio  # calls to_s internally
+#=> I say, Fabio is indubitably one classy individual.
+```
+
+One of these special methods is `method_missing`. That method is called every time Ruby can't find a method in your class - and you can override that too!
+
+```ruby
+class SoMagic
+
+  def initialize(name)
+    @name = name
+  end
+
+  def method_missing(method_name, *args, &block)
+    "#{@name} does not know how to #{method_name}, unfortunately!"
+  end
+end
+
+leeroy_jenkins = SoMagic.new('Leeroy Jenkins')
+puts leeroy_jenkins.chill  # calls method_missing internally
+#=> Leeroy Jenkins does not know how to chill, unfortunately!
+```
+
+Note there's **no** method called `chill` in the class. [This article](https://www.leighhalliday.com/ruby-metaprogramming-method-missing) has a more in-depth explanation on how to use `method_missing` for fun and profit.
