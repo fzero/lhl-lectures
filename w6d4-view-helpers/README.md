@@ -79,7 +79,6 @@ All `Product`s have names, so ActiveRecord automatically created a `find_by_name
 
 ```ruby
 class Classy
-
   def initialize(name)
     @name = name
   end
@@ -98,7 +97,6 @@ One of these special methods is `method_missing`. That method is called every ti
 
 ```ruby
 class SoMagic
-
   def initialize(name)
     @name = name
   end
