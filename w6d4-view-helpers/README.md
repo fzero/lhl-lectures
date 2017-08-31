@@ -102,13 +102,13 @@ class SoMagic
   end
 
   def method_missing(method_name, *args, &block)
-    "#{@name} does not know how to #{method_name}, unfortunately!"
+    "#{@name} has no #{method_name}!"
   end
 end
 
 leeroy_jenkins = SoMagic.new('Leeroy Jenkins')
 puts leeroy_jenkins.chill  # calls method_missing internally
-#=> Leeroy Jenkins does not know how to chill, unfortunately!
+#=> Leeroy Jenkins has no chill!
 ```
 
-Note there's **no** method called `chill` in the class. [This article](https://www.leighhalliday.com/ruby-metaprogramming-method-missing) has a more in-depth explanation on how to use `method_missing` for fun and profit.
+Note there's **no** method called `chill` in `SoMagic`. [This article](https://www.leighhalliday.com/ruby-metaprogramming-method-missing) has a more in-depth explanation on how to use `method_missing` for fun and profit.
