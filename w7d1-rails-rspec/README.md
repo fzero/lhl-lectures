@@ -1,6 +1,6 @@
 # Testing Rails applications using RSpec
 
-We took a quick tour on using RSpec with Rails, taking tips from [this excellent article](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/).
+We took a quick tour on using RSpec with Rails, taking tips from [this excellent article](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/). Note the article is a bit old, so either follow setup instructions present on Compass or simply remove gem versions when adding them to your Gemfile (this will always pull the most recent versions).
 
 The app (more of a skeleton, really) we've worked on can be found inside [`/code`](code). Be sure to check the [`/code/spec/models`](code/spec/models) folder in particular.
 
