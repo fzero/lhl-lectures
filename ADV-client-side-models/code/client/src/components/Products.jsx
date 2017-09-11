@@ -1,8 +1,14 @@
 import React from 'react'
 import {Row, Col, PageHeader, Table} from 'react-bootstrap'
+import {Route, Switch, Link} from 'react-router-dom'
 
-import api from '../models/api'
-import Dialog from './Dialog'
+// Product details modal dialog
+import ProductDetails from './ProductDetails'
+
+// Client-side model
+import Resource from '../models/resource'
+const ProductStore = Resource('products')
+
 
 class Products extends React.Component {
   constructor(props) {
@@ -16,16 +22,10 @@ class Products extends React.Component {
   }
 
   componentWillMount() {
-    api.get('/products')
-    .then((result) => this.setState({products: result.data.data}))
+    ProductStore.findAll() // ProductStore does the API fetching!
+    .then((result) => this.setState({products: result.data, errors: null}))
     .catch((errors) => this.setState({errors: errors}))
   }
-
-  _selectProduct = (product) => {
-    this.setState({selectedProduct: product, showDetails: true})
-  }
-
-  _hideDetails = () => this.setState({showDetails: false})
 
   render() {
     return (
@@ -48,9 +48,14 @@ class Products extends React.Component {
 
             <tbody>
               {this.state.products.map((product, index) => (
-                <tr key={index} onClick={() => this._selectProduct(product)}>
+                <tr key={index}>
                   <td>{product.id}</td>
-                  <td>{product.name}</td>
+                  <td>
+                    {/* <Link> is a react-router component that works pretty much like <a href> */}
+                    <Link to={`/products/${product.id}`}>
+                      {product.name}
+                    </Link>
+                  </td>
                   <td>{product.price}</td>
                   <td>{product.quantity}</td>
                 </tr>
@@ -58,18 +63,10 @@ class Products extends React.Component {
             </tbody>
           </Table>
 
-          <Dialog
-            show={this.state.showDetails}
-            onHide={this._hideDetails}
-            title={this.state.selectedProduct.name}
-          >
-            <p>
-              You selected <strong>{this.state.selectedProduct.name}</strong>.
-            </p>
-            <p>
-              It costs <strong>${this.state.selectedProduct.price}</strong> and there are <strong>{this.state.selectedProduct.quantity}</strong> units in stock.
-            </p>
-          </Dialog>
+          {/* If the URL has an id at the end, we show the details dialog */}
+          <Switch>
+            <Route path="/products/:id" component={ProductDetails} />
+          </Switch>
 
         </Col>
       </Row>

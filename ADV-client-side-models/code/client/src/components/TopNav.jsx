@@ -13,12 +13,12 @@ const TopNav = (props) => (
     </Navbar.Header>
 
     <Nav>
-      <NavItem eventKey={1} href="/products">
-        Products
+      <NavItem eventKey={1}>
+        <Link to="/products">Products</Link>
       </NavItem>
 
-      <NavItem eventKey={2} href="/clients">
-        Clients
+      <NavItem eventKey={2}>
+        <Link to="/clients">Clients</Link>
       </NavItem>
     </Nav>
 

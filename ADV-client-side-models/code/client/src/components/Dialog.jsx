@@ -4,7 +4,8 @@ import {Modal} from 'react-bootstrap'
 const Dialog = (props) => (
   <Modal
     show={props.show}
-    onHide={props.onHide}>
+    onHide={props.onHide}
+    className='dialog-modal'>
 
     <Modal.Header closeButton>
       <Modal.Title>
