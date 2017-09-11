@@ -1,7 +1,9 @@
 import React from 'react'
 import {Row, Col, PageHeader, Table} from 'react-bootstrap'
 
-import api from '../models/api'
+// Client-side model
+import Resource from '../models/resource'
+const ClientStore = Resource('clients')
 
 class Clients extends React.Component {
   constructor(props) {
@@ -13,8 +15,8 @@ class Clients extends React.Component {
   }
 
   componentWillMount() {
-    api.get('/clients')
-    .then((result) => this.setState({clients: result.data.data}))
+    ClientStore.findAll()
+    .then((result) => this.setState({clients: result.data}))
     .catch((errors) => this.setState({errors: errors}))
   }
 
