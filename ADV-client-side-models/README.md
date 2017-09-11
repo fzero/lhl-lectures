@@ -25,7 +25,7 @@ The [project documentation](https://reacttraining.com/react-router/web/guides/qu
 
 ## Client-side models
 
-It's very common to see client-side apps written by beginners using `$.ajax()` or `fetch()` directly inside React components, but that isn't a particularly good practice. The best way to do that is to modularize your API access and create client-side models. For a practical examples with plenty of comments, take a look at [`api.js`](code/client/src/models/api.js) and [`resource.js`](code/client/src/models/resource.js) in the `/client` folder of the [example code](code).
+It's very common to see client-side apps written by beginners using `$.ajax()` or `fetch()` directly inside React components, but that isn't a particularly good practice. The best way to do that is to modularize your API access and create client-side models. For practical examples with plenty of comments, take a look at [`api.js`](code/client/src/models/api.js) and [`resource.js`](code/client/src/models/resource.js) in the `/client` folder of the [example code](code).
 
 These modules allow you to interact with your API like this...
 
@@ -38,10 +38,9 @@ ProductStore.findAll()
 ...instead of spaghettifying your app like this:
 
 ```js
-let headers = new Headers()
-let options = {
+const options = {
   method: 'GET',
-  headers: headers,
+  headers: new Headers(),
   mode: 'cors',
   cache: 'default'
 }

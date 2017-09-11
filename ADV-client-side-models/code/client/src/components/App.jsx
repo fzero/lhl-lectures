@@ -8,9 +8,9 @@ import Products from './Products'
 import Dashboard from './Dashboard'
 
 /*
-This is the main app component. Notice that we're using react-router to change
-*part* of the screen - the <TopNav> component stays put. The components that
-whos up inside <Grid> are determined by the current browser URL. See
+This is the main app component. Note that we're using react-router to change
+*part* of the screen - the <TopNav> component stays put. The component that
+ends up inside <Grid> is determined by the current browser URL. See
 https://reacttraining.com/react-router/web/example/basic for more details.
 */
 
