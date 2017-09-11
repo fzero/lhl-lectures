@@ -5,9 +5,9 @@ This file will represent each data endpoint on your api. It's designed to look a
 bit like an ActiveRecord model. If you need to add any data transformations on
 the API output before sending it to your app, this is the right place!
 
-Note we're assuming all your endpoints work the same wey (and they should, for
+Note we're assuming all your endpoints work the same way (and they should, for
 your own sanity's sake). You'll need to create different modules if you have
-endpoints behave differently.
+endpoints that behave differently.
 */
 
 const Resource = (endpoint) => {
