@@ -1,3 +1,4 @@
-# Client-side models
+# Client-side app structure: routing and models
 
-WIP
+* Quick intro (or refresher) on react-router
+* Creating efficient client-side models for RESTful APIs
