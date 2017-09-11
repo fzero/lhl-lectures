@@ -15,7 +15,7 @@ To fix these problems you need something in your app to link URLs to components,
 
 React-router is very effective, but it's also **nothing** like client-side routing. Techincally there's **no** centralized place to put your routes - you can sprinkle them all through your app! 😱
 
-This results in a lot of flexibility, but it can also become quite confusing. Be sure to check the main [`<App>`]('code/client/src/components/App.jsx') component on the [included code]('code') and also [`<Products>`](code/client/src/components/Products.jsx) to see an example of a route embedded within a component. [`<ProductDetails>`](code/client/src/components/ProductDetails.jsx) has an example of the `<Redirect>` component in action.
+This results in a lot of flexibility, but it can also become quite confusing. Be sure to check the main [`<App>`](code/client/src/components/App.jsx) component on the [included code](code) and also [`<Products>`](code/client/src/components/Products.jsx) to see an example of a route embedded within a component. [`<ProductDetails>`](code/client/src/components/ProductDetails.jsx) has an example of the `<Redirect>` component in action.
 
 The [project documentation](https://reacttraining.com/react-router/web/guides/quick-start) is very good and contains plenty of examples, but a quick summary doesn't hurt:
 
