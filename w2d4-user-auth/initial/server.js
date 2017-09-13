@@ -47,7 +47,7 @@ app.get('/cookies', (req, res) => {
 app.get('/', (req, res) => {
   // if user logged in show treasure,
   // else show login
-  const current_user = req.current_user
+  const current_user = req.cookies.current_user
   if(current_user) {
     res.redirect('/treasure')
   }
@@ -66,7 +66,7 @@ app.post('/login', (req, res) => {
   // Find user by username
   const user = data.users.find((user) => { return user.username === username })
   // check the password - naive way
-  if (password === user.password) {
+  if (user && password === user.password) {
     res.cookie('current_user', user.username)
     res.redirect('/treasure')
   }
