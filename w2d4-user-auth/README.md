@@ -21,6 +21,12 @@ The term _session_ is a catch-all for any mechanisms that keep track of user sta
 
 Using that unique key from the cookie, the server can identify a user. The _actual_ user information should stay on the server side - you should **never** store sensitive information like emails, passwords or a user's name and address in a cookie!
 
+### The `express-session` package
+
+Take a look at [`/code-sessions`](code-sessions) to see a version of the code discussed in class using `express-session`. Note that **there isn't such a thing as `res.session`**, as all session information is actually stored on the **server**, and the encrypted cookie stored in the browser is just a _reference_ to that data.
+
+In this current arrangement, all session data is gone once the server is shut down. But! The `express-session` package has a whole set of functions designed to save and retrieve functions to a file or database for further use. [Be sure to read the docs.](https://github.com/expressjs/session) 😉
+
 ## User Registration and Login
 For part 2 of the lecture we looked at implementing the user registration and login flow.
 
