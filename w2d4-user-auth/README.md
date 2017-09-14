@@ -43,4 +43,25 @@ For part 2 of the lecture we looked at implementing the user registration and lo
 
 ## Middleware
 
-You can use a custom Express middleware to check for logins in your app. This greatly reduces code repetition and it's considered a good practice. Check the example inside the [`/code`](code) folder for a practical example.
+You can use a [custom Express middleware](http://expressjs.com/en/guide/writing-middleware.html) to check for logins in your app. This greatly reduces code repetition and it's considered a good practice. Check the example inside the [`/code`](code) folder for a practical example.
+
+In a nutshell, Express middlewares are functions that take three arguments: `request`, `response` and `next`.
+
+The first two are exactly what they seem to be, and you can add/remove stuff to `request` and `response` as much as you like (they're just plain JS objects). This is how `bodyParser` and `cookieParser` add form and cookie data to `request`. 
+
+The `next` argument is a callback that makes Express move on to the next middleware or process your routes.
+
+```js
+const myMiddleware = function(req, res, next) {
+  // Here I can add stuff to req or res...
+  req.message = "I've been middleware'd!"
+  // ...display messages on the console
+  console.log('--- Just passed through myMiddleware!')
+  // ...and when I'm done I call next(). If I want to stop the process right
+  // here (to redirect, for example), I simply DON'T call next().
+  next()
+}
+
+// And here we insert our middleware into Express. Order matters!
+app.use(myMiddleware)
+```
