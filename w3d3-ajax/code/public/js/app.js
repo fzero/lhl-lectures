@@ -1,44 +1,76 @@
 // Client-side code goes here!
+
 $(function(){ // jQuery document.ready shortcut
 
-  // Makes an AJAX GET call and displays the results inside #container
-  function fetchAndDisplayApples() {
-    // NOTE: $.getJSON is the same as:
-    // $.ajax('/apples', {method: 'GET'})
-    $.getJSON('/apples')
-    .then((apples) => {
-      $('#container').empty();
-      for (let apple of apples) {
+  function loadApples() {
+    $.get('/apples') // This is the same as $.ajax('/apples', {method: 'GET'})
+    .done(function(result) {
+      $('#container').empty()
+      for (var apple of result) {
         $('#container').append(
-          `<p>${apple.type} apples are ${apple.color} and taste ${apple.taste}.</p>`
-        );
+          `<h3>${apple.type}</h3>
+          <p>
+            It's ${apple.color} and tastes ${apple.taste}
+            <a href="#" class="deleteApple" data-apple-id="${apple.id}">
+              [Delete]
+            </a>
+          </p>
+          <hr />`
+        )
       }
-    });
+      // we can only attach events when the elements are being displayed
+      attachDeleteHandlers()
+    })
+    .fail(function(error) {
+      console.error(error)
+    })
   }
 
-  // Attach fetchAndDisplayApples() to clicks on the #getApples button
-  $('#getApples').on('click', fetchAndDisplayApples);
-
-  // Intercepts #newApple form sumission
-  $('#newApple').on('submit', function(ev) {
-    ev.preventDefault(); // Prevents the default browser form submit action
-
-    // SUGGESTION: You should add a check to see if the form is empty
-    //             before posting the data.
-
-    let newApple = {
-      type: $('#type').val(),
-      color: $('#color').val(),
-      taste: $('#taste').val()
-    }
-
-    // NOTE: $.post('/apples', newApple) does the same as the $.ajax call below
-    $.ajax('/apples', {method: "post", data: newApple})
-    .then((result) => {
-      fetchAndDisplayApples()
-      // SUGGESTION: You should clear all form fields here
+  function createApple(formData) {
+    // Submit the data
+    $.post('/apples', formData)
+    .done(function(result) {
+      loadApples()
     })
-    .fail((error) => console.error(error))
-  });
+    .fail(function(error) {
+      console.error(error)
+    })
+  }
 
-});
+  function deleteApple(id) {
+    // show confirmation dialog
+    var confirm = window.confirm(`Are you sure you want to delete apple id ${id}?`)
+    // if confirmed, delete apple
+    if (confirm) {
+      $.ajax(`/apples/${id}`, {method: 'DELETE'})
+      .done(function(result) {
+        // Refresh display
+        loadApples()
+      })
+      .fail(function(error) {
+        console.error(error)
+      })
+    }
+  }
+
+  // Event handlers
+  $('#loadApples').on('click', loadApples)
+
+  $('#daForm').on('submit', function(ev) {
+    ev.preventDefault()
+    // Get data from the form
+    var formData = $('#daForm').serialize()
+    createApple(formData)
+  })
+
+  function attachDeleteHandlers() {
+    $('.deleteApple').on('click', function(ev) {
+      ev.preventDefault()
+      // Get the target element with ev.target,
+      // then get id from data-apple-id attribute
+      var appleId = $(ev.target).data('apple-id')
+      deleteApple(appleId)
+    })
+  }
+
+})

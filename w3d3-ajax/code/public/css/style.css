@@ -6,16 +6,3 @@ body {
 a {
   color: #00B7FF;
 }
-
-#container {
-  width: 100%;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid black;
-}
-
-form#newApple {
-  margin: 20px auto 20px auto;
-  padding: 10px;
-  border: 1px solid #ccc;
-}

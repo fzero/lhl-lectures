@@ -5,32 +5,34 @@
     <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
-    <h1>Apples API!</h1>
+    <h1>Apples are awesome!</h1>
+    <div>
+      <form action="#" method="POST" id="daForm">
+        <p>
+          Apple type:
+          <input type="text" name="type" id="type" placeholder="Granny smith" />
+        </p>
+        <p>
+          Apple color:
+          <input type="text" name="color" id="color" placeholder="Polka dots" />
+        </p>
+        <p>
+          Taste:
+          <input type="text" name="taste" id="taste" placeholder="Is it good?" />
+        </p>
+        <p>
+          <button type="submit" id="submit">Create!</button>
+        </p>
+      </form>
+    </div>
+
     <p>
-      There be apples here, but they're all JSON!
-      Try going to <a href="/apples"><code>/apples</code></a> to check it out.
+      <button id="loadApples">Load apples!</button>
     </p>
 
-    <form id="newApple" action="/apples" method="/post">
-      <h3>New apple!</h3>
-      <p>
-        Type:
-        <input id="type" type="text" name="type" placeholder="Apple type" />
-      </p>
-      <p>
-        Color:
-        <input id="color" type="text" name="color" placeholder="Looks like..." />
-      </p>
-      <p>
-        Taste:
-        <input id="taste" type="text" name="taste" placeholder="Tastes like..." />
-      </p>
-      <input type="submit" value="Gogogo!" />
-    </form>
-
-    <button id="getApples">Get dem apples!</button>
-
-    <div id="container"></div>
+    <div id="container">
+      <p>Here be apples!</p>
+    </div>
 
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="/js/app.js"></script>
