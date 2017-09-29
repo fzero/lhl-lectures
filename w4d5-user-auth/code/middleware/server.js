@@ -49,9 +49,9 @@ app.use(express.static('public'));
 // See http://expressjs.com/en/guide/writing-middleware.html
 function authMiddleware(req, res, next) {
   // No session? No user
-  if (!req.session.user_id) {
+  if (!req.session.user_id && req.path !== '/login') {
     req.user = null // Making sure user is reset when logged out
-    next()          // Always call next()
+    res.redirect('login')
     return
   }
   // If the user is logged in, add user object to request
@@ -74,20 +74,11 @@ app.use(authMiddleware) // Activate middleware
  */
 
 app.get('/', (req, res) => {
-  if (req.user) { // Created by our middleware!
-    res.render('app', {
-      errors: req.flash('errors'),
-      info: req.flash('info'),
-      user: req.user
-    })
-  }
-  else {
-    // If the user is not logged in, render the login/register page
-    res.render('index', {
-      errors: req.flash('errors'),
-      info: req.flash('info')
-    })
-  }
+  res.render('app', {
+    errors: req.flash('errors'),
+    info: req.flash('info'),
+    user: req.user
+  })
 })
 
 
@@ -105,6 +96,10 @@ app.post('/profile', (req, res) => {
     req.flash('errors', err.message);
     res.redirect('/');
   });
+});
+
+app.get('/login', (req, res) => {
+  res.render('login');
 });
 
 
