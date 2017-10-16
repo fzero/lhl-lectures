@@ -23,7 +23,9 @@ group :test do
 end
 ```
 
-Configure `shoulda-matchers`. Add this at the end of  `/spec/rails_helper.rb`:
+You should run `bundle install` at this point!
+
+Now we'll configure `shoulda-matchers`. Add this at the end of  `/spec/rails_helper.rb`:
 
 ```ruby
 require 'shoulda/matchers'
