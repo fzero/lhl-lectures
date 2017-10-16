@@ -1,8 +1,71 @@
 # Testing Rails applications using RSpec
 
-We took a quick tour on using RSpec with Rails, taking tips from [this excellent article](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/). Note the article is a bit old, so either follow setup instructions present on Compass or simply remove gem versions when adding them to your Gemfile (this will always pull the most recent versions).
+We took a quick tour on using RSpec with Rails, taking tips from [this excellent article](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/). Sadly the article is a bit old, so here's a quick summary of what you need to do:
 
-The app (more of a skeleton, really) we've worked on can be found inside [`/code`](code). Be sure to check the [`/code/spec/models`](code/spec/models) folder in particular.
+Add `rspec-rails` gem to `:test` and `:development` groups on your `Gemfile`:
+
+```ruby
+group :development, :test do
+  # ...more stuff here
+  gem 'rspec-rails'
+end
+```
+
+Add `factory_girl_rails`, `faker`, `shoulda-matchers` and `database_cleaner` to the `:test` group:
+
+```ruby
+group :test do
+  # ...more stuff here
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'faker'
+end
+```
+
+Configure `shoulda-matchers`. Add this at the end of  `/spec/rails_helper.rb`:
+
+```ruby
+require 'shoulda/matchers'
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+```
+
+Configure `factory_girl_rails` and `database_cleaner`. Make sure the top of your `/spec/spec_helper.rb` file includes the following lines:
+
+```ruby
+require 'database_cleaner'
+require 'factory_girl'
+
+RSpec.configure do |config|
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+
+  config.include FactoryGirl::Syntax::Methods
+
+  # ... lots of stuff here
+end
+```
+
+These steps are necessary because RSpec is **not** a default Rails component, even though it's the most popular testing solution for Rails (more on this below).
+
+## Code discussed in class
+
+The app we've used in class (more of a skeleton, really) can be found inside the [`/code`](code) folder. Be sure to check [`/code/spec/models`](code/spec/models) in particular.
 
 ## Test steps
 In general a test case will have the following steps:
