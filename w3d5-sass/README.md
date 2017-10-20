@@ -90,6 +90,8 @@ The links below contain good tutorials on responsive design concepts, but if you
 * [Common patterns for flexible layouts (Google Dev Pages)](https://developers.google.com/web/fundamentals/design-and-ui/responsive/patterns)
 * [Using FlexBox for complex designs (CSS Tricks)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
+It's a good idea to familiarize yourself with the [different units of measure you can use in CSS](https://www.tutorialspoint.com/css/css_measurement_units.htm) too.
+
 ### Grid systems
 
 Responsive designs are usually created using grid systems, which place all  elements into columns and rows that can be stacked depending on the size of the display. [Bootstrap](http://getbootstrap.com/), [Materialize](http://materializecss.com/) and other frameworks come with a grid system built-in, but you can also use generators like [this one](http://www.responsivegridsystem.com) to create only the bare mininum code. This keeps things lean and unopinionated for you to show off your amazing design chops.
