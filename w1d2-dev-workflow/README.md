@@ -2,7 +2,7 @@
 
 Today we've discussed how to break a problem into its constituent parts and use the tools at our disposal to solve it.
 
-This involved using the Node repl, using `console.log` statements, googling a lot and using [`node debug`](https://nodejs.org/api/debugger.html) to run our small application step by step.
+This involved using the Node repl, using `console.log` statements, googling a lot and using [`node inspect`](https://nodejs.org/api/debugger.html) to run our small application step by step.
 
 ## Googling protips
 
