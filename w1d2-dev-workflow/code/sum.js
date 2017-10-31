@@ -1,34 +1,28 @@
 /*
-Given that input some numbers from the command line
-I want to sum them all
-so that I can know the result
+Given that I have some numbers √
+I want to sum them all √
+so that I can know the result √
 */
 
-function definitelyANumber(maybeNumber) {
-  return !isNaN(maybeNumber);
-}
-
-function getNumbers(rawNumbers) {
-  var numbers = [];
-  for (var number of rawNumbers) {
-    if (definitelyANumber(number)) {
-      numbers.push(Number(number));
+function cleanNumbers(dirtyNumbers) {
+  var result = [];
+  for (var dirtyNumber of dirtyNumbers) {
+    var cleanNumber = Number(dirtyNumber)
+    if (!isNaN(cleanNumber)) {
+      result.push(cleanNumber);
     }
   }
-  return numbers;
+  return result;
 }
 
-function sumNumbers(numbers) {
+function sumNumbers(cleanNumbers) {
   var total = 0;
-  for (var i = 0; i < numbers.length; i++) {
-    total += numbers[i];
+  for (var i = 0; i < cleanNumbers.length; i += 1) {
+    total += cleanNumbers[i];
   }
   return total;
 }
 
-var args = process.argv.slice(2);
-var result = sumNumbers(getNumbers(args));
-console.log(result);
-
-// Test code
-if (sumNumbers([1, 10, 100]) === 111) console.log("It works!");
+var numbers = cleanNumbers(process.argv.slice(2));
+var total = sumNumbers(numbers);
+console.log('The result is', total);
