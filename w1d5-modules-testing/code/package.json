@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "npx mocha"
   },
   "author": "Fabio Neves",
   "license": "ISC",
   "devDependencies": {
+    "assert": "^1.4.1",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.5.3"
   },
   "dependencies": {
     "request": "^2.79.0"

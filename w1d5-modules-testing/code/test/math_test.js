@@ -80,4 +80,14 @@ describe('Testing the math module', function() {
     });
   })
 
+  describe('sum()', function() {
+    it('should return 50 when given [20, 20, 10]', function() {
+      expect(math.sum([20, 20, 10])).to.equal(50);
+    });
+
+    it('should return 50 when given [20, 20, 10, "batman"]', function() {
+      expect(math.sum([20, 20, 10, "batman"])).to.equal(50);
+    });
+  });
+
 });
