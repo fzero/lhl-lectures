@@ -19,6 +19,8 @@ Node.js comes with a package manager / task runner called [npm](https://www.npmj
 * `npm install -g <package>`
     * Installs a package globally and makes command-line utilities available.
     * Example: `npm install -g express-generator` and then you can use the `express` command from the terminal to start new [Express.js](http://expressjs.com) projects.
+    * **NOTE:** If you want to run a command-line tool from a package installed inside `node_modules` with `--save`/`--save-dev`, use `npx <your command here>`
+      - Example: `npm install --save-dev mocha`, then `npx mocha`
 * `npm install` in a folder with a `package.json` file
    * Installs all project dependencies. Node 8+ will also create a `package-lock.json` file containing a list of dependencies and versions.
 
