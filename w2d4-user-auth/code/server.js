@@ -33,7 +33,7 @@ app.use(morgan('dev'))
 function checkUser(req, res, next) {
   // We want to leave /login and /signup available even if the user
   // isn't logged in, for obvious reasons.
-  if (req.path === '/login' || req.path === '/signup') {
+  if (req.path.match(/login|signup/)) {
     next() // Execute next middleware or go to routes
     return
   }
@@ -42,8 +42,9 @@ function checkUser(req, res, next) {
   const currentUser = req.signedCookies.current_user
   if (currentUser) {
     console.log('User is logged in!', currentUser)
-    req.currentUser = currentUser // We can add values to req and res in a middleware function
-    next() // ALways call next!
+    // We can add values to req and res in a middleware function
+    req.currentUser = currentUser
+    next() // ALways call next to proceed
   }
   else {
     res.redirect('/login')
@@ -56,9 +57,8 @@ app.use(checkUser)
 
 // Let's keep all of our data in one place
 const data = {
-  users: [
-    {username: 'fabio', password: 'secret!'}
-  ]
+  // users: [{username: 'fabio', password: 'HASHED PASSWORD'}]
+  users: []
 }
 
 
@@ -82,7 +82,7 @@ app.post('/login', (req, res) => {
   const username = req.body.username
   const password = req.body.password
   // Find user by username
-  const user = data.users.find((user) => { return user.username === username })
+  const user = data.users.find((user) => user.username === username)
   if (!user) {
     res.redirect('/login')
     return
@@ -113,7 +113,7 @@ app.post('/signup', (req, res) => {
     // add user to database
     data.users.push({username: req.body.username, password: hash})
     console.log('All users are: ', data.users)
-    res.redirect('/')
+    res.redirect('/login')
   })
   // don't put code here
 })
