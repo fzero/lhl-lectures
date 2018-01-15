@@ -47,7 +47,7 @@ The code discussed in class an be found inside [`/code`](code). Open [`example.j
 
 ## A bit more about blocks
 
-Blocks are a rather unique Ruby feature, and it's hard to fine a good beginner's guide. Here's a quick summary:
+Blocks are a rather unique Ruby feature, and it's hard to find a good beginner's guide. Here's a quick summary:
 
 A block is a piece of code you can pass to a method. Inside that method, the block is represented by `yield`. Simplest possible example:
 

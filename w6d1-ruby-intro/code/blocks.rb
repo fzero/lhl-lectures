@@ -25,8 +25,8 @@ def yields_value
   puts "After yield"
 end
 
-yields_value do |yodeled|
-  puts "I got #{yodeled}!"
+yields_value do |yielded|
+  puts "I got #{yielded}!"
 end
 
 def yields_double(array)
