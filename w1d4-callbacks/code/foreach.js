@@ -33,3 +33,20 @@ forEach(numbers, function(n) {
   }
   console.log(dashes);
 });
+
+
+// Now some functions to use as callbacks
+
+// Prints the type of the item
+function getType(item) {
+  console.log(item + ' is a ' + typeof(item));
+}
+
+forEach(numbers, getType);
+
+// Multiplies the item by 2
+function multiplyBy2(item) {
+  console.log(item * 2);
+}
+
+forEach(numbers, multiplyBy2);

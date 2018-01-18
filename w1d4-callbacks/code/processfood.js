@@ -1,5 +1,9 @@
 // First our high-order function
 function processFood(foodItem, callback) {
+  if (typeof(callback) !== 'function') {
+    console.log("Whirrrrrrrrrrr...");
+    return;
+  }
   callback(foodItem);
 }
 
@@ -17,6 +21,8 @@ function blend(foodItem) {
 }
 
 // And now we use it
+processFood("apple");
+processFood("apple", "banana");
 processFood("carrot", grate);
 processFood("carrot", slice);
 processFood("kale", blend);

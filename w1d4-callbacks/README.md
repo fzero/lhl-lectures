@@ -94,6 +94,10 @@ The food processor doesn't do anything by itself, but once you insert one of the
 ```js
 // First our high-order function
 function processFood(foodItem, action) {
+  if (typeof(action) !== 'function') { // Nothing to do if action isn't a function!
+    console.log("Whirrrrrrrrrrr...");
+    return;
+  }
   action(foodItem);
 }
 
@@ -113,6 +117,9 @@ function blend(foodItem) {
 // And now we use it
 processFood("carrot", grate);
 // "Your carrot is now grated!"
+
+processFood("carrot"); // No action! Just noise.
+// "Whirrrrrrrrrrr..."
 ```
 
 Notice that `processFood()` won't even work if you don't pass in an action.
@@ -124,6 +131,8 @@ You'll find that most JS documentation refers to function arguments as _callback
 There are several operations that can take time to be completed - especially ones related to network connections. The people who designed Javascript opted to keep the language fast by making most operations that take time  _asynchronous_, meaning that the main program _won't wait for them to be completed_.
 
 In those situations, we use functions that receive a function to be _called back_ with the results once the operation is done - hence the name. We'll discuss asynchronous callbacks in depth in the coming weeks, so don't worry too much about it right now.
+
+There's a quick example that pulls some pages from the web inside [`/request-example`](request-example). We'll explore the `request` package and other similar code extensively on week 2, so don't worry too much about the details right now. Just notice how we **must** pass a function to `request.get()` to receive results.
 
 ## Example code!
 
