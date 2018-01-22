@@ -42,7 +42,7 @@ Configure `factory_girl_rails` and `database_cleaner`. Make sure the top of your
 
 ```ruby
 require 'database_cleaner'
-require 'factory_girl'
+require 'factory_girl_rails'
 
 RSpec.configure do |config|
 
