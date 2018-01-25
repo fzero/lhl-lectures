@@ -47,7 +47,7 @@ You can use a [custom Express middleware](http://expressjs.com/en/guide/writing-
 
 In a nutshell, Express middlewares are functions that take three arguments: `request`, `response` and `next`.
 
-The first two are exactly what they seem to be, and you can add/remove stuff to `request` and `response` as much as you like (they're just plain JS objects). This is how `bodyParser` and `cookieParser` add form and cookie data to `request`. 
+The first two are exactly what they seem to be, and you can add/remove stuff to `request` and `response` as much as you like (they're just plain JS objects). This is how `bodyParser` and `cookieParser` add form and cookie data to `request`.
 
 The `next` argument is a callback that makes Express move on to the next middleware or process your routes.
 
@@ -65,3 +65,11 @@ const myMiddleware = function(req, res, next) {
 // And here we insert our middleware into Express. Order matters!
 app.use(myMiddleware)
 ```
+
+## Code
+
+There are a few different versions of the code for you to check:
+
+* [`/code-nobcrypt`](code-nobcrypt) contains a version using middlewares and simple value comparison to check logins (no password encryption)
+* [`/code`](code) is the same as above, but using `bcrypt` to encrypt passwords (good practice!)
+* [`/code-sessions`](code-sessions) uses the `express-session` package instead of `cookieParser`, which adds **actual** encryption to cookies, plus a few other cool things.
