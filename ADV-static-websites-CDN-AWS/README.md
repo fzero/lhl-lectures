@@ -37,5 +37,6 @@ AWS has so many services that it's easier if you [go and take a look yourself](h
 
 ## Resources
 
-* [How to reploy a React app to S3 and Cloudfront](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af)
-* [Build a blog with Jekyll and Github pages](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
+* [How to deploy a React app to S3 and Cloudfront](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af)
+* [Github Pages How-to](https://pages.github.com/)
+* [Using a custom domain with Github Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/)
