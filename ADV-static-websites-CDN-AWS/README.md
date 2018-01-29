@@ -17,6 +17,13 @@ The most popular generators are Ruby-based, but there are popular options in wri
 
 Usually you don't really need to do much programming besides HTML, CSS and maybe some client-side JS to create a static blog. Middleman is slightly more geared towards creating web app UIs. It integrates Webpack in the mix, so it's relatively easy to use it to create marketing pages while the app itself is in React, for example.
 
+Independently of which generator you choose, the main ideas and processes are always the same:
+
+* There's a **source** directory where your content (usually in Markdown) goes. In Jekyll, this is the root directory plus `/_posts` for blog posts. This changes between the different tools.
+  * You can also add plain HTML files, images and so on - they'll just get copied over to the destination.
+* There's usually a **watch** or **serve** command which will rebuild your content on the fly as you edit it (`bundle exec jekyll serve` for example).
+* Finally, there's a **build** command, which reads the content and creates a directory with plain HTML/JS/CSS to be uploaded directly to a static server. In Jekyll this is `/_site`.
+
 ## Static content hosting - Content Distribution Networks (CDN)
 
 Ideally the server responsible for static assets shouldn't be the same where you get the data from. This leaves the application server free to take care only of data-related requests. Your Javascript code, CSS and images won't change after they reach the browser anyway, so why use Express to do that when you can use a specialized tool for that?
