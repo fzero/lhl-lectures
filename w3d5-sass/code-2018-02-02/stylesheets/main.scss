@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'nav';
+
+body {
+  background-color: $background;
+  font-family: $font-family;
+  color: $text-color;
+  margin: 5% 10% 30% 10%; //TRouBLe
+  @media (max-width: 800px) {
+    margin: 5% 3% 15% 3%;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-family: $title-font-family;
+}
+
+main {
+  margin-left: 15%;
+  margin-right: 15%;
+  @media (max-width: 800px) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  article {
+    margin-bottom: 70px;
+
+    aside {
+      margin: 15px;
+      background-color: $aside-background;
+      padding: 10px;
+      font-size: 80%;
+      width: 40%;
+      float: right;
+      border: 1px solid #999999;
+    }
+    @media (max-width: 800px) {
+      aside {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}
