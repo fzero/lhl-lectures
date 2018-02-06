@@ -31,7 +31,7 @@ User.findByEmail('email@example.com', (err, result) => {
 })
 ```
 
-You can (and should!) add more functions to the `User` module as you go, which has the added benefit of allowing you to tweak the database access code separately from the rest of your app.
+You can (and should!) add more functions to the `User` module as you go, which has the added benefit of allowing you to tweak the database access code separately from the rest of your app. See the example inside [`/modules`](modules/) for more information.
 
 This pattern is so common that you can find multiple libraries that implement it in different languages. It is sometimes referred to as [Object-Relational Mapping (ORM)](https://en.wikipedia.org/wiki/Object-relational_mapping), where every class/module refers to a different table on the database. The most popular ORM for Node is [SequelizeJS](http://docs.sequelizejs.com/).
 
