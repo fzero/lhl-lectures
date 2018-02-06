@@ -24,7 +24,12 @@ module.exports = function(client) {
   }
 
   // The return value of the function becomes the return value of the module.
-  // We're using object shorthand here; you can do this whenenevr
+  // The returned functions will remember the value of `client` that was
+  // received at the top! This is called a closure.
+  // More info about closures here:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+  //
+  // Also: we're using object shorthand here; you can do this whenenever
   // the keys and values have the same name. This is the same as:
   //
   // return {
