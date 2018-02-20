@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css");
+
+body {
+  background: white;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 70px 0;
+}
+
+.chatbar {
+  background: tomato;
+  border-top: 1px solid black;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  padding: 5px;
+  position: fixed;
+  right: 0;
+}
+
+.chatbar-message,
+.chatbar-username {
+  border: 1px solid black;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px;
+  padding: 0 9px;
+}
+
+.chatbar-message {
+  flex: 8;
+}
+
+.chatbar-username {
+  flex: 2;
+}
+
+.message {
+  display: flex;
+  padding: 5px;
+}
+
+.message.system {
+  font-style: italic;
+  padding: 5px 20px;
+}
+
+.message-content,
+.message-username {
+  overflow: hidden;
+  margin: 5px;
+  padding: 0 10px;
+}
+
+.message-content {
+  flex: 8;
+}
+
+.message-username {
+  flex: 2;
+  font-weight: 700;
+}
+
+.navbar {
+  background: tomato;
+  border-bottom: 1px solid black;
+  height: 60px;
+  left: 0;
+  padding: 0 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.navbar-brand {
+  color: inherit;
+  display: block;
+  float: left;
+  font-weight: 700;
+  font-size: 28px;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+  text-decoration: none;
+}

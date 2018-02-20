@@ -21,6 +21,17 @@ npm start
 
 It's also strongly recommeneded that you install the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) chrome extension.
 
+### Pro-tip!
+
+Running `yarn start` on `create-react-app` will open a new browser window by default, which I find extremely annoying. To fix that, edit the `start` script on your `package.json` to look like this:
+
+```js
+"scripts": {
+  "start": "BROWSER=none react-scripts start",
+  // ...
+}
+```
+
 ## The main idea
 
 I'm unashamedly borrowing the excellent [slides](react.pdf) and [code](code) made by LHL Vancouver instructor [Karl Jensen](https://github.com/jensen/react-notes) to illustrate this section, but here's a quick breakdown:
@@ -49,3 +60,5 @@ There are a couple of predefined functions/methods that are called at different 
 * [10 React mini-patterns](https://hackernoon.com/10-react-mini-patterns-c1da92f068c5) is an excellent article for people just getting started with React.
 * [The official React documentation](https://facebook.github.io/react/docs/hello-world.html) is slightly confusing (especially when switching from functional to class-based style), but it's a handy reference nevertheless. You might be better off following...
 * ...[the official React turotial](https://facebook.github.io/react/tutorial/tutorial.html) instead.
+
+Also, we've worked a bit on transforming Chatty from [plain HTML](chatty-example/chatty-mockup.html) into a React app. [The work is by no means complete](chatty-example) (because **you** should do it!), but it should help you get going.
