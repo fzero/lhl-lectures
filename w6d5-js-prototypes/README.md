@@ -187,3 +187,7 @@ apple.description
 ```
 
 In reality, JS classes are simply _syntatic sugar_ for prototypes - in other words, prorotypes are **always** used internally to implement OOP features. You don't need to worry about this 99% of the time, but it doesn't hurt to be aware of it.
+
+## Code
+
+You can find a simple OOP code example inside [`/code`](code) showing off simple concepts like inheritance, getters and setters.
