@@ -4,7 +4,7 @@
 
 Today we discussed how we can use AJAX to fetch data from the server _asynchronously_ in the browser. This technology allows us to sync and change the state of our app **without refreshing the page**.
 
-The technology was originally create by Microsoft (yup). It is actually called `XMLHttpRequest` but it's an awful name so everyone calls it AJAX instead. [Check out Wikipedia if you don't believe me!](https://en.wikipedia.org/wiki/Ajax_(programming))
+The technology was originally created by Microsoft (yup). It is actually called `XMLHttpRequest` but it's an awful name so everyone calls it AJAX instead. [Check out Wikipedia if you don't believe me!](https://en.wikipedia.org/wiki/Ajax_(programming))
 
 XHR calls aren't very straightforward to make...
 ```js
@@ -45,20 +45,26 @@ Also you can use the `jQuery.get()`, `jQuery.getJSON()`, `jQuery.post()` calls, 
 
 ## What about `fetch()`?
 
-Newer versions of Javascript implement a new native way of making AJAX requests that's heavily influenced by jQuery. Here's what it looks like:
+Newer versions of Javascript implement a native way of making AJAX requests that's heavily influenced by jQuery. Here's what it looks like:
 
 ```js
 // url (required), options (optional)
 fetch('https://myjsonapi.com/some/url', {method: 'get'})
-.then(function(response) {
+.then((response) => {
   // Everything went right!
+  // NOTE: if your response is JSON there's an extra step:
+  return response.json()
+})
+.then((data) => {
+  // Deal with parsed JSON data here
+  console.log('Parsed JSON:', data)
 })
 .catch(function(err) {
-	// Error :(
-});
+  // Error :(
+})
 ```
 
-[Not all browser support `fetch()` at this moment](http://caniuse.com/#search=fetch), so for now we're stuck using jQuery or a [`fetch()` polyfill](https://github.com/github/fetch). See [this article](https://davidwalsh.name/fetch) for more details.
+[Most browsers support `fetch()` at this moment](http://caniuse.com/#search=fetch), but you'll need to use jQuery or a [`fetch()` polyfill](https://github.com/github/fetch) if you want to support IE. See [this article](https://davidwalsh.name/fetch) for more details.
 
 ## Bonus: JSONPlaceholder
 
