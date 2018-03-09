@@ -1,0 +1,111 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+const app = require('../app')
+const http = require('http')
+const https = require('https')
+const fs = require('fs')
+
+// Read SSL keys
+let HTTPSEnabled = false
+let credentials = {}
+
+try {
+  credentials = {
+    key: fs.readFileSync('certs/key.pem', 'utf8'),
+    cert: fs.readFileSync('certs/cert.pem', 'utf8')
+  }
+  HTTPSEnabled = true
+}
+catch(e) {
+  console.warn("certs/key.pem or certs/cert.pem not found, HTTPS disabled.")
+}
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+const HTTPPort = normalizePort(process.env.HTTP_PORT || '8080')
+const HTTPSPort = normalizePort(process.env.HTTPS_PORT || '8443')
+
+/**
+ * Create HTTP server and listen.
+ */
+
+const HTTPserver = http.createServer(app)
+HTTPserver.listen(HTTPPort)
+HTTPserver.on('error', onError)
+HTTPserver.on('listening', makeOnListen(HTTPserver))
+
+/**
+ * Same on HTTPS.
+ */
+
+if (HTTPSEnabled) {
+  const HTTPSserver = https.createServer(credentials, app)
+  HTTPSserver.listen(HTTPSPort)
+  HTTPSserver.on('error', onError)
+  HTTPSserver.on('listening', makeOnListen(HTTPSserver))
+  console.log(`HTTPS enabled on port ${HTTPSPort}!`)
+}
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10)
+
+  if (isNaN(port)) {
+    // named pipe
+    return val
+  }
+
+  if (port >= 0) {
+    // port number
+    return port
+  }
+
+  return false
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error
+  }
+
+  var bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges`)
+      process.exit(1)
+      break
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use`)
+      process.exit(1)
+      break
+    default:
+      throw error
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function makeOnListen(server) {
+  return () => {
+    var addr = server.address()
+    var bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`
+    console.log(`Listening on ${bind}`)
+  }
+}

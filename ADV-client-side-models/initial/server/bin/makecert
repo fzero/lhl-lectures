@@ -1,0 +1,26 @@
+#!/bin/bash
+cat << EOF
+
+This generates a self-signed HTTPS certificate for development.
+Press ctlr+c now to cancel.
+
+EOF
+
+read
+
+openssl genrsa -out certs/key.pem
+
+openssl req \
+-new \
+-subj "/C=CA/ST=Stateless/L=Townsville/O=Disorganization/CN=localhost.local" \
+-key certs/key.pem \
+-out certs/csr.pem
+
+openssl x509 \
+-req \
+-days 9999 \
+-in certs/csr.pem \
+-signkey certs/key.pem \
+-out certs/cert.pem
+
+rm certs/csr.pem
