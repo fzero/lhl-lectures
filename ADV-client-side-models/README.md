@@ -50,3 +50,12 @@ fetch('http://localhost:8080/products', options)
 .then((parsed) => this.setState({products: parsed.data.data, errors: null}))
 .catch((errors) => this.setState({errors: errors}))
 ```
+
+## About the code
+
+To demonstrate the complete separation between client and server, we actually have **two** servers that can be used with the client-side app without any changes!
+
+* [The first is coded in JS](code/js-server) and is based on an express boilerplate called [BAAAAES](https://github.com/fzero/baaaes). Start it with `npm start` as usual. **NOTE:** this server is currently configure to use Postgres, so read the code and configure it properly!
+* [The second is a Rails server](code/rails-server) created with `rails new --api`. You should start it with `bin/rails s -p 8080` so the client application can find it. It uses sqlite3, so you should be ready to go no matter what. Don't forget to run `bundle install && bin/rake db:setup` before spinning the server.
+
+Both servers implement the same routes and are configured with [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) support.
