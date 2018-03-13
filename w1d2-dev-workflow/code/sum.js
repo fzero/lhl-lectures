@@ -1,28 +1,35 @@
 /*
-Given that I have some numbers √
-I want to sum them all √
-so that I can know the result √
+Given that I have some numbers
+I want to sum them all
+so that I can know the result
 */
 
-function cleanNumbers(dirtyNumbers) {
-  var result = [];
-  for (var dirtyNumber of dirtyNumbers) {
-    var cleanNumber = Number(dirtyNumber)
-    if (!isNaN(cleanNumber)) {
-      result.push(cleanNumber);
-    }
-  }
-  return result;
-}
-
-function sumNumbers(cleanNumbers) {
+function sum(numbers) {
   var total = 0;
-  for (var i = 0; i < cleanNumbers.length; i += 1) {
-    total += cleanNumbers[i];
+
+  for (var i = 0; i < numbers.length; i += 1) {
+    var number = Number(numbers[i]);
+    if (isNaN(number)) {
+      continue;
+    }
+    total += Number(numbers[i]);
   }
   return total;
 }
 
-var numbers = cleanNumbers(process.argv.slice(2));
-var total = sumNumbers(numbers);
-console.log('The result is', total);
+function getNumbers() {
+  return process.argv.slice(2);
+}
+
+var numbers = getNumbers();
+var total = sum(numbers);
+console.log('The total is', total);
+
+// Automated testing!
+
+if (sum([10, 5, 2 ,3]) === 20) {
+  console.log("The function works!");
+}
+else {
+  console.log("You have a bug or you broke math.");
+}

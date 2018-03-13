@@ -5,9 +5,6 @@ that takes words
 and inserts them in the sentence
 so I can have a laugh
 
-Sentence:
-I brought my ___ to the ___ so that I could get ___.
-
 Tasks:
 - Figure out how to read arguments from the command line
 - How to put words in the sentence?
@@ -15,28 +12,37 @@ Tasks:
   - add the words
 */
 
-function buildMadlib(madlib, words) {
-  // Whenever I have a madlib, the length of the splitted madlib
-  // will be the number of blank spaces + 1.
-  // How do we know this? We've tried it on the REPL!
-  var splittedMadlib = madlib.split('___');
 
-  var sentence = '';
-  for (var c = 0; c < words.length; c++) {
-    // console.log("Part of sentence: " + splittedMadlib[c]);
-    // console.log("Word: " + words[c]);
-    sentence += splittedMadlib[c];
-    sentence += words[c];
+function madlib(sentence, words) {
+  var assembled = '';
+  // split sentence at blanks
+  var parts = sentence.split('___');
+  // add words to each corresponding blank in order
+  for (var i = 0; i < words.length; i += 1) {
+    assembled += parts[i] + words[i];
   }
-  // Then we need to get the last part of the sentence.
-  // To get the last element of an array, use array.length - 1
-  sentence += splittedMadlib[splittedMadlib.length - 1];
-
-  return sentence;
+  assembled += parts[parts.length - 1];
+  // return assembled sentence
+  return assembled;
 }
 
 
-// This is where the code actually starts running
-var madlib = "I brought my ___ to the ___ so that I could get ___.";
-var words = process.argv.slice(2);
-console.log(buildMadlib(madlib, words));
+// Here be tests!
+
+var sentence = "I went to the ___ to get some ___ but then I met ___ and ___ happened.";
+var words = ['mall', 'liquor', 'Nicole', 'catastrophe'];
+console.log('Assembled:', madlib(sentence, words));
+
+if (madlib(sentence, words) === "I went to the mall to get some liquor but then I met Nicole and catastrophe happened.") {
+  console.log("It works!");
+}
+else {
+  console.log('You done goofed!');
+}
+
+// Now we use the command line arguments
+// node madlibs.js "I went to the ___ to get ___ for a ___." desert sand castle
+
+var sentenceFromCommandLine = process.argv[2]; // Remember to use quotes!
+var wordsFromCommandLine = process.argv.slice(3);
+console.log('Your sentence:', madlib(sentenceFromCommandLine, wordsFromCommandLine));
