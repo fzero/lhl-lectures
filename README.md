@@ -4,3 +4,5 @@ Assets for lecture READMEs
 
 Also a demo of gh-pages!
 
+UPDATED!
+
