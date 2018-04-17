@@ -1,0 +1,9 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 5%;
+}
+
+h1.main-header {
+  color: #666666;
+  border-bottom: 1px solid #666666;
+}

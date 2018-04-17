@@ -1,0 +1,13 @@
+.kitten {
+  padding: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.add-a-kitten {
+  padding: 15px;
+  box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.2);
+}
+
+.add-a-kitten input {
+  margin-left: 10px;
+}

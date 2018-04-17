@@ -1,8 +1,8 @@
 # A proper React intro
 
-React is a client-side **framework** to build interactive user interfaces easily. Due to some stubborness from the Facebook engineering team, React was always sold as "just a library", but to properly use it you need much more that just a `<script>` tag on your HTML.
+React is a client-side *framework* to build interactive user interfaces easily. Due to some stubborness from the Facebook engineering team, React was always sold as "just a library", but to properly use it you need much more that just a `<script>` tag on your HTML.
 
-In yesterday's tooling video you were introduced to Webpack, Babel and a primitive React example. Today we'll explore how to build a slightly more complex example app and understand how data and actions flow in a React application.
+In yesterday's class you were introduced to Webpack, Babel and a primitive React example. Today we'll explore how to build a slightly more complex example app and understand how data and actions flow in a React application.
 
 ## First things first: the easy way to get things going
 
@@ -42,7 +42,9 @@ Components can render HTML and handle user actions. They can also be nested just
 
 Each component can receive some data in the form of **properties** (or **props**), which look pretty much like HTML attributes. Once props are received, they cannot be changed. Think of them as function arguments.
 
-Components can also have an internal **state**, which reflects how a certain component looks like at a given time. Every time the state changes, the component is re-rendered.
+Components can also have an internal **state**, which reflects how a certain component looks like at a given time. Every time the state changes, the component is re-rendered. 
+
+Components can also be **stateless** - i.e. they can take props, but don't have internal state. Usually these components are written as plain ES6 functions returning JSX. [You can find a good example of that in the kittens app.](kittens/src/Survey.jsx)
 
 The state should **not** be treated as a regular variable. While you can _read_ from it regularly, you must update it with `setState()` so that the component can be re-rendered properly.
 
@@ -55,6 +57,8 @@ There are a couple of predefined functions/methods that are called at different 
 * `render()` - The function that actually does the rendering.
 
 ## Additional resources
+
+We've worked on a quick and dirty app about kittens during class. The code can be found [here](kittens). We've mocked a JSON API call using a static file inside the `/public` folder (you can do the same to do your testing - it's a tried and true method!).
 
 * [Original lecture notes and code by Karl Jensen](https://github.com/jensen/react-notes) - very detailed and recommended!
 * [10 React mini-patterns](https://hackernoon.com/10-react-mini-patterns-c1da92f068c5) is an excellent article for people just getting started with React.

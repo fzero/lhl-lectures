@@ -1,0 +1,19 @@
+{
+  "kittens": [
+    {
+      "name": "Mr. fluffs",
+      "adorability": 11,
+      "yourThoughts": "Super cute"
+    },
+    {
+      "name": "Dark lord",
+      "adorability": -1,
+      "yourThoughts": "Will kill you"
+    },
+    {
+      "name": "Grumpy Cat",
+      "adorability": 8,
+      "yourThoughts": "No."
+    }
+  ]
+}
