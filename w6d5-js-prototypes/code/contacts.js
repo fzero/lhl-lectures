@@ -67,5 +67,5 @@ const dougFord = new BusinessContact({
 console.log(leeroyJenkins.toString())
 console.log(dougFord.toString())
 
-leeroyJenkins.email = "invalid@email@really.whatever.com"
+leeroyJenkins.email = "not an email!!!!!"
 // The line above throws an exception, since we're using our email() setter
