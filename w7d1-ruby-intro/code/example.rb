@@ -3,6 +3,8 @@ def print_items(my_array)
   my_array.size
 end
 
+
+
 my_array = ['banana', 'apple', 'truck', 'building', 'computer', 'machine gun']
 
 my_array << 'orange'

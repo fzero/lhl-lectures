@@ -2,7 +2,6 @@ function printItems(myArray) {
   myArray.forEach((item) => {
     console.log(`Item is now: ${item}`);
   });
-
   return myArray.length;
 }
 
@@ -23,7 +22,7 @@ let contact = {
   address: "The Internets"
 }
 
-for (key in contact) {
+for (let key in contact) {
   console.log(`${key}: ${contact[key]}`);
 }
 
