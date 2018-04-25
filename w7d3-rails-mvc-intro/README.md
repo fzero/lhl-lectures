@@ -45,7 +45,7 @@ Four main ways:
 
 * `raise something.inspect` - you can do this anywhere.
 * `puts something.inspect` - check the command line (rails log)
-* `<%= debug something %>` - HTML / ERB layer only
+* `<%= console %>` - HTML / ERB layer only (good to debug requests, helpers and views in general)
 * Use `binding.pry` or `byebug` with which you can set breakpoints (similar as debugger in Node)
 
 ### Important folders
