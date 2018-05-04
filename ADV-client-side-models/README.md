@@ -51,6 +51,20 @@ fetch('http://localhost:8080/products', options)
 .catch((errors) => this.setState({errors: errors}))
 ```
 
+## What about authentication?
+
+Request-response applications usually rely on cookies for authentication, but we can't to that when the server is _completely_ seperated from the client. The most usual way to authenticate/authorize users on SPAs is by using tokens.
+
+There are several ways to do this, but the workflow usually goes like this:
+
+- A special route on your server will receive your authentication arguments (username and password, for example) and generate a unique token. The token is just a long string of characters that can be used by the server to find the user again. One of the ways to do this is storing it as a column on the users table. **Bear in mind that tokens should expire!** The usual practice is expiring tokens in a few hours.
+
+- The client app receives and stores this token in a cookie or other local storage. From that point onwards, this token should be included in your request headers. Usually this header is called `Authentication`. If this header isn't deteced in the server, the request isn't athenticated and you should return an error (conventionally `403 Unauthorized`).
+
+One of the most popular token standards these days is JSON Web Tokens - [JWT](https://jwt.io) for short. There are multiple JWT libraries ready to go for both servers and clients in multiple languages.
+
+Also note that this kind of authentication will _only_ be safe if your app is served over HTTPS. But it's 2018 and you should have HTTPS no matter what ([hint](https://letsencrypt.org/)).
+
 ## About the code
 
 To demonstrate the complete separation between client and server, we actually have **two** servers that can be used with the client-side app without any changes!
