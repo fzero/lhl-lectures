@@ -124,7 +124,7 @@ Some pages are request-response (welcome page and login form, for example) while
 
 A good example would be an e-commerce application showing a sticky shopping cart panel. Every time an item is chosen, the cart updates without reloading the page. On the other hand, the whole page reloads when the user presses the "order" button on the cart.
 
-**This is usually the quickest approach to write a good, interactive web app at the level you are right now.** It's very common for professional apps to start like this and then migrate to a full SPA architecture.
+**This is usually the quickest approach to write a good, interactive web app for your midterms - or if you have a content-heavy app in general.** It's very common for professional apps to start like this and then migrate to a full SPA architecture.
 
 Some large applications are structured as multiple SPAs with a few request-response actions in between. For example, Facebook and Twitter have a request-response login page, while the main application is a large SPA. A good exercise is using a few of your favourite web apps and trying to figure out which requests reload the whole page.
 
