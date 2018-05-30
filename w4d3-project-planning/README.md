@@ -129,6 +129,37 @@ A good example would be an e-commerce application showing a sticky shopping cart
 
 Some large applications are structured as multiple SPAs with a few request-response actions in between. For example, Facebook and Twitter have a request-response login page, while the main application is a large SPA. A good exercise is using a few of your favourite web apps and trying to figure out which requests reload the whole page.
 
+## Additional stuff for final project
+
+### Show off!
+
+Midterm projects are about exercising what you've learned, gathering feedback from mentors and improving your skills. Final projects, on the othe rhand, are about impressing potential employers and people in general. So be ambitious and make it look good.
+
+### Don't underestimate UI/UX coding time
+
+Your user interface will certainly be *at least* 70% of your code. **Do not underestimate the time you will spend on it** - even if you use an UI library such as [React-Bootstrap](https://react-bootstrap.github.io/).
+
+### Be lazy!
+
+You don't need to create everything from scratch - we already know you're capable of building apps. Feel free to use libraries and cloud services, as long as they provide something useful for your app. This brings us to our next point...
+
+### Explore things, but timebox
+
+If you see a cool library or service and you want to make sure it's a good fit, set aside a **fixed** amount of time to try it - a day or an afternoon should do. If you can do something usefull with it and think it will save time in your project, go for it! On the other hand, if the time to get it up and running exceeds your timebox *or* if the gains are negligible, scrap it.
+
+### Stay focused! Do your MVP first!
+
+Always! You need to have a very good idea of what are the main features and what can be left out. Remember this doesn't mean delivering an incomplete app, but a **polished, working app that does what it's supposed to do** with no frills.
+
+### Test integrations
+
+Unit testing (i.e. testing individual functions and methods) is nice, but integration tests are *way* more important. You should definitely test *interface points* - the areas of your app where the user interacts with it and where your client-side interacts with your API. If you're making a SPA, do try to test your API endpoints!
+
+### Don't do a solo project
+
+It can be tempting to go solo, but past experience at Lighthouse Labs tells us this isn't a good idea. Building a polished app 2 1/2 weeks is no small feat, so having at least two people working together is a must.
+
+
 ## BONUS: Git feature branching cheatsheet
 
 1. Ensure your local `master` is up to date: `git checkout master && git pull origin master`
