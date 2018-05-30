@@ -69,7 +69,7 @@ But in short:
   - Meet them
   - Use [Trello](http://trello.com) to track your user stories
 
-* **SMART Goals**
+* **SMART Goals** (because you **must** know when something is actually done)
   - **S**pecific
   - **M**easurable
   - **A**chievable
@@ -88,17 +88,13 @@ But in short:
 * Write tests if you can
   - [`mocha`](http://mochajs.org/) is your friend
 * Good programmers are lazy
-  - Use [Express Generator](http://expressjs.com/en/starter/generator.html) to create an app skeleton!
-    - Beware of template languages as it defaults to [Pug](https://pugjs.org) instead of [EJS](http://www.embeddedjs.com). You'll probably want to run `express myapp -e` to pick EJS.
+  - Use [Express Generator](http://expressjs.com/en/starter/generator.html) to create an app skeleton, if you're using Express
   - **There's a `npm` package for that**
     + If you're using an external service, look for a package
   - **There's a CSS framework for that**
     + [Bootstrap](http://getbootstrap.com/)
     + [Materialize](http://materializecss.com/)
     + Hundreds of others!
-  - [Bower](https://bower.io/) might be a good addition to your project
-    - It's like `npm` for client-side stuff (jQuery, CSS frameworks etc.)
-
 
 ## The three main approaches on writing a web app
 
