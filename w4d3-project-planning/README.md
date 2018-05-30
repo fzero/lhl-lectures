@@ -32,6 +32,7 @@ While you're doing this, remember **YAGNI**
 
 Remove everything that feels optional. Ask yourselves what's the bare minimum for your idea to work. That's your Minimum Viable Product (MVP).
 
+
 ## Alright then, where do we go from here?
 
 Don Burks made an amazing list of things to do next:
@@ -56,6 +57,7 @@ But in short:
       + Good ol' whiteboarding
   + It's always better to think from the perspective of the user, not what's easier to implement
   + How to write user stories: https://medium.com/@jonatisokon/a-framework-for-user-stories-bc3dc323eca9
+
 
 ## How to work as a team
 
@@ -97,6 +99,7 @@ But in short:
   - [Bower](https://bower.io/) might be a good addition to your project
     - It's like `npm` for client-side stuff (jQuery, CSS frameworks etc.)
 
+
 ## The three main approaches on writing a web app
 
 ### 1. Request-response
@@ -129,11 +132,12 @@ A good example would be an e-commerce application showing a sticky shopping cart
 
 Some large applications are structured as multiple SPAs with a few request-response actions in between. For example, Facebook and Twitter have a request-response login page, while the main application is a large SPA. A good exercise is using a few of your favourite web apps and trying to figure out which requests reload the whole page.
 
+
 ## Additional stuff for final project
 
 ### Show off!
 
-Midterm projects are about exercising what you've learned, gathering feedback from mentors and improving your skills. Final projects, on the othe rhand, are about impressing potential employers and people in general. So be ambitious and make it look good.
+Midterm projects are about exercising what you've learned, gathering feedback from mentors and improving your skills. Final projects, on the other hand, are about impressing potential employers and people in general. So be ambitious and make it look good.
 
 ### Don't underestimate UI/UX coding time
 
@@ -141,11 +145,11 @@ Your user interface will certainly be *at least* 70% of your code. **Do not unde
 
 ### Be lazy!
 
-You don't need to create everything from scratch - we already know you're capable of building apps. Feel free to use libraries and cloud services, as long as they provide something useful for your app. This brings us to our next point...
+You don't need to create everything from scratch - we already know you're capable of building apps. Feel free to use libraries and cloud services, as long as they provide something useful for you. This brings us to our next point...
 
 ### Explore things, but timebox
 
-If you see a cool library or service and you want to make sure it's a good fit, set aside a **fixed** amount of time to try it - a day or an afternoon should do. If you can do something usefull with it and think it will save time in your project, go for it! On the other hand, if the time to get it up and running exceeds your timebox *or* if the gains are negligible, scrap it.
+If you see a cool library or service you want to try, set aside a **fixed** amount of time to do a test drive - an afternoon should do. If you can do something usefull with it and think it will *save time* in your project, go for it! On the other hand, if the time to get it up and running exceeds your timebox *or* if the gains are negligible, scrap it.
 
 ### Stay focused! Do your MVP first!
 
@@ -157,7 +161,7 @@ Unit testing (i.e. testing individual functions and methods) is nice, but integr
 
 ### Don't do a solo project
 
-It can be tempting to go solo, but past experience at Lighthouse Labs tells us this isn't a good idea. Building a polished app 2 1/2 weeks is no small feat, so having at least two people working together is a must.
+It can be tempting to go solo, but past experience at Lighthouse Labs tells us this isn't a good idea. Building a polished app in 2 1/2 weeks is no small feat, so having at least two people working together is a must.
 
 
 ## BONUS: Git feature branching cheatsheet
