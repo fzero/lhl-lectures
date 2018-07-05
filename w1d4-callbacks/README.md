@@ -134,7 +134,7 @@ In those situations, we use functions that receive a function to be _called back
 
 There's a quick example that pulls some pages from the web inside [`/request-example`](request-example). We'll explore the `request` package and other similar code extensively on week 2, so don't worry too much about the details right now. Just notice how we **must** pass a function to `request.get()` to receive results.
 
-**Also:** There's an [additional version of the code using `request` that _also has a closure example!_](request-closue) That's when a function returns _another function_. In this example, the returned function is used by `request.get` so that the requested URL can be part of the message being displayed.
+**Also:** There's an [additional version of the code using `request` that _also has a closure example!_](request-closure) That's when a function returns _another function_. In this example, the returned function is used by `request.get` so that the requested URL can be part of the message being displayed.
 
 ## Example code!
 
