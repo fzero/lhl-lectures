@@ -38,7 +38,7 @@ folder) creating a simple model that handles all data storage functions.
 |**U**pdate | PUT/PATCH        |
 |**D**elete | DELETE           |
 
-**NOTE:** Browsers only support `GET` and `POST` actions from pure HTTP forms. TO use `PUT`/`PATCH`/`DELETE` you'll either need to use client-side JS or the [`method-override`](http://expressjs.com/en/resources/middleware/method-override.html) middleware.
+**NOTE:** Browsers only support `GET` and `POST` actions from pure HTTP forms. To use `PUT`/`PATCH`/`DELETE` you'll either need to use client-side JS or the [`method-override`](http://expressjs.com/en/resources/middleware/method-override.html) middleware.
 
 ### BREAD - Additions to CRUD and how they map to URLs
 
