@@ -46,17 +46,17 @@ Using the [Apples app](code) as an example:
 
 | Action    | HTTP method & URL       | Details             |
 | --------- | ----------------------- | ------------------- |
-|**B**rowse | `GET /apples`           |                     |
-|**R**ead   | `GET /apples/:id`       |                     |
+|**B**rowse | `GET /apples`           | Show all apples     |
+|**R**ead   | `GET /apples/:id`       | Show a single apple |
 |**E**dit   | `GET /apples/:id/edit`  | Show populated form |
-|           | `PUT/PATCH /apples/:id` | Submit data         |
+|           | `PUT/PATCH /apples/:id` | Submit updated data |
 |**A**dd    | `GET /apples/new`       | Show empty form     |
-|           | `POST /apples`          | Submit data         |
-|**D**elete | `DELETE /apples/:id`    |                     |
+|           | `POST /apples`          | Submit new data     |
+|**D**elete | `DELETE /apples/:id`    | Self-explanatory    |
 
 ## Bonus: `nodemon`
 
-The [`nodemon`]() package automatically reloads your express server when the code is modified. To use it, you need to install it as a dev dependency and run it when you call `npm start`.
+The [`nodemon`](https://nodemon.io/) package automatically reloads your express server when the code is modified. To use it, you need to install it as a dev dependency and run it when you call `npm start`.
 
 ```
 # in your project folder
