@@ -26,3 +26,48 @@ handle user requests (**Controller**).
 
 We've applied this pattern to our example application (see [`/code`](code)
 folder) creating a simple model that handles all data storage functions.
+
+## REST Cheatsheet
+
+### CRUD to HTTP
+
+| Action    | HTTP verb/method |
+| --------- | ---------------- |
+|**C**reate | POST             |
+|**R**ead   | GET              |
+|**U**dpate | PUT/PATCH        |
+|**D**elete | DELETE           |
+
+**NOTE:** Browsers only support `GET` and `POST` actions from pure HTTP forms. TO use `PUT`/`PATCH`/`DELETE` you'll either need to use client-side JS or the [`method-override`](http://expressjs.com/en/resources/middleware/method-override.html) middleware.
+
+### BREAD - Additions to CRUD and how they map to URLs
+
+Using the [Apples app](code) as an example:
+
+| Action    | HTTP method & URL       | Details             |
+| --------- | ----------------------- | ------------------- |
+|**B**rowse | `GET /apples`           |                     |
+|**R**ead   | `GET /apples/:id`       |                     |
+|**E**dit   | `GET /apples/:id/edit`  | Show populated form |
+|           | `PUT/PATCH /apples/:id` | Submit data         |
+|**A**dd    | `GET /apples/new`       | Show empty form     |
+|           | `POST /apples`          | Submit data         |
+|**D**elete | `DELETE /apples/:id`    |                     |
+
+## Bonus: `nodemon`
+
+The [`nodemon`]() package automatically reloads your express server when the code is modified. To use it, you need to install it as a dev dependency and run it when you call `npm start`.
+
+```
+# in your project folder
+npm install --save-dev nodemon
+```
+
+On your `package.json`:
+```json
+// ...
+"scripts": {
+  "start": "npx nodemon node app.js"
+},
+// ...
+```

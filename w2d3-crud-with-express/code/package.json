@@ -4,7 +4,7 @@
   "description": "Example Express.js app",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "npx nodemon node app.js",
     "test": "echo LOL NOPE"
   },
   "repository": {
@@ -27,5 +27,8 @@
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.1"
   }
 }
