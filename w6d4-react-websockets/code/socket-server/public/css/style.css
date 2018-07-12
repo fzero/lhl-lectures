@@ -1,0 +1,7 @@
+html, body {
+  font-family: "Helvetica", sans-serif;
+  margin: 1em;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
