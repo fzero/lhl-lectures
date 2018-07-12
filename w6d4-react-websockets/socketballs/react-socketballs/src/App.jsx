@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const ip = '127.0.0.1'
+    const ip = '172.46.3.236'
     this.socket = new WebSocket(`ws://${ip}:5000`)
     this.socket.onmessage = this.handleMessage
   }

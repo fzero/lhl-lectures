@@ -13,7 +13,3 @@ Websockets are a bidirectional protocol (vs. HTTP, which is request-response). T
 ## Everybody talks!
 
 The code discussed in class can be found inside [`/code`](code). The server-side code is in [`/code/server.js`](code/server.js) and the client-side is in [`/code/public/js/app.js`](code/public/js/app.js).
-
-## Socketballs
-
-This is a slightly more elaborate example using websocket messages to trasmit JSON data instead of plain text. This is closer to what you'll implement on Chatty (particularly on the server), since it deals with many different message types. The code is in the [`/socketballs`](socketballs) folder and should be easy enough to follow.
