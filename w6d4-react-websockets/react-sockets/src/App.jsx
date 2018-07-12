@@ -7,14 +7,23 @@ class App extends Component {
     this.state = {
       contents: ''
     }
-    this.socket = new WebSocket("ws://172.46.3.236:5000");
+
+    // Add your public IP here if you want other people to connect
+    // const socketServerURL = "ws://172.46.3.236:5000";
+    const socketServerURL = "ws://localhost:5000";
+
+    // Connects to websocket and attaches it to class
+    this.socket = new WebSocket(socketServerURL);
+
+    // Attaches message handling function to websocket
     this.socket.onmessage = this._handleMessage;
   }
 
-  _handleMessage = (ev) => {
-    this.setState({contents: ev.data})
-  }
+  // Handles incoming message.
+  // The contents are always in the 'data' property of the event.
+  _handleMessage = (ev) => this.setState({contents: ev.data})
 
+  // Handles text input
   _handleInput = (ev) => this.socket.send(ev.target.value)
 
   render() {
@@ -22,11 +31,9 @@ class App extends Component {
 
     return (
       <Fragment>
-        <h1>EVERYBODY TALKS</h1>
-
+        <h1>EVERYBODY TALKS!</h1>
         <textarea
           name="typehere"
-          id="typehere"
           className="typehere"
           onInput={this._handleInput}
           value={contents}

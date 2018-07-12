@@ -20,12 +20,16 @@ class App extends Component {
       clients: {}
     }
 
+    // Throttles function call to at most once every 10ms to
+    // prevent crashing the server.
     this.handleMovement = debounce(this.handleMovement, 10)
   }
 
   componentWillMount() {
-    const ip = '172.46.3.236'
-    this.socket = new WebSocket(`ws://${ip}:5000`)
+    // Change here to allow other people to connect to your server
+    // const host = '172.46.3.236'
+    const host = 'localhost'
+    this.socket = new WebSocket(`ws://${host}:5000`)
     this.socket.onmessage = this.handleMessage
   }
 

@@ -9,14 +9,13 @@ const PORT = 5000
 
 // Create a new express server
 const app = express()
-.use(express.static('public')) // add static to serve /public
-.listen(
-  PORT, '0.0.0.0', 'localhost',
-  () => console.log(`Listening on ${PORT}`)
-)
+  .use(express.static('public')) // add static to serve /public
+  .listen(PORT, '0.0.0.0', 'localhost', () =>
+    console.log(`Listening on ${PORT}`)
+  )
 
 // Create the WebSockets server and attach it to express
-const wss = new SocketServer({server: app})
+const socketServer = new SocketServer({ server: app })
 
 // Currently connected clients
 let clients = {}
@@ -24,43 +23,39 @@ let clients = {}
 // Set up a callback that will run when a client connects to the server
 // When a client connects they are assigned a socket, represented by
 // the ws parameter in the callback.
-wss.on('connection', (client) => {
-
+socketServer.on('connection', client => {
   // Initialize a new client id
   const clientId = uuid()
 
   // Send initial client data
-  clientConnected(client, clientId);
+  clientConnected(client, clientId)
 
   // Handle messages
   client.on('message', handleMessage, client)
 
-  // Set up a callback for when a client closes the socket. This usually means they closed their browser.
+  // Set up a callback for when a client closes the socket.
+  // This usually means they closed their browser.
   client.on('close', () => {
     clientDisconected(clientId)
   })
 })
 
-
 // Broadcast - Goes through each client and sends message data
-wss.broadcast = function(data) {
-  wss.clients.forEach(function(client) {
+socketServer.broadcast = data => {
+  socketServer.clients.forEach(client => {
     if (client && client.readyState === client.OPEN) {
       client.send(data)
     }
   })
 }
 
-
 // Simple function to return a random integer between 0 and max
-function rand(max) {
+const rand = max => {
   return Math.round(Math.random() * (max + 1))
 }
 
-
 // Connection event
-function clientConnected(client, clientId) {
-
+const clientConnected = (client, clientId) => {
   // Create client data
   clients[clientId] = {
     id: clientId,
@@ -90,13 +85,12 @@ function clientConnected(client, clientId) {
   if (client.readyState === client.OPEN) {
     client.send(JSON.stringify(setupMsg))
   }
-  wss.broadcast(JSON.stringify(connectionMsg))
+  socketServer.broadcast(JSON.stringify(connectionMsg))
   console.log(`>> ${clients[clientId].name}`, clients[clientId])
 }
 
-
 // Disconnection event
-function clientDisconected(clientId) {
+const clientDisconected = clientId => {
   const client = clients[clientId]
 
   if (!client) return // catch race condition
@@ -105,22 +99,21 @@ function clientDisconected(clientId) {
     type: 'disconnection',
     data: client
   }
-  wss.broadcast(JSON.stringify(disconnectionMsg))
+  socketServer.broadcast(JSON.stringify(disconnectionMsg))
   console.log(`<< ${client.name} (${clientId}) disconnected`)
   delete clients[clientId]
 }
 
-
 // Handles incoming messages
-function handleMessage(incoming, client) {
+const handleMessage = (incoming, client) => {
   // Broadcast message back no matter what
-  wss.broadcast(incoming)
+  socketServer.broadcast(incoming)
 
   // Catching race condition
-  if (!client || typeof(client.send) !== 'function') return
+  if (!client || typeof client.send !== 'function') return
 
   const message = JSON.parse(incoming)
-  switch(message.type) {
+  switch (message.type) {
     case 'action':
       // Update client state based on id
       clients[message.data.id] = clients[message.data]
@@ -138,7 +131,6 @@ function handleMessage(incoming, client) {
         client.send(JSON.stringify(setupMsg))
       }
       break
-
 
     default:
       console.log(`Unsupported message:`, message)
