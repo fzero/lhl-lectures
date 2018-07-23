@@ -23,14 +23,15 @@ group :development, :test do
   # and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.7'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'faker', require: false
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do
+  gem 'chromedriver-helper'
   gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'database_cleaner', '~> 1.5'
 end

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :bicycle do
     model "Model"
     colour "Red"

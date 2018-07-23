@@ -11,5 +11,5 @@ And you're off!
 
 I had issues with the suggested `geckodriver`, so I've switched to `chromedriver` in this project. [Download it here](https://sites.google.com/a/chromium.org/chromedriver/) then put it in a directory where your OS can find executables (`/usr/local/bin` usually works).
 
-I've followed [this Stack Overflow response](http://stackoverflow.com/questions/21445164/set-chrome-as-default-browser-for-rspec-capybara#21453068) to set it up.
-See [`/spec/spec_helper.rb`](spec/spec_helper.rb#L21-L25) for more details.
+I've followed [this article](https://robots.thoughtbot.com/headless-feature-specs-with-chrome) to set it up.
+See [`/spec/spec_helper.rb`](spec/spec_helper.rb#L21-L38) for more details.

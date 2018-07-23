@@ -1,18 +1,18 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :bicycle do
     model "Model"
     colour "Red"
     speeds 1
-    style { FactoryGirl.build(:style) }
-    brand { FactoryGirl.build(:brand) }
+    style { FactoryBot.build(:style) }
+    brand { FactoryBot.build(:brand) }
 
     trait :fixie do
-      style { FactoryGirl.build(:style, name: "Fixie") }
+      style { FactoryBot.build(:style, name: "Fixie") }
       speeds 1
     end
 
     trait :road do
-      style { FactoryGirl.build(:style, name: "Road Bike") }
+      style { FactoryBot.build(:style, name: "Road Bike") }
       speeds 21
     end
 
@@ -21,7 +21,7 @@ FactoryGirl.define do
     end
 
     trait :brand_x do
-      brand { FactoryGirl.build(:brand, name: "Brand X") }
+      brand { FactoryBot.build(:brand, name: "Brand X") }
     end
 
     factory :fixie_bike, traits: [:fixie]

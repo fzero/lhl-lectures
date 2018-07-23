@@ -6,7 +6,7 @@ The code discussed in class can be found inside [`/code`](code). Be sure to chec
 
 I've also included a [Capybara cheatsheet](capybara_cheatsheet.md) with the most common actions.
 
-If you need help setting up your Rails app to run unit and feature tests, [check out this article](https://www.sitepoint.com/learn-the-first-best-practices-for-rails-and-rspec/).
+If you need help setting up your Rails app to run unit and feature tests, [check out yesterday's lecture notes](../w8d1-rails-rspec/README.md).
 
 > **NOTE:** Setting up Capybara can be tricky, so make sure to check the article above. I'm using `chromedriver` to run features tests, but you can also use `phantomjs` as recommended in Compass. [Check the README included with the example code](code/README.md) for more details.
 
