@@ -37,6 +37,12 @@ This adds the following files which are used for configuration:
 * `spec/spec_helper.rb`
 * `spec/rails_helper.rb`
 
+Optionally, you can also run this to add a `bin/rspec` command to your Rails app. If you don't do this, you'll have to run rspec with `bundle exec rspec`:
+
+```sh
+bundle binstubs rspec-core
+```
+
 Now we'll configure `shoulda-matchers`. Add this at the end of  `/spec/rails_helper.rb`:
 
 ```ruby
