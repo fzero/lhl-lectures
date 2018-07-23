@@ -7,16 +7,16 @@ Add `rspec-rails` gem to `:test` and `:development` groups on your `Gemfile`:
 ```ruby
 group :development, :test do
   # ...more stuff here
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.7'
 end
 ```
 
-Add `factory_girl_rails`, `faker`, `shoulda-matchers` and `database_cleaner` to the `:test` group:
+Add `factory_bot_rails`, `faker`, `shoulda-matchers` and `database_cleaner` to the `:test` group:
 
 ```ruby
 group :test do
   # ...more stuff here
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'faker'
@@ -24,6 +24,18 @@ end
 ```
 
 You should run `bundle install` at this point!
+
+Next we'll use the Rspec generator to create the basic config files:
+
+```sh
+bin/rails generate rspec:install
+```
+
+This adds the following files which are used for configuration:
+
+* `.rspec`
+* `spec/spec_helper.rb`
+* `spec/rails_helper.rb`
 
 Now we'll configure `shoulda-matchers`. Add this at the end of  `/spec/rails_helper.rb`:
 
@@ -38,11 +50,11 @@ Shoulda::Matchers.configure do |config|
 end
 ```
 
-Configure `factory_girl_rails` and `database_cleaner`. Make sure the top of your `/spec/spec_helper.rb` file includes the following lines:
+Configure `factory_bot_rails` and `database_cleaner`. Make sure the top of your `/spec/spec_helper.rb` file includes the following lines:
 
 ```ruby
 require 'database_cleaner'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 RSpec.configure do |config|
 
@@ -57,7 +69,7 @@ RSpec.configure do |config|
     end
   end
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   # ... lots of stuff here
 end
@@ -110,6 +122,6 @@ We also talked about how to use:
   * `context` does the exact same thing.
 * `before` / `before :each` blocks to write code that needs to be used to create the necessary test conditions.
 
-## FactoryGirl
+## FactoryBot
 
-[FactoryGirl](http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md) is a gem that allows you to create customizable test assets with different traits. Be sure to check out [`/code/spec/factories`](code/spec/factories) to see how to define them and [`bicycle_spec.rb`](code/spec/models/bicycle_spec.rb) to see it in use.
+[FactoryBot](http://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md) is a gem that allows you to create customizable test assets with different traits. Be sure to check out [`/code/spec/factories`](code/spec/factories) to see how to define them and [`bicycle_spec.rb`](code/spec/models/bicycle_spec.rb) to see it in use.

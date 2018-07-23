@@ -13,9 +13,9 @@ RSpec.describe Bicycle, type: :model do
   context "Relationships:" do
 
     before :each do
-      @brand = FactoryGirl.build(:brand)
-      @style = FactoryGirl.build(:style)
-      @bicycle = FactoryGirl.build(:bicycle)
+      @brand = FactoryBot.build(:brand)
+      @style = FactoryBot.build(:style)
+      @bicycle = FactoryBot.build(:bicycle)
     end
 
     it "Should belong to brand" do
@@ -33,8 +33,8 @@ RSpec.describe Bicycle, type: :model do
   context "Formatting:" do
 
     before :each do
-      @fixie = FactoryGirl.build(:red_brand_x_fixie_bike)
-      @road_bike = FactoryGirl.build(:red_brand_x_road_bike)
+      @fixie = FactoryBot.build(:red_brand_x_fixie_bike)
+      @road_bike = FactoryBot.build(:red_brand_x_road_bike)
     end
 
     it "returns a formatted description of a bicycle" do

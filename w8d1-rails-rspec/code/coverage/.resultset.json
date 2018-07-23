@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/spec/models/bicycle_spec.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/spec/models/bicycle_spec.rb": [
         1,
         null,
         1,
@@ -50,7 +50,7 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/spec/rails_helper.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -118,14 +118,14 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/environment.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/application.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/application.rb": [
         1,
         null,
         1,
@@ -152,12 +152,12 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/boot.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/environments/test.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/environments/test.rb": [
         1,
         null,
         null,
@@ -201,7 +201,7 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/application_controller_renderer.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -209,7 +209,7 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/assets.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -222,7 +222,7 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/backtrace_silencers.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -231,20 +231,20 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/cookies_serializer.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/inflections.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -262,13 +262,13 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/mime_types.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/new_framework_defaults.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/new_framework_defaults.rb": [
         null,
         null,
         null,
@@ -294,12 +294,12 @@
         null,
         1
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/session_store.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/initializers/wrap_parameters.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -315,7 +315,7 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/spec/factories/bicycle_factory.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/spec/factories/bicycle_factory.rb": [
         1,
         1,
         1,
@@ -350,7 +350,7 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/spec/factories/brand_factory.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/spec/factories/brand_factory.rb": [
         1,
         null,
         1,
@@ -360,7 +360,7 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/spec/factories/style_factory.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/spec/factories/style_factory.rb": [
         1,
         null,
         1,
@@ -369,16 +369,16 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/config/routes.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/config/routes.rb": [
         1,
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/app/helpers/application_helper.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/app/models/bicycle.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/app/models/bicycle.rb": [
         1,
         null,
         1,
@@ -406,40 +406,40 @@
         null,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/app/models/application_record.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/spec/models/brand_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/app/models/brand.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/spec/models/style_spec.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/spec/models/brand_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/fzero/Lighthouse/lectures/w7d1-rails-rspec/initial/app/models/style.rb": [
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/app/models/brand.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/spec/models/style_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/fzero/Lighthouse/lectures/w8d1-rails-rspec/code/app/models/style.rb": [
         1,
         null,
         1,
@@ -453,6 +453,6 @@
         null
       ]
     },
-    "timestamp": 1499697536
+    "timestamp": 1532363580
   }
 }
