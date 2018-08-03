@@ -90,4 +90,23 @@ describe('Testing the math module', function() {
     });
   });
 
+  describe('formattedCount()', function() {
+    it('should return "No items" when 0 is given', function() {
+      assert.equal(math.formattedCount(0), "No items");
+    });
+
+    it('should return "1 item" when 1 is given', function() {
+      assert.equal(math.formattedCount(1), "One item");
+    });
+
+    it('should return "2 items" when 2 or more is given', function() {
+      assert.equal(math.formattedCount(2), "2 items");
+      assert.equal(math.formattedCount(3), "3 items");
+    });
+
+    it('should return "N/A" when something that is not a number is given', function() {
+      assert.equal(math.formattedCount('batman'), "N/A");
+    });
+  });
+
 });

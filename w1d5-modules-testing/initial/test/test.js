@@ -5,7 +5,9 @@
 var assert = require('assert');
 
 describe('Description of what is being tested', function() {
+
   it('should do something very specific', function() {
     assert.equal(true, true);
   });
+
 });

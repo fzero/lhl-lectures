@@ -40,11 +40,20 @@ function roundToPrecision(number, precision) {
   return Number(number.toFixed(precision));
 }
 
+function formattedCount(number) {
+  number = Number(number);
+  if (isNaN(number)) return "N/A";
+  if (number === 0) return "No items";
+  if (number === 1) return "One item";
+  return number + " items";
+}
+
 module.exports = {
   squared: squared,
   circleArea: circleArea,
   circumference: circumference,
   toKb: toKb,
   triangleArea: triangleArea,
-  sum: sum
+  sum: sum,
+  formattedCount: formattedCount
 }
