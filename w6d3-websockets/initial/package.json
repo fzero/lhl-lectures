@@ -10,7 +10,7 @@
   "author": "Fabio Neves",
   "license": "ISC",
   "dependencies": {
-    "express": "4.14.0",
-    "ws": "1.1.1"
+    "express": "^4.16.3",
+    "ws": "^6.0.0"
   }
 }

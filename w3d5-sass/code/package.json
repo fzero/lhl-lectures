@@ -32,6 +32,6 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "node-sass": "^4.5.3"
+    "node-sass": "^4.9.3"
   }
 }

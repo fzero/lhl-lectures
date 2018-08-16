@@ -11,12 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^0.8.7",
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "cookies": "^0.6.1",
     "ejs": "^2.5.2",
-    "express": "^4.14.0",
-    "morgan": "^1.7.0",
-    "nodemon": "^1.14.11"
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3"
   }
 }
