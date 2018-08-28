@@ -1,0 +1,55 @@
+body {
+  margin: 10% 20% 20% 20%;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+input {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+input[type=text] {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+button {
+  font-size: 20px;
+  padding: 5px 15px 5px 15px;
+  margin: auto 5px auto 5px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+ul {
+  list-style: none;
+  padding: 20px 0 20px 0;
+  margin: 30px 0 30px 0;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+li {
+  color: darkblue;
+  margin: 7px auto 7px auto;
+}
+
+.no-todos {
+  color: lightgray;
+  font-style: italic;
+}
+
+.todo-input {
+  display: flex;
+  align-items: center;
+}
+
+.todo-input input[type=text] {
+  width: 90%;
+}
+
+
