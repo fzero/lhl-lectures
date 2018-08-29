@@ -47,9 +47,10 @@ Firebase[1]
                 Heroku[3]
                         Google Kube Engine[4]
                         AWS container engine
-                                                   RAW Google Cloud
-                                                   RAW AWS
-                                                   Digital Ocean
+                                              Digital Ocean
+                                                  Amazon Lightsail
+                                                     RAW Google Cloud
+                                                     RAW AWS
                                                        DYI Linux Server
 <--------------------------------------------------------------------->
 100% automated                                        100% from scratch
