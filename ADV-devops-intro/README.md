@@ -41,6 +41,26 @@ If you're using [Express](http://expressjs.com) you can add the [`cors`](https:/
 
 There are several ways to go about hosting an application, but in general the decision is about taking time to do things from scratch or spending more to use a more convenient and automated process.
 
+```
+Firebase[1]
+  Google App Engine[2]
+                Heroku[3]
+                        Google Kube Engine[4]
+                        AWS container engine
+                                                   RAW Google Cloud
+                                                   RAW AWS
+                                                   Digital Ocean
+                                                       DYI Linux Server
+<--------------------------------------------------------------------->
+100% automated                                        100% from scratch
+$$$$                                                                  $
+
+[1] No SQL, no NodeJS, no custom stuff
+[2] Use their specific DB, cache storage, monitoring tools
+[3] You pick your "addons" to give any env you want, but you pay
+[4] You define the containers from scratch, AWS/Google handles scaling
+```
+
 Providers like [Amazon](https://aws.amazon.com/), [Rackspace](https://www.rackspace.com/) and [DigitalOcean](https://www.digitalocean.com/) are on the "from scratch" side. Assembling your own hardware server is also a thing.
 
 You have to install everything from the OS up and also come up with a way to deploy code to the server. There are several tools to make this easier:
