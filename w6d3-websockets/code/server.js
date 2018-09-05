@@ -6,7 +6,8 @@ const PORT = 5000;
 
 // Create a new express server
 const app = express()
- // Make the express server serve static assets (html, javascript, css) from the /public folder
+ // Make the express server serve static assets (html, javascript, css)
+ // from the /public folder
 .use(express.static('public'))
 .listen(
   PORT, '0.0.0.0', 'localhost',
@@ -14,15 +15,15 @@ const app = express()
 );
 
 // Create the WebSockets server and attach it to express
-const wss = new SocketServer({server: app});
+const wsServer = new SocketServer({server: app});
 
 // Stores the current value of the text box on the client
 let currentContents = '';
 
 // Set up a callback that will run when a client connects to the server
 // When a client connects they are assigned a socket, represented by
-// the ws parameter in the callback.
-wss.on('connection', (client) => {
+// the `client` argument in the callback.
+wsServer.on('connection', (client) => {
   console.log('Client connected');
 
   // Send current textbox contents on connection
@@ -31,14 +32,15 @@ wss.on('connection', (client) => {
   // Handle messages
   client.on('message', handleMessage);
 
-  // Set up a callback for when a client closes the socket. This usually means they closed their browser.
+  // Set up a callback for when a client closes the socket.
+  // This usually means they closed their browser tab.
   client.on('close', () => console.log('Client disconnected'));
 });
 
 
 // Broadcast - Goes through each client and sends message data
-wss.broadcast = function(data) {
-  wss.clients.forEach(function(client) {
+wsServer.broadcast = function(data) {
+  wsServer.clients.forEach(function(client) {
     client.send(data);
   });
 };
@@ -48,12 +50,12 @@ wss.broadcast = function(data) {
 // Stores the current state of the textbox and broadcasts it
 function handleMessage(message) {
   currentContents = message;
-  wss.broadcast(message);
+  wsServer.broadcast(message);
 }
 
 
 // Simply broadcasts the message back to all clients
 function broadcastBack(message) {
   console.log(`Received: ${message}`)
-  wss.broadcast(message);
+  wsServer.broadcast(message);
 }
