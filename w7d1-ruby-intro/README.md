@@ -4,7 +4,7 @@ We're going to jump right in, assuming that you've got a basic grasp of the lang
 
 This lecture deals with the basic features of Ruby and how it's different from Javascript. There will be a breakout later today that will deal exclusively with the OOP aspects of Ruby.
 
-The code discussed in class an be found inside [`/code`](code). Open [`example.js`](code/example.js) and [`example.rb`](code/example.rb) side by side for a direct comparison between the languages.
+The code discussed in class can be found inside [`/code`](code). Open [`example.js`](code/example.js) and [`example.rb`](code/example.rb) side by side for a direct comparison between the languages.
 
 ## Topics
 
