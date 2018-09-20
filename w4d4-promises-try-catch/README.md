@@ -1,4 +1,4 @@
-# Errors and Promises
+# Errors, Promises and `async`/`await`
 
 The name of this lecture sounds like a whiny album by a shoegazer band from
 the 90s, but we're actually still talking about Javascript.
@@ -54,3 +54,44 @@ with the `request` module.
 For a more complete example, check out [`getheadtags.js`](code/getheadtags.js).
 It uses promises to break each one of the process' steps into a
 promise-compatible function, the calls everything step by step at the end.
+
+## `async`/`await` (ES7+)
+
+The `async` and `await` keywords bring it all full circle by making promises a natural part of Javascript and bringing back `try`/`catch` support. You just have to mark a function as `async` to use `await` inside. This tells Javascript that you're waiting for a promise to resolve.
+
+If the promise is rejected inside a `try`/`catch` block, the `catch` statement will receive the return value. In other words, instead of writing code like this:
+
+```js
+router.get('/', (req, res) => {
+  models.Product.findAll()
+  .then((result) => {
+    res.json(result)
+  })
+  .catch((error) => {
+    res.status(400).json(error)
+  })
+})
+```
+
+You can write it like this:
+
+```js
+router.get('/', async (req, res) => {
+  try {
+    res.json(await models.Product.findAll())
+  }
+  catch(error) {
+    res.status(400).json(error)
+  }
+})
+```
+
+If you're a visual learner, [Bramus](https://www.bram.us) created this short and sweet GIF explaining the [callbacks &rarr; promises &rarr; async/await transition](https://www.bram.us/2017/05/09/javascript-from-callbacks-to-promises-to-asyncawait-in-7-seconds/):
+
+![Awesome gif!](https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif)
+
+Be sure to check out [`/code/promisified-requests`](code/promisified-requests) to see a practical example of `async`/`await`.
+
+## A full example: [Baaaes](https://github.com/fzero/baaaes)
+
+I created an ExpressJS boilerplate to demonstrate how `async`/`await` can make dealing with databases in Node _way_ less frustrating. The end result is more legible code, less nesting and absolutely no callback hell
