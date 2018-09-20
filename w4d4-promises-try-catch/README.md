@@ -1,4 +1,4 @@
-# Errors, Promises and `async`/`await`
+# Errors and Promises
 
 The name of this lecture sounds like a whiny album by a shoegazer band from
 the 90s, but we're actually still talking about Javascript.
@@ -90,7 +90,7 @@ If you're a visual learner, [Bramus](https://www.bram.us) created this short and
 
 ![Awesome gif!](https://www.bram.us/wordpress/wp-content/uploads/2017/05/js-callbacks-promises-asyncawait.gif)
 
-Be sure to check out [`/code/promisified-requests`](code/promisified-requests) to see a practical example of `async`/`await`.
+Be sure to check out [`/code/promisified-requests`](code/promisified-requests/index.js) to see a practical example of `async`/`await`.
 
 ## A full example: [Baaaes](https://github.com/fzero/baaaes)
 
