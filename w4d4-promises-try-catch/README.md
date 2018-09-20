@@ -37,12 +37,12 @@ The main idea goes like this:
 
 * Functions **don't** return values, but an instance of `Promise` (also known as a _future_)
   * Think of it as an IOU for the function's return value
-* When things go well: `.then((something) => {something()})`
+* When things go well: `.then((something) => { myFunction(something) })`
   * `.then` is called with the **sucessful** return value of the previous step
 * You can add more `.then`s here, as long as you return another promise
   * You can make immediately resolved/rejected promises with `Promise.resolve("value")`
   * So instead of `return "value"` you'll use `return Promise.resolve("value")`
-* When errors happen: `.catch((oops) => console.log("Things went boom, yo"))`
+* When errors happen: `.catch((error) => console.log("Things went boom, yo"))`
   * The chain will be halted and `.catch` will be called immediately with the error as first argument
 
 [This site provides an amazing visualization of how promises work](http://bevacqua.github.io/promisees/), including examples on how to use `Promise.all()` to run several promises in parallel and use their results.

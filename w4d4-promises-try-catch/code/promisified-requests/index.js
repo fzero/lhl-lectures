@@ -23,7 +23,7 @@ const parallelGet = (urls) => {
     // The `results` argument below is an array containing all resolved
     // promises in the same order as they were created above.
     // .then() is only called when all promises resolve.
-    .then(results => results.map(body => console.log(body.length)))
+    .then(results => results.forEach(body => console.log(body.length)))
     // If ANY of the promises is rejected, we go to .catch()
     .catch(error => console.error('Stuff exploded:', error))
 }
@@ -37,19 +37,22 @@ const urls = [
 parallelGet(urls)
 
 
-// Here we're coming full circle using async/await
-// Any function marked as `async` returns a promise by default.
+// Here we're coming full circle using async/await!
+// Any function marked as `async` implicitly returns a promise by default.
 // You can now use `await` to tell JS to wait for a promise to resolve.
 // try/catch is promise-aware inside async functions:
 // you can use it to deal with rejected promises in a more idiomatic way.
+//
+// NOTE: As of now, you can only use `await` from within an async
+// function, so we're wrapping our code with an IIFE here. "Naked" `await`
+// support is planned for ES8.
 (async () => {
   try {
     // Awaits promise to call .resolve() - this is the same as:
     // req(...).then((result) => console.log(result.length))
     const result = await req('https://en.wikipedia.org/wiki/Kitten')
-    console.log(result.length)   // Everything here
-    console.log("All is fine!")  // is running synchronously
-    console.log("A third step!") // now!
+    console.log(result.length)
+    console.log("All is fine!")
   }
   // In case of .reject(), the catch() block can deal with it!
   // This is the same as:
@@ -58,3 +61,27 @@ parallelGet(urls)
     console.error('Something exploded:', error)
   }
 })()
+
+// You can also create named async functions, of course!
+// Like I mentioned above, this will implicitly return a promise...
+async function myAsyncFunction(arg) {
+  return `Your argument is: ${arg}`
+}
+
+// ...but don't worry, JS has your back and will deal with it automatically.
+// Both examples below should work.
+(async () => {
+  console.log(await myAsyncFunction('testing 1 2 3'))
+})()
+console.log(myAsyncFunction('testing 1 2 3'))
+
+// ES6 style
+const anotherAsyncFunction = async (arg) => {
+  return `Your argument is: ${arg}`
+}
+
+// Same as above
+(async () => {
+  console.log(await anotherAsyncFunction('testing 1 2 3'))
+})()
+console.log(anotherAsyncFunction('testing 1 2 3'))
