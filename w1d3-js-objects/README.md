@@ -60,7 +60,7 @@ Objects exist un other languages with different names:
 
 Parameters passed into functions will behave differently depending on the type:
 
-* Primitive types will be **copied** into the local parameter variables. This that, if you pass a variable as a parameter, the original value **won't change**:
+* Primitive types will be **copied** into the local parameter variables. This means that if you pass a variable as a parameter, the original value **won't change**:
 ```js
 var initialNumber = 10;
 var initialString = "Hi!"
