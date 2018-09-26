@@ -147,3 +147,7 @@ bluesquare.describe();
 Note how `this` takes the value of the **caller object** (whatever is before the dot: `redcircle` and `bluesquare` in the example above).
 
 The tricky part is `this` **changes for every function call**. This can get particularly complex when you're dealing with nested functions.
+
+## Code examples
+
+Make sure to check the [`/code`](code) folder for additional examples discused in class.
