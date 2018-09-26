@@ -151,3 +151,7 @@ The tricky part is `this` **changes for every function call**. This can get part
 ## Code examples
 
 Make sure to check the [`/code`](code) folder for additional examples discused in class.
+
+## BONUS: Pythontutor
+
+[PythonTutor](pythontutor.com/javascript.html#mode=edit) is a nice online tool that allows you to visualize your code while it's running. It can visualize many languages - not only Python - and we've used it in class to explore how objects and arrays are passed by reference. Here's a link to [`/code/zipper.js`](https://goo.gl/iB2S2L) within PythonTutor.
