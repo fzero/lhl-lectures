@@ -41,10 +41,28 @@
     - This means each request is a complete conversation. Once it's over, the server doesn't really keep any information about previous requests.
     - Persistence (i.e. logged-in state, discussion threads and so on) is achieved through workarounds. The most popular is the use of cookies.
 
+### What about HTTPS?
+
+HTTPS is the encrypted version of HTTP. It works pretty much the same way, but all data within the request/response body is encrypted (more about request/response parts below).
+
+It's considered a good practice to _only_ host sites on HTTPS-enabled servers these days, for privacy reasons. **Note that the body is the ONLY encrypted part of the request!** URL and headers are always sent/received in plain text.
+
 
 ## HTTP Requests
 
-### Request method
+HTTP requests have three parts:
+
+### 1. Request line
+
+Includes protocol version, HTTP request method and a URI. It looks like this:
+
+```
+HTTP/1.1 GET https://google.com
+```
+
+Let's break this down a bit:
+
+#### Request method
 * `GET` - READ data from the server
 * `POST` - SEND data and CREATE an object on the server
 * `PUT/PATCH` - SEND data and UPDATE an object on the server
@@ -52,7 +70,7 @@
 
 Note how they map nicely to CRUD operations
 
-### URI - Uniform Resource Indicator
+#### URI - Uniform Resource Indicator
 * Also known as **URL - Uniform Recource Locator**
 * Has several parts. In `http://www.example.com:8080/hello?name=fabio&lname=neves#greeting`
     - Protocol: `http://`
@@ -62,19 +80,21 @@ Note how they map nicely to CRUD operations
     - Query parameters: `?fname=fabio&lname=neves`
     - Hash (or anchor): `#greeting`
 
-### Headers
+### 2. Headers
 * Always in the form of `key: value` pairs
 * Contain additional information about the client and the request, including:
     - User agent
     - Cookies
 
-### Body
-Data to be sent to the server (optional)
+### 3. Body
+Data to be sent to the server (optional). The body isn't present on `GET` and `DELETE` requests, but it's necessary for `POST` and `PUT`/`PATCH`.
 
 
 ## HTTP Responses
 
-### Response status
+HTTP responses also have 3 parts:
+
+### 1. Response status
 - Contains a response code and a message
 - Response codes are divided in series
     + **100 series** = informational
@@ -89,7 +109,7 @@ Data to be sent to the server (optional)
     + **500 series** = server error
     + Full list: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 
-### Response headers
+### 2. Response headers
 - Informations about the data being returned
     + Content size
     + Media type
@@ -98,7 +118,7 @@ Data to be sent to the server (optional)
     + ETags (used for caching)
     + ...several others
 
-### Body
+### 3. Body
 * Yep, that's the content
 * Usually it's HTML, but can also be pure text, JSON data, images, videos, audio...
 
@@ -110,10 +130,9 @@ Data to be sent to the server (optional)
     - `curl` - make requests from the terminal
         + Tutorial: http://curl.haxx.se/docs/httpscripting.html
         + Documentation in FAQ format: http://curl.haxx.se/docs/faq.html
-    - DHC Chrome App: https://goo.gl/aa2jaU
+    - Restlet Client: https://goo.gl/aa2jaU
     - Postman: http://getpostman.com
 * Checking responses
-    - http://requestb.in
     - http://httpbin.org
 
 
@@ -124,4 +143,8 @@ https://github.com/alex/what-happens-when
 
 ## Code discussed in class
 
-Look inside the [`/code`](code) folder.
+Inside the [`/code`](code) folder you'll find:
+
+* [`/code/requests`](code/requests) - Example on how to use the [request](https://www.npmjs.com/package/request) package to make HTTP requests from Node.
+* [`/code/bare-server`](code/bare-server) - An extremely minimalistic web server using Node's built-in [http](https://nodejs.org/api/http.html) package.
+* [`/code/express-server`](code/express-server) - An HTTP server created using the [express](http://expressjs.com/) package, which is considered the gold standard for serving HTTP with Node.
