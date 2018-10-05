@@ -190,4 +190,4 @@ In reality, JS classes are simply _syntatic sugar_ for prototypes - in other wor
 
 ## Code
 
-You can find a simple OOP code example inside [`/code`](code) showing off simple concepts like inheritance, getters and setters.
+You can find simple OOP code examples inside [`/code`](code) showing off simple concepts like inheritance, getters and setters.
