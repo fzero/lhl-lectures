@@ -1,0 +1,70 @@
+/* Your amazing styles here! */
+
+body {
+  font-family: "Helvetica", sans-serif;
+  margin: 100px 12% 30% 12%;
+}
+
+h1 {
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+p {
+  font-family: "Georgia", serif;
+}
+
+nav {
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 100;
+  text-align: center;
+  padding-top: 5px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px 3px #ccc;
+  opacity: 0.95;
+}
+
+nav ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+nav li {
+  border-radius: 10px;
+  background-color: #ececec;
+  padding: 2px;
+  display: inline-block;
+  margin: 3px;
+}
+
+nav li:hover {
+  background-color: yellow;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  margin: auto 6px auto 6px;
+}
+
+.float-left {
+  float: left;
+  margin: auto 11px 9px 0;
+}
+
+.float-right {
+  float: right;
+  margin: auto 0 9px 11px;
+}
+
+.thumb {
+  width: 150px;
+}
+
+.circle {
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px 3px #ccc;
+}
