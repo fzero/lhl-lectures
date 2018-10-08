@@ -31,7 +31,7 @@ This is a messy one. It really _should_ be the default, but luckily [it's a fixa
 
 ## Flexbox and CSS grid
 
-CSS has avolved a lot in the past few years. In the past you could only use `inline`, `block` and `inline-block` for the `display` property, but now there are two other wasy to organize elements that help a lot with more complex designs:
+CSS has evolved a lot in the past few years. In the past you could only use `inline`, `block` and `inline-block` for the `display` property, but now there are two other wasy to organize elements that help a lot with more complex designs:
 
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) allows you to define your design in rows and columns with a lot of control over alignment, wrapping and relative sizing. [It's well supported by all current browsers](https://caniuse.com/#feat=flexbox) and definitely something you shoud look into. 
 
