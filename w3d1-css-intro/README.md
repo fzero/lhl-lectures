@@ -29,6 +29,14 @@ These values interact to give you the final size of the element. Sadly each brow
 ### Box sizing: border-box (non-default)
 This is a messy one. It really _should_ be the default, but luckily [it's a fixable problem](https://www.paulirish.com/2012/box-sizing-border-box-ftw).
 
+## Flexbox and CSS grid
+
+CSS has avolved a lot in the past few years. In the past you could only use `inline`, `block` and `inline-block` for the `display` property, but now there are two other wasy to organize elements that help a lot with more complex designs:
+
+- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) allows you to define your design in rows and columns with a lot of control over alignment, wrapping and relative sizing. [It's well supported by all current browsers](https://caniuse.com/#feat=flexbox) and definitely something you shoud look into. 
+
+- [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) allows you to define a grid to organize your design elements. This feature was heavily influenced by frameworks such as [Bootstrap](https://getbootstrap.com/) and it's very useful to plan adaptable, mobile-first designs. [Browser support is very good](https://caniuse.com/#feat=css-grid), but it's not as well supported as Flexbox just yet.
+
 ## BONUS: circles and triangles
 Yes, you can make them just with CSS!
 
