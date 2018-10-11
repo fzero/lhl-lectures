@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const morgan = require('morgan')
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -13,6 +14,7 @@ const MONGODB_URI = 'mongodb://127.0.0.1:27017/todo_app'
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
+app.use(morgan('dev'))
 
 // Create a global variable to store the database instance
 let db
