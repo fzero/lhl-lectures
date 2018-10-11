@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const morgan = require('morgan')
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -13,6 +14,7 @@ const MONGODB_URI = 'mongodb://127.0.0.1:27017/todo_app'
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
+app.use(morgan('dev'))
 
 // Create a global variable to store the database instance
 let db
@@ -21,7 +23,10 @@ let db
 MongoClient.connect(
   MONGODB_URI,
   (err, mongoInstance) => {
-    if (err) throw err
+    if (err) {
+      console.log("Couldn't connect to MongoDB:", err)
+      process.exit(1)
+    }
     console.log(`Successfully connected to DB: ${MONGODB_URI}`)
     db = mongoInstance
   }
@@ -79,17 +84,47 @@ app.get('/todos/:id/edit', (req, res) => {
 // Update a todo
 app.put('/todos/:id', (req, res) => {
   const id = req.params.id
-  let filter = { _id: Mongo.ObjectId(id) }
-  const todo = {
+  const filter = { _id: Mongo.ObjectId(id) }
+  const updatedData = {
     desc: req.body.desc,
     priority: Number(req.body.priority)
-  } // mongo doc
-  db.collection('todos').updateOne(filter, todo, (err, result) => {
-    if (err) {
-      res.send('Something exploded on PUT /todos!')
-      return
+  }
+  db.collection('todos').updateOne(
+    filter,
+    { $set: updatedData }, // always use $set, unless you want to overwrite
+    (err, result) => {
+      // the whole object
+      if (err) {
+        res.send('Something exploded on PUT /todos!')
+        return
+      }
+      res.redirect('/todos')
     }
-    res.redirect('/todos')
+  )
+})
+
+// Toggle completion
+app.put('/todos/:id/toggle', (req, res) => {
+  const id = req.params.id
+  const filter = { _id: Mongo.ObjectId(id) }
+
+  // We need to find the current value first
+  db.collection('todos').findOne(filter, (err, todo) => {
+    // Flip completion
+    const completed = !todo.completed
+    // Now we update
+    db.collection('todos').updateOne(
+      // Yes, a callback inside a callback.
+      filter, // TODO: reimplement this with promises!
+      { $set: { completed: completed } },
+      (err, result) => {
+        if (err) {
+          res.send('Something exploded on PUT /todos/:id/toggle!')
+          return
+        }
+        res.redirect('/todos')
+      }
+    )
   })
 })
 
@@ -112,7 +147,8 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`)
 })
 
-// The code below here is to make sure that we close the conncetion to mongo when this node process terminates
+// The code below here is to make sure that we close the
+// connection to mongo when this node process terminates
 function gracefulShutdown() {
   console.log('\nShutting down gracefully...')
   try {

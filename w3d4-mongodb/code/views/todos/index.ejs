@@ -19,15 +19,25 @@
       <% for (todo of todos) { %>
         <tr>
           <td><%= todo.desc %></td>
-          <td><%= todo.completed ? 'Completed' : 'Incomplete' %></td>
-          <td><%= todo.priority %></td>
+
           <td>
-            <a href="/todos/<%= todo._id %>/edit" class="btn btn-default">Edit</a>
+            <%= todo.completed ? 'Completed' : 'Incomplete' %>
           </td>
-          <td>
+
+          <td><%= todo.priority %></td>
+
+          <td style="display: flex">
+
+            <form action="/todos/<%= todo._id %>/toggle?_method=PUT" method="POST">
+              <button class="btn btn-default">Toggle</button>
+            </form>
+
+            <a href="/todos/<%= todo._id %>/edit" class="btn btn-default">Edit</a>
+
             <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
               <button class="btn btn-default">Delete &#128465;</button>
             </form>
+
           </td>
         </tr>
       <% } %>

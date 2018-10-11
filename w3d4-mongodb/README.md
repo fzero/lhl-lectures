@@ -69,6 +69,8 @@ Example of a JSON file:
 }
 ```
 
+You can find an example of an app that persists data to disk inside [`/persistence`](persistence). It's pretty much TinyApp without the web interface.
+
 #### Challenges
 
 Challenges with storing and managing our own text (CSV, JSON, etc) files for user data:
@@ -164,9 +166,29 @@ On the other hand `findOne()` is more straightforward, since it only returns one
 db.collection('my_collection').findOne(filters, (err, result) => {...})
 ```
 
-### The `dbInstance` (db connection)
+### The `mongoInstance` (db connection)
 
-We see that our node app connects to a specific MongoDB database when it starts and there is a single connection passed into all the other helper functions like `insert`, `remove` and `getAll`
+We see that our node app connects to a specific MongoDB database when it starts and there is a single connection passed into all the other helper functions like `insert`, `remove` and `getAll`. When we connect, we get the `mongoInstance` object and assign it to a global variable `db` so we can talk to the database:
+
+```
+// Create a global variable to store the database instance
+let db
+
+// Connect to MongoDB
+MongoClient.connect(
+  MONGODB_URI,
+  (err, mongoInstance) => {
+    if (err) {
+      console.log("Couldn't connect to MongoDB:", err)
+      process.exit(1)
+    }
+    console.log(`Successfully connected to DB: ${MONGODB_URI}`)
+    db = mongoInstance
+  }
+)
+```
+
+There are other (better) ways to do this, of course. The most popular one is to create a module that receives `db` and abstracts all database operations with functions. This will be explored on later lectures.
 
 ### Client vs Server
 
