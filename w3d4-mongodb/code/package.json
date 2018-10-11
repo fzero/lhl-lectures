@@ -4,7 +4,7 @@
   "description": "LHL w3d4 code",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "npx nodemon node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Khurram Virani and Fabio Neves",
@@ -16,5 +16,8 @@
     "express": "^4.16.3",
     "method-override": "^3.0.0",
     "mongodb": "^2.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
