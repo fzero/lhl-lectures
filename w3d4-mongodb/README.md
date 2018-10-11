@@ -170,7 +170,7 @@ db.collection('my_collection').findOne(filters, (err, result) => {...})
 
 We see that our node app connects to a specific MongoDB database when it starts and there is a single connection passed into all the other helper functions like `insert`, `remove` and `getAll`. When we connect, we get the `mongoInstance` object and assign it to a global variable `db` so we can talk to the database:
 
-```
+```js
 // Create a global variable to store the database instance
 let db
 
